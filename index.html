@@ -703,6 +703,7 @@
 
     <!-- İlişkiler Butonu -->
     <button id="relationships-toggle" style="position: fixed; top: 10px; left: 10px; z-index: 999; background: rgba(116, 185, 255, 0.8); border: none; color: white; padding: 8px; border-radius: 5px; cursor: pointer;">👥</button>
+    <button id="download-names" style="position: fixed; top: 50px; left: 10px; z-index: 999; background: rgba(0, 150, 136, 0.8); border: none; color: white; padding: 8px; border-radius: 5px; cursor: pointer;">💾</button>
     <!-- Lider Paneli Butonu -->
     <button id="leader-toggle">📊</button>
 
@@ -900,7 +901,11 @@
             // İsim isteme gibi özel fonksiyonlar
             if (choice.prompt) {
                 const name = prompt(choice.prompt.text);
-                gameState[choice.prompt.variable] = name || "İsimsiz";
+                const finalName = name || "İsimsiz";
+                gameState[choice.prompt.variable] = finalName;
+                if (choice.prompt.variable === 'karakter_adi') {
+                    saveName(finalName);
+                }
             }
             
             // Oyun gününü artır
@@ -1209,6 +1214,30 @@
                 Dış Politika: ${gameState.dis_politika_durumu}<br>
                 Teknoloji: ${gameState.teknoloji_seviyesi}
             `;
+        }
+
+        const NAME_STORAGE_KEY = 'recorded_names';
+
+        function saveName(name) {
+            const names = JSON.parse(localStorage.getItem(NAME_STORAGE_KEY)) || [];
+            names.push(name);
+            localStorage.setItem(NAME_STORAGE_KEY, JSON.stringify(names));
+        }
+
+        function downloadNames() {
+            const names = JSON.parse(localStorage.getItem(NAME_STORAGE_KEY)) || [];
+            if (names.length === 0) {
+                alert('Kayıtlı isim yok.');
+                return;
+            }
+            const csv = names.map((n, i) => `${i + 1},${n}`).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'names.csv';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
 
         // === HİKAYE VERİSİ (JSON formatında) ===
@@ -1886,6 +1915,8 @@
             const board = document.getElementById('leader-board');
             board.classList.toggle('hidden');
         });
+
+        document.getElementById('download-names').addEventListener('click', downloadNames);
         
         // Lore tooltip için event listener
         document.addEventListener('click', (e) => {
