@@ -1,0 +1,314 @@
++------------------------------------------+
+|      Bölüm 1.0: BAŞLANGIÇ & İLK KARAR     |
++------------------------------------------+
+| Oyuncu dünyaya tanıtılır ve isyan etme   |
+| veya etmeme kararını verir.              |
+| ---------------------------------------- |
+| KARAR: İsyan et vs. Sessiz kal           |
++------------------------------------------+
+          |
+          '---> (Eğer "İsyan Et" seçilirse)
+          |
++------------------------------------------+
+|         Bölüm 1.1: İLK DİRENİŞ           |
++------------------------------------------+
+| Oyuncu, iş yerinde ilk örgütlenme        |
+| adımını atar. Kime güvenecek?            |
+| ---------------------------------------- |
+| KARAR: Risk al vs. Aklını kullan vs. Sabırlı ol |
++------------------------------------------+
+          |
+          '---> (Bu kararlar tek bir yola çıkar ama farklı başlangıç bonusları verir)
+          |
++------------------------------------------+
+|        Bölüm 1.2: KIVILCIM BÜYÜYOR       |
++------------------------------------------+
+| Küçük grup, ilk ses getiren eylemini     |
+| planlar. Amaç dikkat çekmek mi, yoksa    |
+| kaynak toplamak mı?                      |
+| ---------------------------------------- |
+| KARAR:                                   |
+|   A) Propaganda Eylemi                   |
+|   B) Sabotaj Eylemi                      |
++------------------------------------------+
+      |                           |
+(Yol A) '-----------------------' (Yol B)
+      |                           |
++-------------------------+     +-----------------------------+
+| 1.2.A: PROPAGANDA YOLU  |     |   1.2.B: SABOTAJ YOLU       |
++-------------------------+     +-----------------------------+
+| Pankart asmak, yayın    |     | Elitlere ait bir fabrikanın |
+| yapmak.                 |     | üretimini durdurmak.        |
+| >> Halk Desteği++       |     | >> Elitlerin Baskısı++      |
+| >> Adalet++             |     | >> Güç++                    |
++-------------------------+     +-----------------------------+
+      |                           |
+      '-----------+---------------+----'
+                  |
++------------------------------------------+
+|            Bölüm 1.3: MÜTTEFİKLER        |
++------------------------------------------+
+| Hareket büyüdü ve diğer grupların        |
+| dikkatini çekti. Kiminle ittifak         |
+| kuracaksın?                             |
+| ---------------------------------------- |
+| KARAR:                                   |
+|   A) Radikal Öğrenci Grupları            |
+|   B) Pragmatik İşçi Sendikaları          |
+|   C) Yavaş Ama Etkili Entelektüeller     |
++------------------------------------------+
+      |                   |                  |
+(Yol A) '--------+--------' (Yol B)   (Yol C) '--------+
+      |          |                                     |
++-------------+ +---------------------------+        +----------------+
+| 1.3.A:      | |    1.3.B: SENDİKALAR      |        | 1.3.C:         |
+|  ÖĞRENCİLER | | Yanında durursan genel    |        | ENTELEKTÜELLER |
+| Hızlı ve    | | grev gücü kazanırsın.     |        | Medya gücü     |
+| etkililer   | | Ama ekonomik talepleri    |        | ve uluslararası|
+| ama kontrol | | vardır ve taviz isterler. |        | destek vaadi.  |
+| zordur.     | | >> Güç+++, Adalet-        |        | Ama eylemde    |
+| >>Halk Dst.++| +---------------------------+        | yavaştırlar.   |
+| >>Güç++     |                                      | >>Adalet+++    |
++-------------+                                      +----------------+
+      |                                                    |
+      '---------------------+------------------------------'
+                            |
++-------------------------------------------------------------+
+|                   Bölüm 1.4: DEVLETİN CEVABI                  |
++-------------------------------------------------------------+
+| Hareketin artık görmezden gelinemez. Elitler karşılık verir.|
+| Güvenlik şefi, hareketin liderlerinden birini "feda etmeni" |
+| karşılığında baskıyı azaltmayı teklif eder.                  |
+| ----------------------------------------------------------- |
+| KARAR: AHLAKİ İKİLEM                                        |
+|   A) TEKLİFİ REDDET: Tüm gücümüzle direneceğiz!              |
+|      >> Elitlerin Baskısı++++, Halk Desteği++ (Kahramanlık) |
+|   B) BİR YOLDAŞINI FEDA ET: Bu savaşta kurbanlar olacak.      |
+|      >> Güç++++, Adalet---- (Yozlaşma Başlangıcı)           |
+|   C) GİZLİ ANLAŞMA: Baskıyı azalt, biz de yavaşlayalım.       |
+      >> Halk Desteği--, Adalet--, Güç-- (İhanet)            |
++-------------------------------------------------------------+
+                            |
+                            '---> (Seçimin ne olursa olsun, son perdeye hazırlık)
+                            |
++-------------------------------------------------------------+
+|              Bölüm 1.5: DEVRİMİN EŞİĞİNDE (PERDE FİNALİ)      |
++-------------------------------------------------------------+
+| Her şey bu ana bağlı. Halk sokaklarda. Saray'ın kapısındasın.|
+| Son hamle ne olacak?                                        |
+| ----------------------------------------------------------- |
+| KARAR: FİNAL STRATEJİSİ                                     |
+|   A) KANLI DEVRİM: Saray'a saldırı emri ver.                  |
+|      (Eğer $guc_puani > $adalet_puani ise başarı şansı yüksek) |
+|   B) BARIŞÇIL DEVRİM: Milyonluk yürüyüşle Saray'ı kuşat.      |
+|      (Eğer $adalet_puani > $guc_puani ise başarı şansı yüksek)|
+|   C) MÜZAKERE: Elitlerle son bir kez masaya otur.             |
+|      (Eğer $halk_destegi çok yüksekse başarı şansı yüksek)   |
++-------------------------------------------------------------+
+                            |
+          .
+          |
+          '---> (PERDE 1 SONU: ZAFER!)
+          |
++-------------------------------------------------+
+|   Bölüm 2.0: GEÇİŞ - "5 YIL SONRA"             |
++-------------------------------------------------+
+| Oyuncu lüks bir ofistedir. Artık o bir Lider.   |
+| Arayüz ve müzik değişir. Daha soğuk, kurumsal.  |
+| Yeni mekanikler oyuncuya tanıtılır.             |
++-------------------------------------------------+
+          |
++-------------------------------------------------+
+|      Bölüm 2.1: ZAFERİN BEDELİ                  |
++-------------------------------------------------+
+| Yeni hükümetin ilk büyük krizi: Kıtlık.         |
+| Devrim yüzünden tedarik zinciri koptu.          |
+| Hazine boş. Halk aç ve sabırsız.                |
+| ----------------------------------------------- |
+| KARAR: Acil Çözüm Ne Olacak?                    |
+|   A) HAZİNEYİ KULLAN: Kalan parayla dışarıdan   |
+|      gıda al. >> $Hazine----, $HalkMemnuniyeti++|
+|   B) KARNE SİSTEMİ: Herkese eşit ama az gıda.  |
+|      >> $Adalet++, $HalkMemnuniyeti--         |
+|   C) ELİTLERİN MALLARINA EL KOY: Eski zenginlerin|
+|      stoklarını halka dağıt.                    |
+|      >> $Güç++, $HalkMemnuniyeti+++, $İsyanRiski+|
++-------------------------------------------------+
+          |
+          '---> (Seçimin sonucu, bir sonraki krizi tetikler)
+          |
++----------------------------------------------------+
+|          Bölüm 2.2: ESKİ HAYALETLER                |
++----------------------------------------------------+
+| Eski rejimin kalıntıları hala devlette. Bürokrasi  |
+| reformlarını sabote ediyor.                        |
+| -------------------------------------------------- |
+| KARAR: Bürokrasiyi Nasıl Temizleyeceksin?          |
+|   A) TASFİYE: Sana sadık olmayanları temizle.      |
+|      (Eğer $guc_puani yüksekse özel seçenek)       |
+|      >> $Güç+++, $İsyanRiski++                   |
+|   B) LİYAKAT: Herkesi sınava tabi tut, en iyisi    |
+|      kalsın. (Eğer $adalet_puani yüksekse özel seçenek)|
+|      >> $Adalet+++, $Hazine-- (Sınav maliyeti)     |
+|   C) UZLAŞMA: Eski bürokratlarla anlaş.            |
+|      >> $Güç-, $Adalet-, Bürokrasi yavaşlar ama stabil |
++----------------------------------------------------+
+          |
++-------------------------------------------------------+
+|          Bölüm 2.3: YOLDAŞLAR ARASINDA ÇATLAK           |
++-------------------------------------------------------+
+| Devrimi birlikte yaptığın eski bir yoldaşın (radikal  |
+| kanattan), politikalarının "fazla yumuşak" olduğunu   |
+| söyleyerek seni halka açık şekilde eleştirir.         |
+| ----------------------------------------------------- |
+| KARAR: Eski Dostuna Ne Yapacaksın?                    |
+|   A) ONU DİNLE: Politikalarını sertleştir.            |
+|      >> Radikallerin desteği+, $HalkMemnuniyeti--     |
+|   B) ONU GÖREVDEN AL: Otoritene meydan okuyamaz.      |
+|      >> $Güç++, $İsyanRiski+ (O artık bir muhalif)    |
+|   C) ONU SÜRGÜNE GÖNDER: Tartışmalı ama kansız çözüm.  |
+|      >> $Adalet--, Uluslararası imajın zedelenir      |
++-------------------------------------------------------+
+          |
+          '---> (Bu kararlar, yeni muhalefetin kim olacağını belirler)
+          |
++-------------------------------------------------------+
+|        Bölüm 2.4: İLK MUHALİF SESLER (AYNADAKİ YÜZ)     |
++-------------------------------------------------------+
+| Bir grup genç, senin zamanında kullandığın yöntemlerle |
+| (duvar yazıları, sosyal medya) protestolara başlıyor. |
+| Adları: "Gerçek Eşitler".                          |
+| Talepleri: Senin verdiğin ama tutamadığın vaatler.    |
+| ----------------------------------------------------- |
+| KARAR: Bu Yeni İsyan Kıvılcımına Ne Yapacaksın?       |
+|   A) GÜVENLİK GÜÇLERİNİ GÖNDER: Tıpkı eskiler gibi.  |
+|      >> $İsyanRiski++++, $HalkMemnuniyeti---         |
+|   B) LİDERLERİYLE GÖRÜŞ: Onları sisteme dahil et.   |
+|      >> $Hazine--, $Adalet+, Otoriten zayıflar        |
+|   C) KARA PROPAGANDA: Onları "eski rejim ajanı"       |
+|      olarak yaftala. Tıpkı eskilerin sana yaptığı gibi.|
+|      >> $Güç++, $İsyanRiski++ (Halk kutuplaşır)      |
++-------------------------------------------------------+
+          |
+          '---> (Oyunun gidişatı artık geri dönülmez bir yola giriyor)
+          |
++----------------------------------------------------------+
+|         Bölüm 2.5: GÜCÜN YALNIZLIĞI (PERDE FİNALİ)         |
++----------------------------------------------------------+
+| Artık ofisinde yalnızsın. Verdiğin kararlar seni ideallerinden|
+| uzaklaştırdı. Ülke ya bir polis devletine, ya iflasın     |
+| eşiğine ya da sürekli isyanların olduğu bir kaosa sürüklendi.|
+| Pencereden dışarı bakıyorsun.                           |
+| -------------------------------------------------------- |
+| KARAR: KENDİNLE YÜZLEŞME                                 |
+|   (Bu karar direkt bir oyun mekaniği değil, oyuncunun    |
+|   o ana kadar yaptığı seçimlerin bir yansımasıdır.)      |
+|                                                          |
+|   >> Eğer GÜÇ odaklı oynadıysan: Her yer sessizdir. Çünkü |
+|      herkesi susturdun. Ama $İsyanRiski barı gizlice doludur.|
+|   >> Eğer ADALET odaklı oynadıysan: Hazine boştur ama halk|
+|      sana hala bir nebze saygı duyar.                     |
+|   >> Eğer DENGESİZ oynadıysan: Ülke tam bir kaostadır.  |
++----------------------------------------------------------+
+                            |
+          .
+          |
+          '---> (PERDE 2 SONU: Yozlaşma veya Zayıflama)
+          |
++-------------------------------------------------------+
+| Bölüm 3.0: GEÇİŞ - "Diken Üstünde"                    |
++-------------------------------------------------------+
+| Oyuncu tamamen izole olmuştur. Eski yoldaşları ya     |
+| düşman ya da sessizdir. Halk ya korkuyor ya da nefret  |
+| ediyor. Tek amaç, `$İsyanRiski` barının dolmasını     |
+| engellemektir.                                       |
++-------------------------------------------------------+
+          |
++-------------------------------------------------------+
+|        Bölüm 3.1: GÖLGEDEKİ LİDER                      |
++-------------------------------------------------------+
+| İstihbarat şefin, yeni devrimci hareket "Gerçek Eşitler"|
+| hakkında bir rapor sunar. Başlarında karizmatik ve    |
+| idealist yeni bir lider var. Tıpkı senin gençliğin gibi.|
+| ----------------------------------------------------- |
+| KARAR: Tehdidi Nasıl Ortadan Kaldırırsın?             |
+|   A) TUTUKLAMA: Komplo suçlamasıyla lideri hapse at.  |
+|      >> $İsyanRiski+++ (Bir kahraman yaratırsın)      |
+|   B) SUİKAST: Sessizce ve gizlice ortadan kaldır.     |
+|      (Eğer $guc_puani çok yüksekse özel seçenek)      |
+|      >> $Güç++++, $Adalet----, $İsyanRiski-- (kısa vadede)|
+|   C) İTİBARSIZLAŞTIRMA: Hakkında sahte kanıtlar üret. |
+|      >> $İsyanRiski+ (Bazıları inanır, bazıları tepki gösterir)|
++-------------------------------------------------------+
+          |
+          '---> (Bu karar, isyanın niteliğini belirler: açık veya gizli)
+          |
++------------------------------------------------------------+
+|        Bölüm 3.2: KIRILMA NOKTASI & PROTESTO DALGASI       |
++------------------------------------------------------------+
+| Yaptığın hamleye tepki olarak ülke genelinde büyük bir     |
+| protesto dalgası başlar. Bu, senin devriminden bile büyük  |
+| olabilir. Ana meydan, senin zamanında yaptığın gibi,       |
+| isyancılar tarafından doldurulmuştur.                      |
+| ---------------------------------------------------------- |
+| KARAR: Meydanı Nasıl Kontrol Edeceksin?                    |
+|   A) TAM BASKI: Orduyu sokağa indir, sıkıyönetim ilan et. |
+|      >> İç Savaş Riski, $HalkMemnuniyeti----, $İsyanRiski++++ |
+|   B) TAVİZ: Tüm taleplerini kabul et, erken seçime git.    |
+|      (Eğer $adalet_puani yüksekse özel seçenek)             |
+|      >> İktidarı Kaybetme, Onurlu Son                      |
+|   C) GÖZDAĞI: Güç gösterisi yap ama ateş açma emri verme.  |
+|      >> Yüksek risk, sonuç belirsiz ($HalkMemnuniyeti ve    |
+|      $İsyanRiski arasında büyük dalgalanma)                |
+|   D) KAÇIŞ: Gizlice ülkeyi terk et.                         |
+|      >> Sürgün Sonu, İktidarı Kaybetme                     |
++------------------------------------------------------------+
+          |
+          |
+'---------+--------'  (Birden fazla oyun sonu burada belirlenir)
+          |
+          |
++-----------------------------------------------------------------+
+|               Bölüm 3.3: SON (THE ENDING)                       |
++-----------------------------------------------------------------+
+| Bu bir bölüm değil, oyuncunun önceki kararlarına ve son hamlesine|
+| göre dallanan farklı bitiş senaryolarıdır.                      |
+|                                                                 |
+|---EĞER "TAM BASKI" SEÇİLİRSE:------------------------------------|
+|   +--------------------------+  +-------------------------------+
+|   |   İç Savaş Sonu          |  |      Devrilme Sonu            |
+|   +--------------------------+  +-------------------------------+
+|   | Ülke iç savaşa sürüklenir.|  | Ordu sana ihanet eder veya    |
+|   | Oyun, kaotik bir harita  |  | isyancılar Saray'ı basar.     |
+|   | ekranıyla biter.         |  | Tıpkı senin devirdiğin lider  |
+|   | YIKIM.                   |  | gibi yakalanırsın.            |
+|   |                          |  | DÖNGÜ TAMAMLANDI.             |
+|   +--------------------------+  +-------------------------------+
+|                                                                 |
+|---EĞER DİĞER SEÇENEKLER KULLANILIRSA:----------------------------|
+|   +--------------------------+  +-------------------------------+
+|   |      Onurlu Son          |  |        Sürgün Sonu            |
+|   +--------------------------+  +-------------------------------+
+|   | İktidarı barışçıl yolla  |  | Başka bir ülkede, haberlerden |
+|   | devredersin. Tarihe hem  |  | kendi devrilmeni izlersin.    |
+|   | bir devrimci hem de bir  |  | YALNIZLIK.                    |
+|   | tiran olarak geçersin.   |  |                               |
+|   | İRONİ.                   |  |                               |
+|   +--------------------------+  +-------------------------------+
+|                                                                 |
++-----------------------------------------------------------------+
+          |
+          '---> (En yaygın son olan "Devrilme Sonu" sonrası...)
+          |
++------------------------------------------------------------+
+|                         EPİLOG & YENİ OYUN+                |
++------------------------------------------------------------+
+| Sahne: Yeni devrimci lider, Saray'ın balkonundan zaferini  |
+| ilan ediyor. Senin yıllar önce kurduğun cümlelerin neredeyse|
+| aynısını kuruyor.                                          |
+|                                                            |
+| Ekranda son yazı belirir:                                  |
+| "Herkes eşittir."                                          |
+|                                                            |
+| (Ana Menü'ye dönüş)                                        |
++------------------------------------------------------------+

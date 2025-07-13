@@ -1,0 +1,142 @@
+THE EQUALS GAME - ENGLISH IMAGE PROMPTS
+==========================================
+
+SCENE: start
+TR: Şehrin kenar mahallesinde, gri beton blokların arasında yaşıyorsun
+EN: Urban outskirts, gray concrete apartment blocks, working class neighborhood, industrial cityscape, gloomy atmosphere, social inequality, poverty, urban decay, modern dystopia
+
+SCENE: ilk_karar  
+TR: Bugün maaşının kesildiğini, patronunun ise yeni bir lüks araba aldığını öğrendin
+EN: Office building, corporate environment, luxury car parked outside, contrast between wealth and poverty, businessman in suit, modern workplace, social injustice, economic disparity
+
+SCENE: son_sessizlik
+TR: Başını öne eğdin. Güvenli yolu seçtin
+EN: Submissive posture, bowed head, defeated expression, safe but unhappy choice, internal conflict, moral dilemma, quiet resignation, personal defeat
+
+SCENE: ilk_direnis
+TR: İçindeki öfke ve adalet ateşiyle işyerine döndün
+EN: Factory or workplace interior, workers in uniform, industrial setting, revolutionary spirit, anger and determination, workplace solidarity, blue-collar environment, industrial revolution atmosphere
+
+SCENE: orgut_yapisi_secimi
+TR: İlk eylem başarılı oldu. Şimdi nasıl örgütleneceksiniz?
+EN: Underground meeting room, secret gathering, revolutionary planning, conspiratorial atmosphere, dim lighting, political discussion, organizational structure, revolutionary movement
+
+SCENE: ilk_protesto_organizasyonu
+TR: Ahmet ile birlikte hemen harekete geçtin. Mola saatinde küçük bir toplantı yaptınız
+EN: Break room or cafeteria, workers on break, small group discussion, revolutionary planning, workplace activism, labor movement, solidarity meeting, industrial setting
+
+SCENE: kivilcim_buyuyor
+TR: Küçük grup, ilk ses getiren eylemini planlıyor
+EN: Revolutionary headquarters, planning room, maps and documents, activist meeting, political strategy, movement building, grassroots organization, resistance planning
+
+SCENE: propaganda_eylemi
+TR: Propaganda eylemi seçtin. Pankartlar hazırladınız ve yayınlar yaptınız
+EN: Street protest, banners and signs, political demonstration, public square, revolutionary propaganda, mass gathering, political activism, social movement
+
+SCENE: sabotaj_eylemi
+TR: Sabotaj eylemi seçtin. Zenginlere ait bir fabrikanın üretimini durdurdunuz
+EN: Industrial sabotage, factory interior, stopped machinery, industrial protest, worker resistance, factory occupation, industrial action, revolutionary sabotage
+
+SCENE: müttefikler
+TR: Hareket büyüdü ve diğer grupların dikkatini çekti
+EN: Political alliance meeting, diverse group of activists, coalition building, revolutionary alliance, political negotiation, movement expansion, strategic partnership
+
+SCENE: entelektuel_ittifaki
+TR: Entelektüellerle ittifak kurdun. Medya gücü ve uluslararası destek vaadi var
+EN: Academic meeting room, intellectuals and scholars, media presence, international support, intellectual alliance, academic environment, political theory discussion
+
+SCENE: ogrenci_ittifaki
+TR: Öğrenci gruplarıyla ittifak kurdun. Genç ve enerjik, ama bazen kontrol edilmesi zor
+EN: University campus, student protest, young activists, energetic demonstration, student movement, campus activism, youth revolution, academic protest
+
+SCENE: sendika_ittifaki
+TR: İşçi sendikalarıyla ittifak kurdun. Güçlü ama ekonomik talepleri var
+EN: Union hall, labor meeting, worker solidarity, trade union gathering, industrial workers, labor movement, worker rights, union headquarters
+
+SCENE: elif_tutuklanmasi
+TR: Bir sabah, en yakın arkadaşın Elif'i 'isyana yardım ve yataklık' suçlamasıyla tutukladılar
+EN: Police arrest, political prisoner, revolutionary arrest, government crackdown, political repression, security forces, authoritarian response, political persecution
+
+SCENE: devletin_cevabi
+TR: Hareketin artık görmezden gelinemez. Elitler karşılık verir
+EN: Government building, political power, authoritarian response, state repression, political pressure, government crackdown, power struggle, political intimidation
+
+SCENE: devrimin_esiginde
+TR: Her şey bu ana bağlı. Halk sokaklarda. Saray'ın kapısındasın
+EN: Palace gates, mass demonstration, revolutionary moment, people power, palace surrounded, revolutionary climax, mass uprising, political revolution
+
+SCENE: perde2_gecis
+TR: Artık lüks bir ofistesin. Sen bir Lider oldun
+EN: Luxury office, political power, government building, leadership position, political authority, government headquarters, executive office, political leadership
+
+SCENE: zaferin_bedeli
+TR: Yeni hükümetin ilk büyük krizi: Kıtlık
+EN: Food shortage, economic crisis, government crisis, famine, economic hardship, political crisis, resource scarcity, government failure
+
+SCENE: zertan_tehdidi
+TR: Komşu ve güçlü Zertan İmparatorluğu endişeleniyor
+EN: Military threat, border tension, foreign power, imperial threat, military buildup, international conflict, diplomatic crisis, foreign pressure
+
+SCENE: eski_hayaletler
+TR: Eski rejimin kalıntıları hala devlette. Bürokrasi reformlarını sabote ediyor
+EN: Government bureaucracy, political resistance, administrative sabotage, bureaucratic resistance, government reform, political obstruction, administrative challenge
+
+SCENE: yoldaslar_arasinda_catlak
+TR: Devrimi birlikte yaptığın eski bir yoldaşın, politikalarının 'fazla yumuşak' olduğunu söyleyerek seni halka açık şekilde eleştiriyor
+EN: Political criticism, public dissent, revolutionary disagreement, political conflict, internal division, revolutionary split, political opposition, movement fracture
+
+SCENE: elif_elestirisi
+TR: Elif, senin lider olarak aldığın sert kararları eleştiriyor
+EN: Personal confrontation, moral criticism, ethical dilemma, personal conflict, moral judgment, ethical challenge, personal criticism, moral questioning
+
+SCENE: ilk_muhalif_sesler
+TR: Bir grup genç, senin zamanında kullandığın yöntemlerle protestolara başlıyor
+EN: Youth protest, new generation rebellion, revolutionary youth, young activists, generational conflict, youth movement, new revolutionaries, young resistance
+
+SCENE: gucun_yalnizligi
+TR: Artık ofisinde yalnızsın. Verdiğin kararlar seni ideallerinden uzaklaştırdı
+EN: Lonely leader, isolated power, political isolation, leadership loneliness, power corruption, moral compromise, political solitude, leadership burden
+
+SCENE: perde3_gecis
+TR: Artık tamamen yalnızsın. Eski yoldaşları ya düşman ya da sessiz
+EN: Complete isolation, political loneliness, abandoned leader, political solitude, leadership isolation, political abandonment, lonely power, isolated authority
+
+SCENE: golgedeki_lider
+TR: İstihbarat şefin, yeni devrimci hareket 'Gerçek Eşitler' hakkında bir rapor sunuyor
+EN: Intelligence briefing, security report, political threat assessment, intelligence meeting, security briefing, threat analysis, political intelligence, security assessment
+
+SCENE: kirilma_noktasi
+TR: Yaptığın hamleye tepki olarak ülke genelinde büyük bir protesto dalgası başlıyor
+EN: Mass uprising, nationwide protest, revolutionary wave, popular uprising, mass rebellion, national protest, revolutionary movement, popular resistance
+
+SCENE: final_ic_savas
+TR: Ülke iç savaşa sürükleniyor. Kaotik bir harita ekranıyla oyun bitiyor
+EN: Civil war, chaotic map, war-torn country, military conflict, internal war, national chaos, war map, conflict zones, military struggle
+
+SCENE: final_onurlu_son
+TR: İktidarı barışçıl yolla devrediyorsun. Tarihe hem bir devrimci hem de bir tiran olarak geçiyorsun
+EN: Peaceful transfer of power, political transition, democratic handover, leadership transition, political legacy, historical irony, power transfer, political succession
+
+SCENE: final_devrilme
+TR: Ordu sana ihanet ediyor veya isyancılar Saray'ı basıyor
+EN: Military betrayal, palace storming, revolutionary overthrow, military coup, palace invasion, political overthrow, military rebellion, revolutionary victory
+
+SCENE: final_surgun
+TR: Başka bir ülkede, haberlerden kendi devrilmeni izliyorsun
+EN: Foreign exile, watching news from abroad, political exile, foreign refuge, watching downfall from distance, political asylum, exile watching, foreign sanctuary
+
+SCENE: final_ulusal_birlik
+TR: Ulusal birlik hükümeti kurdun. 'Gerçek Eşitler'le birleşerek dış tehdide karşı direndin
+EN: National unity government, political coalition, united front, national solidarity, political unity, coalition government, national alliance, political cooperation
+
+SCENE: final_kukla_lider
+TR: Zertan'dan yardım istedin. İsyanı bastırdın ama ülkeyi bir kukla devlete dönüştürdün
+EN: Puppet state, foreign control, imperial domination, puppet government, foreign influence, imperial rule, controlled government, foreign domination
+
+==========================================
+NOTES:
+- All prompts emphasize the political and revolutionary themes
+- Focus on atmosphere and mood rather than specific details
+- Include emotional and psychological elements
+- Maintain consistency with the game's dystopian and revolutionary narrative
+- Consider lighting, composition, and visual impact for each scene 

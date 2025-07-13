@@ -1,0 +1,131 @@
+THE EQUALS GAME - YAPISAL ANALİZ
+========================================
+
+PROJE: TheEquals_Game
+VERSİYON: 1.0.0
+SERİ NO: TEG-001
+TARİH: 2024
+
+========================================
+
+OYUN MİMARİSİ:
+---------------
+1. TEKNOLOJİ: HTML5 + CSS3 + Vanilla JavaScript
+2. MOTOR: Custom Interactive Fiction Engine
+3. FORMAT: Single Page Application (SPA)
+
+========================================
+
+OYUN SİSTEMİ:
+--------------
+1. DEĞİŞKEN SİSTEMİ:
+   - gameState objesi (JavaScript)
+   - 6 ana puan: adalet_puani, guc_puani, halk_destegi, halk_memnuniyeti, isyan_riski, hazine
+   - 10 durum değişkeni: karakter_adi, secilen_yol, müttefik, vb.
+
+2. HİKAYE YAPISI:
+   - 3 Perde (Bölüm)
+   - Node-based storytelling
+   - 25+ hikaye noktası
+   - 4 farklı final
+
+3. GÖRSEL SİSTEM:
+   - Dynamic background images (Unsplash)
+   - CSS animations
+   - Typewriter effect
+   - Responsive design
+
+4. SES SİSTEMİ:
+   - Ambient background music
+   - User interaction trigger
+
+========================================
+
+HİKAYE AKIŞI:
+--------------
+PERDE 1: DEVRİM
+- Başlangıç → İlk Karar → İlk Direniş
+- Propaganda/Sabotaj Yolu Seçimi
+- Müttefik Seçimi (Öğrenci/Sendika/Entelektüel)
+- Devletin Cevabı → Devrimin Eşiğinde
+
+PERDE 2: İKTİDAR
+- 5 Yıl Sonra Geçiş
+- Zaferin Bedeli (Kıtlık Krizi)
+- Eski Hayaletler (Bürokrasi)
+- Yoldaşlar Arasında Çatlak
+- İlk Muhalif Sesler
+
+PERDE 3: DÜŞÜŞ
+- Diken Üstünde Geçiş
+- Gölgedeki Lider
+- Kırılma Noktası
+- 4 Farklı Final
+
+========================================
+
+OYUN MEKANİKLERİ:
+------------------
+1. Puan Sistemi:
+   - Her seçim puanları etkiler
+   - "it +X" formatında değişimler
+   - Final puanları gösterilir
+
+2. Seçim Sistemi:
+   - 2-4 seçenek arası
+   - Her seçim sonraki node'u belirler
+   - Değişken güncellemeleri
+
+3. Debug Sistemi:
+   - Sağ alt köşede debug panel
+   - Gerçek zamanlı puan gösterimi
+
+========================================
+
+TEKNİK ÖZELLİKLER:
+-------------------
+1. PERFORMANS:
+   - Vanilla JS (Framework yok)
+   - Optimized image loading
+   - Smooth transitions
+
+2. UYUMLULUK:
+   - Modern browser support
+   - Mobile responsive
+   - Cross-platform
+
+3. GÜVENLİK:
+   - Client-side only
+   - No external dependencies
+   - Local storage kullanımı yok
+
+========================================
+
+GÜÇLÜ YANLAR:
+--------------
+✅ Temiz kod yapısı
+✅ Responsive design
+✅ Smooth animations
+✅ Comprehensive story branching
+✅ Debug system
+✅ Professional UI/UX
+
+========================================
+
+GELİŞTİRİLEBİLİR ALANLAR:
+--------------------------
+⚠️ Save/Load sistemi yok
+⚠️ Sound control options yok
+⚠️ Fullscreen mode yok
+⚠️ Progress tracking yok
+⚠️ Statistics tracking yok
+
+========================================
+
+SONUÇ:
+------
+Oyun teknik olarak sağlam bir yapıya sahip. Interactive fiction türünde 
+profesyonel bir ürün. Hikaye kapsamlı ve çok dallı. Görsel/ses sistemi 
+etkili. Temel eksiklikler save sistemi ve kullanıcı kontrolleri.
+
+======================================== 
