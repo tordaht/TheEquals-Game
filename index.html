@@ -543,7 +543,7 @@
                 top: 5px;
                 right: 5px;
                 padding: 10px;
-                font-size: 0.7em;
+                font-size: 0.8em;
                 max-width: 180px;
             }
             
@@ -573,7 +573,51 @@
                 padding: 15px;
             }
         }
-        
+
+        /* Sallanma efekti */
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        /* Lider paneli aç/kapa butonu */
+        #leader-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(201, 74, 74, 0.8);
+            border: none;
+            color: #fff;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            #leader-toggle {
+                display: block;
+            }
+
+            #leader-board.hidden {
+                display: none;
+            }
+        }
+
         /* Debug panel (eski) - gizli */
         #debug-panel {
             display: none;
@@ -659,6 +703,8 @@
 
     <!-- İlişkiler Butonu -->
     <button id="relationships-toggle" style="position: fixed; top: 10px; left: 10px; z-index: 999; background: rgba(116, 185, 255, 0.8); border: none; color: white; padding: 8px; border-radius: 5px; cursor: pointer;">👥</button>
+    <!-- Lider Paneli Butonu -->
+    <button id="leader-toggle">📊</button>
 
     <!-- Görsel Efektler -->
     <div class="screen-flash" id="screen-flash"></div>
@@ -734,7 +780,21 @@
         const choicesElement = document.getElementById('choices');
         const ambienceSound = document.getElementById('ambience-sound');
         const debugInfoElement = document.getElementById('debug-info');
-        
+
+        const previousStats = {
+            adalet_puani: 0,
+            guc_puani: 0,
+            halk_destegi: 0,
+            halk_memnuniyeti: 0,
+            isyan_riski: 0,
+            hazine: 100,
+            kisisel_vicdan: 0
+        };
+
+        if (window.innerWidth <= 768) {
+            document.getElementById('leader-board').classList.add('hidden');
+        }
+
         let isSoundStarted = false;
 
         // Metni harf harf yazma efekti
@@ -766,6 +826,18 @@
                 }
             }
             type();
+        }
+
+        function animateValue(id, start, end, duration = 500) {
+            const element = document.getElementById(id);
+            const range = end - start;
+            const startTime = performance.now();
+            function step(now) {
+                const progress = Math.min((now - startTime) / duration, 1);
+                element.textContent = Math.round(start + range * progress);
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
         }
 
         // Oyunu başlatan fonksiyon
@@ -927,37 +999,48 @@
             // Güç puanı (0-100 arası normalize et)
             const powerPercent = Math.min(Math.max(gameState.guc_puani + 50, 0), 100);
             document.getElementById('power-fill').style.width = powerPercent + '%';
-            document.getElementById('power-value').textContent = gameState.guc_puani;
+            animateValue('power-value', previousStats.guc_puani, gameState.guc_puani);
+            previousStats.guc_puani = gameState.guc_puani;
             
             // Adalet puanı
             const justicePercent = Math.min(Math.max(gameState.adalet_puani + 50, 0), 100);
             document.getElementById('justice-fill').style.width = justicePercent + '%';
-            document.getElementById('justice-value').textContent = gameState.adalet_puani;
+            animateValue('justice-value', previousStats.adalet_puani, gameState.adalet_puani);
+            previousStats.adalet_puani = gameState.adalet_puani;
             
             // Halk desteği
             const supportPercent = Math.min(Math.max(gameState.halk_destegi + 50, 0), 100);
             document.getElementById('support-fill').style.width = supportPercent + '%';
-            document.getElementById('support-value').textContent = gameState.halk_destegi;
+            animateValue('support-value', previousStats.halk_destegi, gameState.halk_destegi);
+            previousStats.halk_destegi = gameState.halk_destegi;
             
             // Halk memnuniyeti
             const satisfactionPercent = Math.min(Math.max(gameState.halk_memnuniyeti + 50, 0), 100);
             document.getElementById('satisfaction-fill').style.width = satisfactionPercent + '%';
-            document.getElementById('satisfaction-value').textContent = gameState.halk_memnuniyeti;
+            animateValue('satisfaction-value', previousStats.halk_memnuniyeti, gameState.halk_memnuniyeti);
+            previousStats.halk_memnuniyeti = gameState.halk_memnuniyeti;
             
             // İsyan riski
             const rebellionPercent = Math.min(Math.max(gameState.isyan_riski, 0), 100);
             document.getElementById('rebellion-fill').style.width = rebellionPercent + '%';
-            document.getElementById('rebellion-value').textContent = gameState.isyan_riski;
+            animateValue('rebellion-value', previousStats.isyan_riski, gameState.isyan_riski);
+            previousStats.isyan_riski = gameState.isyan_riski;
+            if (gameState.isyan_riski >= 70) {
+                document.body.classList.add('shake');
+                setTimeout(() => document.body.classList.remove('shake'), 500);
+            }
             
             // Hazine
             const treasuryPercent = Math.min(Math.max(gameState.hazine, 0), 100);
             document.getElementById('treasury-fill').style.width = treasuryPercent + '%';
-            document.getElementById('treasury-value').textContent = gameState.hazine;
+            animateValue('treasury-value', previousStats.hazine, gameState.hazine);
+            previousStats.hazine = gameState.hazine;
             
             // Kişisel vicdan
             const consciencePercent = Math.min(Math.max(gameState.kisisel_vicdan + 50, 0), 100);
             document.getElementById('conscience-fill').style.width = consciencePercent + '%';
-            document.getElementById('conscience-value').textContent = gameState.kisisel_vicdan;
+            animateValue('conscience-value', previousStats.kisisel_vicdan, gameState.kisisel_vicdan);
+            previousStats.kisisel_vicdan = gameState.kisisel_vicdan;
         }
         
         // İlişkiler panelini güncelleyen fonksiyon
@@ -1797,6 +1880,11 @@
         document.getElementById('relationships-toggle').addEventListener('click', () => {
             const panel = document.getElementById('relationships-panel');
             panel.classList.toggle('show');
+        });
+
+        document.getElementById('leader-toggle').addEventListener('click', () => {
+            const board = document.getElementById('leader-board');
+            board.classList.toggle('hidden');
         });
         
         // Lore tooltip için event listener
