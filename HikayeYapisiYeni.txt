@@ -1,314 +1,156 @@
-+------------------------------------------+
-|      Bölüm 1.0: BAŞLANGIÇ & İLK KARAR     |
-+------------------------------------------+
-| Oyuncu dünyaya tanıtılır ve isyan etme   |
-| veya etmeme kararını verir.              |
-| ---------------------------------------- |
-| KARAR: İsyan et vs. Sessiz kal           |
-+------------------------------------------+
-          |
-          '---> (Eğer "İsyan Et" seçilirse)
-          |
-+------------------------------------------+
-|         Bölüm 1.1: İLK DİRENİŞ           |
-+------------------------------------------+
-| Oyuncu, iş yerinde ilk örgütlenme        |
-| adımını atar. Kime güvenecek?            |
-| ---------------------------------------- |
-| KARAR: Risk al vs. Aklını kullan vs. Sabırlı ol |
-+------------------------------------------+
-          |
-          '---> (Bu kararlar tek bir yola çıkar ama farklı başlangıç bonusları verir)
-          |
-+------------------------------------------+
-|        Bölüm 1.2: KIVILCIM BÜYÜYOR       |
-+------------------------------------------+
-| Küçük grup, ilk ses getiren eylemini     |
-| planlar. Amaç dikkat çekmek mi, yoksa    |
-| kaynak toplamak mı?                      |
-| ---------------------------------------- |
-| KARAR:                                   |
-|   A) Propaganda Eylemi                   |
-|   B) Sabotaj Eylemi                      |
-+------------------------------------------+
-      |                           |
-(Yol A) '-----------------------' (Yol B)
-      |                           |
-+-------------------------+     +-----------------------------+
-| 1.2.A: PROPAGANDA YOLU  |     |   1.2.B: SABOTAJ YOLU       |
-+-------------------------+     +-----------------------------+
-| Pankart asmak, yayın    |     | Elitlere ait bir fabrikanın |
-| yapmak.                 |     | üretimini durdurmak.        |
-| >> Halk Desteği++       |     | >> Elitlerin Baskısı++      |
-| >> Adalet++             |     | >> Güç++                    |
-+-------------------------+     +-----------------------------+
-      |                           |
-      '-----------+---------------+----'
-                  |
-+------------------------------------------+
-|            Bölüm 1.3: MÜTTEFİKLER        |
-+------------------------------------------+
-| Hareket büyüdü ve diğer grupların        |
-| dikkatini çekti. Kiminle ittifak         |
-| kuracaksın?                             |
-| ---------------------------------------- |
-| KARAR:                                   |
-|   A) Radikal Öğrenci Grupları            |
-|   B) Pragmatik İşçi Sendikaları          |
-|   C) Yavaş Ama Etkili Entelektüeller     |
-+------------------------------------------+
-      |                   |                  |
-(Yol A) '--------+--------' (Yol B)   (Yol C) '--------+
-      |          |                                     |
-+-------------+ +---------------------------+        +----------------+
-| 1.3.A:      | |    1.3.B: SENDİKALAR      |        | 1.3.C:         |
-|  ÖĞRENCİLER | | Yanında durursan genel    |        | ENTELEKTÜELLER |
-| Hızlı ve    | | grev gücü kazanırsın.     |        | Medya gücü     |
-| etkililer   | | Ama ekonomik talepleri    |        | ve uluslararası|
-| ama kontrol | | vardır ve taviz isterler. |        | destek vaadi.  |
-| zordur.     | | >> Güç+++, Adalet-        |        | Ama eylemde    |
-| >>Halk Dst.++| +---------------------------+        | yavaştırlar.   |
-| >>Güç++     |                                      | >>Adalet+++    |
-+-------------+                                      +----------------+
-      |                                                    |
-      '---------------------+------------------------------'
-                            |
-+-------------------------------------------------------------+
-|                   Bölüm 1.4: DEVLETİN CEVABI                  |
-+-------------------------------------------------------------+
-| Hareketin artık görmezden gelinemez. Elitler karşılık verir.|
-| Güvenlik şefi, hareketin liderlerinden birini "feda etmeni" |
-| karşılığında baskıyı azaltmayı teklif eder.                  |
-| ----------------------------------------------------------- |
-| KARAR: AHLAKİ İKİLEM                                        |
-|   A) TEKLİFİ REDDET: Tüm gücümüzle direneceğiz!              |
-|      >> Elitlerin Baskısı++++, Halk Desteği++ (Kahramanlık) |
-|   B) BİR YOLDAŞINI FEDA ET: Bu savaşta kurbanlar olacak.      |
-|      >> Güç++++, Adalet---- (Yozlaşma Başlangıcı)           |
-|   C) GİZLİ ANLAŞMA: Baskıyı azalt, biz de yavaşlayalım.       |
-      >> Halk Desteği--, Adalet--, Güç-- (İhanet)            |
-+-------------------------------------------------------------+
-                            |
-                            '---> (Seçimin ne olursa olsun, son perdeye hazırlık)
-                            |
-+-------------------------------------------------------------+
-|              Bölüm 1.5: DEVRİMİN EŞİĞİNDE (PERDE FİNALİ)      |
-+-------------------------------------------------------------+
-| Her şey bu ana bağlı. Halk sokaklarda. Saray'ın kapısındasın.|
-| Son hamle ne olacak?                                        |
-| ----------------------------------------------------------- |
-| KARAR: FİNAL STRATEJİSİ                                     |
-|   A) KANLI DEVRİM: Saray'a saldırı emri ver.                  |
-|      (Eğer $guc_puani > $adalet_puani ise başarı şansı yüksek) |
-|   B) BARIŞÇIL DEVRİM: Milyonluk yürüyüşle Saray'ı kuşat.      |
-|      (Eğer $adalet_puani > $guc_puani ise başarı şansı yüksek)|
-|   C) MÜZAKERE: Elitlerle son bir kez masaya otur.             |
-|      (Eğer $halk_destegi çok yüksekse başarı şansı yüksek)   |
-+-------------------------------------------------------------+
-                            |
-          .
-          |
-          '---> (PERDE 1 SONU: ZAFER!)
-          |
-+-------------------------------------------------+
-|   Bölüm 2.0: GEÇİŞ - "5 YIL SONRA"             |
-+-------------------------------------------------+
-| Oyuncu lüks bir ofistedir. Artık o bir Lider.   |
-| Arayüz ve müzik değişir. Daha soğuk, kurumsal.  |
-| Yeni mekanikler oyuncuya tanıtılır.             |
-+-------------------------------------------------+
-          |
-+-------------------------------------------------+
-|      Bölüm 2.1: ZAFERİN BEDELİ                  |
-+-------------------------------------------------+
-| Yeni hükümetin ilk büyük krizi: Kıtlık.         |
-| Devrim yüzünden tedarik zinciri koptu.          |
-| Hazine boş. Halk aç ve sabırsız.                |
-| ----------------------------------------------- |
-| KARAR: Acil Çözüm Ne Olacak?                    |
-|   A) HAZİNEYİ KULLAN: Kalan parayla dışarıdan   |
-|      gıda al. >> $Hazine----, $HalkMemnuniyeti++|
-|   B) KARNE SİSTEMİ: Herkese eşit ama az gıda.  |
-|      >> $Adalet++, $HalkMemnuniyeti--         |
-|   C) ELİTLERİN MALLARINA EL KOY: Eski zenginlerin|
-|      stoklarını halka dağıt.                    |
-|      >> $Güç++, $HalkMemnuniyeti+++, $İsyanRiski+|
-+-------------------------------------------------+
-          |
-          '---> (Seçimin sonucu, bir sonraki krizi tetikler)
-          |
-+----------------------------------------------------+
-|          Bölüm 2.2: ESKİ HAYALETLER                |
-+----------------------------------------------------+
-| Eski rejimin kalıntıları hala devlette. Bürokrasi  |
-| reformlarını sabote ediyor.                        |
-| -------------------------------------------------- |
-| KARAR: Bürokrasiyi Nasıl Temizleyeceksin?          |
-|   A) TASFİYE: Sana sadık olmayanları temizle.      |
-|      (Eğer $guc_puani yüksekse özel seçenek)       |
-|      >> $Güç+++, $İsyanRiski++                   |
-|   B) LİYAKAT: Herkesi sınava tabi tut, en iyisi    |
-|      kalsın. (Eğer $adalet_puani yüksekse özel seçenek)|
-|      >> $Adalet+++, $Hazine-- (Sınav maliyeti)     |
-|   C) UZLAŞMA: Eski bürokratlarla anlaş.            |
-|      >> $Güç-, $Adalet-, Bürokrasi yavaşlar ama stabil |
-+----------------------------------------------------+
-          |
-+-------------------------------------------------------+
-|          Bölüm 2.3: YOLDAŞLAR ARASINDA ÇATLAK           |
-+-------------------------------------------------------+
-| Devrimi birlikte yaptığın eski bir yoldaşın (radikal  |
-| kanattan), politikalarının "fazla yumuşak" olduğunu   |
-| söyleyerek seni halka açık şekilde eleştirir.         |
-| ----------------------------------------------------- |
-| KARAR: Eski Dostuna Ne Yapacaksın?                    |
-|   A) ONU DİNLE: Politikalarını sertleştir.            |
-|      >> Radikallerin desteği+, $HalkMemnuniyeti--     |
-|   B) ONU GÖREVDEN AL: Otoritene meydan okuyamaz.      |
-|      >> $Güç++, $İsyanRiski+ (O artık bir muhalif)    |
-|   C) ONU SÜRGÜNE GÖNDER: Tartışmalı ama kansız çözüm.  |
-|      >> $Adalet--, Uluslararası imajın zedelenir      |
-+-------------------------------------------------------+
-          |
-          '---> (Bu kararlar, yeni muhalefetin kim olacağını belirler)
-          |
-+-------------------------------------------------------+
-|        Bölüm 2.4: İLK MUHALİF SESLER (AYNADAKİ YÜZ)     |
-+-------------------------------------------------------+
-| Bir grup genç, senin zamanında kullandığın yöntemlerle |
-| (duvar yazıları, sosyal medya) protestolara başlıyor. |
-| Adları: "Gerçek Eşitler".                          |
-| Talepleri: Senin verdiğin ama tutamadığın vaatler.    |
-| ----------------------------------------------------- |
-| KARAR: Bu Yeni İsyan Kıvılcımına Ne Yapacaksın?       |
-|   A) GÜVENLİK GÜÇLERİNİ GÖNDER: Tıpkı eskiler gibi.  |
-|      >> $İsyanRiski++++, $HalkMemnuniyeti---         |
-|   B) LİDERLERİYLE GÖRÜŞ: Onları sisteme dahil et.   |
-|      >> $Hazine--, $Adalet+, Otoriten zayıflar        |
-|   C) KARA PROPAGANDA: Onları "eski rejim ajanı"       |
-|      olarak yaftala. Tıpkı eskilerin sana yaptığı gibi.|
-|      >> $Güç++, $İsyanRiski++ (Halk kutuplaşır)      |
-+-------------------------------------------------------+
-          |
-          '---> (Oyunun gidişatı artık geri dönülmez bir yola giriyor)
-          |
-+----------------------------------------------------------+
-|         Bölüm 2.5: GÜCÜN YALNIZLIĞI (PERDE FİNALİ)         |
-+----------------------------------------------------------+
-| Artık ofisinde yalnızsın. Verdiğin kararlar seni ideallerinden|
-| uzaklaştırdı. Ülke ya bir polis devletine, ya iflasın     |
-| eşiğine ya da sürekli isyanların olduğu bir kaosa sürüklendi.|
-| Pencereden dışarı bakıyorsun.                           |
-| -------------------------------------------------------- |
-| KARAR: KENDİNLE YÜZLEŞME                                 |
-|   (Bu karar direkt bir oyun mekaniği değil, oyuncunun    |
-|   o ana kadar yaptığı seçimlerin bir yansımasıdır.)      |
-|                                                          |
-|   >> Eğer GÜÇ odaklı oynadıysan: Her yer sessizdir. Çünkü |
-|      herkesi susturdun. Ama $İsyanRiski barı gizlice doludur.|
-|   >> Eğer ADALET odaklı oynadıysan: Hazine boştur ama halk|
-|      sana hala bir nebze saygı duyar.                     |
-|   >> Eğer DENGESİZ oynadıysan: Ülke tam bir kaostadır.  |
-+----------------------------------------------------------+
-                            |
-          .
-          |
-          '---> (PERDE 2 SONU: Yozlaşma veya Zayıflama)
-          |
-+-------------------------------------------------------+
-| Bölüm 3.0: GEÇİŞ - "Diken Üstünde"                    |
-+-------------------------------------------------------+
-| Oyuncu tamamen izole olmuştur. Eski yoldaşları ya     |
-| düşman ya da sessizdir. Halk ya korkuyor ya da nefret  |
-| ediyor. Tek amaç, `$İsyanRiski` barının dolmasını     |
-| engellemektir.                                       |
-+-------------------------------------------------------+
-          |
-+-------------------------------------------------------+
-|        Bölüm 3.1: GÖLGEDEKİ LİDER                      |
-+-------------------------------------------------------+
-| İstihbarat şefin, yeni devrimci hareket "Gerçek Eşitler"|
-| hakkında bir rapor sunar. Başlarında karizmatik ve    |
-| idealist yeni bir lider var. Tıpkı senin gençliğin gibi.|
-| ----------------------------------------------------- |
-| KARAR: Tehdidi Nasıl Ortadan Kaldırırsın?             |
-|   A) TUTUKLAMA: Komplo suçlamasıyla lideri hapse at.  |
-|      >> $İsyanRiski+++ (Bir kahraman yaratırsın)      |
-|   B) SUİKAST: Sessizce ve gizlice ortadan kaldır.     |
-|      (Eğer $guc_puani çok yüksekse özel seçenek)      |
-|      >> $Güç++++, $Adalet----, $İsyanRiski-- (kısa vadede)|
-|   C) İTİBARSIZLAŞTIRMA: Hakkında sahte kanıtlar üret. |
-|      >> $İsyanRiski+ (Bazıları inanır, bazıları tepki gösterir)|
-+-------------------------------------------------------+
-          |
-          '---> (Bu karar, isyanın niteliğini belirler: açık veya gizli)
-          |
-+------------------------------------------------------------+
-|        Bölüm 3.2: KIRILMA NOKTASI & PROTESTO DALGASI       |
-+------------------------------------------------------------+
-| Yaptığın hamleye tepki olarak ülke genelinde büyük bir     |
-| protesto dalgası başlar. Bu, senin devriminden bile büyük  |
-| olabilir. Ana meydan, senin zamanında yaptığın gibi,       |
-| isyancılar tarafından doldurulmuştur.                      |
-| ---------------------------------------------------------- |
-| KARAR: Meydanı Nasıl Kontrol Edeceksin?                    |
-|   A) TAM BASKI: Orduyu sokağa indir, sıkıyönetim ilan et. |
-|      >> İç Savaş Riski, $HalkMemnuniyeti----, $İsyanRiski++++ |
-|   B) TAVİZ: Tüm taleplerini kabul et, erken seçime git.    |
-|      (Eğer $adalet_puani yüksekse özel seçenek)             |
-|      >> İktidarı Kaybetme, Onurlu Son                      |
-|   C) GÖZDAĞI: Güç gösterisi yap ama ateş açma emri verme.  |
-|      >> Yüksek risk, sonuç belirsiz ($HalkMemnuniyeti ve    |
-|      $İsyanRiski arasında büyük dalgalanma)                |
-|   D) KAÇIŞ: Gizlice ülkeyi terk et.                         |
-|      >> Sürgün Sonu, İktidarı Kaybetme                     |
-+------------------------------------------------------------+
-          |
-          |
-'---------+--------'  (Birden fazla oyun sonu burada belirlenir)
-          |
-          |
-+-----------------------------------------------------------------+
-|               Bölüm 3.3: SON (THE ENDING)                       |
-+-----------------------------------------------------------------+
-| Bu bir bölüm değil, oyuncunun önceki kararlarına ve son hamlesine|
-| göre dallanan farklı bitiş senaryolarıdır.                      |
-|                                                                 |
-|---EĞER "TAM BASKI" SEÇİLİRSE:------------------------------------|
-|   +--------------------------+  +-------------------------------+
-|   |   İç Savaş Sonu          |  |      Devrilme Sonu            |
-|   +--------------------------+  +-------------------------------+
-|   | Ülke iç savaşa sürüklenir.|  | Ordu sana ihanet eder veya    |
-|   | Oyun, kaotik bir harita  |  | isyancılar Saray'ı basar.     |
-|   | ekranıyla biter.         |  | Tıpkı senin devirdiğin lider  |
-|   | YIKIM.                   |  | gibi yakalanırsın.            |
-|   |                          |  | DÖNGÜ TAMAMLANDI.             |
-|   +--------------------------+  +-------------------------------+
-|                                                                 |
-|---EĞER DİĞER SEÇENEKLER KULLANILIRSA:----------------------------|
-|   +--------------------------+  +-------------------------------+
-|   |      Onurlu Son          |  |        Sürgün Sonu            |
-|   +--------------------------+  +-------------------------------+
-|   | İktidarı barışçıl yolla  |  | Başka bir ülkede, haberlerden |
-|   | devredersin. Tarihe hem  |  | kendi devrilmeni izlersin.    |
-|   | bir devrimci hem de bir  |  | YALNIZLIK.                    |
-|   | tiran olarak geçersin.   |  |                               |
-|   | İRONİ.                   |  |                               |
-|   +--------------------------+  +-------------------------------+
-|                                                                 |
-+-----------------------------------------------------------------+
-          |
-          '---> (En yaygın son olan "Devrilme Sonu" sonrası...)
-          |
-+------------------------------------------------------------+
-|                         EPİLOG & YENİ OYUN+                |
-+------------------------------------------------------------+
-| Sahne: Yeni devrimci lider, Saray'ın balkonundan zaferini  |
-| ilan ediyor. Senin yıllar önce kurduğun cümlelerin neredeyse|
-| aynısını kuruyor.                                          |
-|                                                            |
-| Ekranda son yazı belirir:                                  |
-| "Herkes eşittir."                                          |
-|                                                            |
-| (Ana Menü'ye dönüş)                                        |
-+------------------------------------------------------------+
+OYUN HİKAYESİ: GRİ ŞAFAKDÜNYA: AETHELBURG ŞEHRİYönetim, kendisini "Konsey" olarak adlandıran, teknokrat ve otoriter bir rejimdir. Yıllar önce bir ekonomik çöküşün ardından "istikrar" vaadiyle yönetime gelmişlerdir. Şehir, mega şirketlerin (OmniCorp, GenTek, Vestra Lojistik) ve devletin iç içe geçtiği bir yapıya sahiptir. Her vatandaşın bir "Sosyal Liyakat Puanı" vardır ve bu puan, iş bulmaktan ev kiralamaya kadar her şeyi etkiler. Eleştiri, itaatsizlik ve "verimsizlik" bu puanı düşürür. Şehrin mimarisi brütalist ve monotondur, devasa beton yapılar güneşi engeller. Sadece zenginlerin yaşadığı "Tepe Sektörü" yeşil ve ferahtır. Halk ise alt seviyelerdeki, neon reklamların kirli bir ışıkla aydınlattığı, sürekli bir çiselemenin hakim olduğu "Vadi"de yaşar.ANA KARAKTERLER (DERİNLEŞTİRİLMİŞ)Arda (Oyuncu): Geçmişi oyuncu tarafından seçilir, ancak ortak özelliği, sistemin içinde boğulmuş ama henüz umudunu tamamen yitirmemiş olmasıdır.Elara Aydın (Akademisyen): Eski bir Konsey danışmanıdır. Rejimin kuruluşunda yer almış ancak zamanla amacından saptığını görmüştür. En büyük korkusu, devrimin Konsey'den daha kötü bir tiranlık yaratmasıdır. Kişisel Görevi: Konsey'in kuruluş manifestosunun orijinal, sansürsüz kopyasını bularak rejimin kendi ideallerine nasıl ihanet ettiğini kanıtlamak.Kaan Demir (Asker): Ailesi, Konsey'in tasfiye ettiği eski askeri elittendir. Babası bir "vatan haini" olarak damgalanmıştır. Kaan için bu devrim, sadece halk için değil, aynı zamanda ailesinin onurunu geri almak için kişisel bir vendettadır. Kişisel Görevi: Babasının adını temize çıkaracak ve tasfiyelerin arkasındaki gerçek sebebi ortaya koyacak gizli askeri mahkeme kayıtlarını bulmak.Leyla Kaya (Sendikacı): Vadi'nin kalbindeki fabrikalarda büyümüştür. Küçük erkek kardeşini, yetersiz güvenlik önlemleri olan bir fabrikada iş kazasında kaybetmiştir. Onun için bu savaş, soyut ideallerden çok, halkın somut acılarına karşı bir isyandır. Kişisel Görevi: Kardeşinin ölümüne neden olan OmniCorp yöneticisinin ihmalini kanıtlayan belgeleri bularak onu halkın önünde adalete teslim etmek.Ahmet Çelik: Arda'nın çocukluk arkadaşı. İyi bir insan, bir aile babası. Devrimin pratik ve insani yüzünü temsil eder. Başlangıçta korkak olsa da, ailesini koruma içgüdüsü onu şaşırtıcı derecede cesur eylemlere itebilir.Albay Davut Sancak (Antagonist): İstihbaratın başındaki isim. O bir sadist değil, bir fanatiktir. Kaosun en büyük kötülük olduğuna ve düzeni sağlamak için her yolun mübah olduğuna inanır. Arda'nın eylemlerini kişisel bir satranç maçı olarak görür. Zekidir, kaynakları sınırsızdır ve devrim hücresinin psikolojik profillerini çıkararak onları birbirine düşürmeye çalışır.PROLOG: PASLANMIŞ DİŞLİLERBölüm 0.0: AYNI GÜN, FARKLI MASKEOyun, Arda'nın Sosyal Liyakat Puanı terminaline bakmasıyla başlar. Puanı ortalamanın biraz üzerindedir; ne göze batacak kadar yüksek, ne de başını belaya sokacak kadar düşük. Mükemmel bir sıradanlık. Oyuncu burada Arda'nın geçmişini seçer. Bu seçim, sadece başlangıç bonusları değil, aynı zamanda oyunun ilerleyen kısımlarında açılacak özel diyalogları ve çözüm yollarını da belirler.[SEÇİM] Arda bu sisteme nasıl uyum sağladı?Veri Analisti (OmniCorp): "Sayılar yalan söylemez. Ben de onlara sığındım." Verimlilik raporları, işten çıkarma algoritmaları... Arda, sistemin dişlilerini yağlayanlardan biriydi. [Bonus: Hacking mini oyunlarında avantaj, kurumsal jargonu anlama, propaganda analizinde isabet.]Sokak Muhabiri (Vadi Postası): "Gerçeğin kırıntılarını arıyordum, sansürün sofrasından arta kalanları." [Bonus: İkna ve gözdağı diyaloglarında ek seçenekler, bilgi toplama görevlerinde daha fazla ipucu bulma.]Sosyal Hizmetler Görevlisi (Belediye): "Sistemin ezdiklerine yara bandı yapıştırıyordum, kanamayı durduramasam da." [Bonus: Halkın moralini ve ihtiyaçlarını daha iyi anlama, mülteci ve evsizlerle daha kolay iletişim kurma, Halk Memnuniyeti'ni artıran eylemlerde bonus.]Bölüm 0.1: KIRILMA ANISahne, Vadi'nin kalabalık bir metro istasyonunda açılır. Holografik reklamlar, "OmniCorp ile Daha Verimli Bir Gelecek!" sloganını tekrarlar. Hoparlörlerden mekanik bir ses, "Unutmayın, fedakarlık ilerlemenin yakıtıdır," der. Arda, çocukluk arkadaşı Ahmet ile her zamanki ucuz erişteci dükkanında buluşmak için yoldadır. Ahmet'ten o meşhur mesaj gelir: "İşten çıkarıldım. Konuşacak halde değilim."Tam o sırada, eriştecinin duvarındaki ekranda Ekonomi Bakanı'nın yüzü belirir: "Verimlilik odaklı yeniden yapılanmamız, bazı çürük elmaları sepetten ayıklamamızı gerektiriyor. Milletimiz için fedakarlık kaçınılmazdır."[SEÇİM] Bu "çürük elma" lafından sonra ne yapacaksın?Ahmet'in evine git.Sahne: Ahmet'in yaşadığı, Konsey'in "Kovan Blokları"ndan birine gidersin. Dar koridorlar, isli duvarlar. Kapıyı Ahmet'in eşi Sema açar. İçeride, ailenin küçük kızı sessizce oyuncaklarıyla oynarken, Ahmet pencereden dışarıdaki sonsuz beton manzarasına bakmaktadır.[DİYALOG SEÇİMİ] Yıkılmış arkadaşına ne söylersin?a) (Maddi Yardım) "Ahmet, kenarda biraz param var. En azından birkaç aylık kira..." [--Hazine, ++Ahmet İlişkisi, +Kişisel Vicdan. İleride Ahmet, bu parayla karaborsadan bir silah alıp başını belaya sokabilir veya bir kaçış planı için kullanabilir.]b) (İntikam Yemini) "Bu bir 'yeniden yapılanma' değil, Ahmet. Bu bir tasfiye. Ve bunu onların yanına bırakmayacağız." [+Adalet. Ahmet'in gözlerinde bir ışık yanar. Gelecekte devrimin en gözü kara neferlerinden biri olabilir.]c) (Sessiz Destek) Yanına oturup omuzuna dokunursun. "Konuşmak zorunda değilsin. Sadece bil ki, yalnız değilsin." [++Ahmet İlişkisi. Ahmet, devrime daha temkinli yaklaşır ama sana olan sadakati sarsılmaz olur. İleride grubun vicdanı haline gelebilir.]d) (Araştırmacı Yaklaşım) "Neden sen? Bir sebep gösterdiler mi? Son zamanlarda sendikal faaliyetlerle ilgili bir şeye karıştın mı?" [Arda'nın geçmişine göre ek seçenekler açılır. Bu konuşma, Bölüm 1.3'teki Propaganda Savaşı için değerli bilgiler sağlar.]Öfkeyle durumu araştır.Sahne: Arda, kendi dairesine döner. Terminalini açar. Geçmişine göre farklı bir yol izler:Veri Analisti olarak: OmniCorp'un iç ağına gizli bir arka kapıdan sızar. İşten çıkarılan 117 kişinin listesini bulur. Ortak noktaları: Düşük Sosyal Liyakat Puanı, son 3 ayda "verimsizlik" uyarısı almış olmaları ve hepsinin Vadi'deki sendika toplantılarının yapıldığı bölgede yaşaması. [+Adalet, ++Propaganda Malzemesi]Muhabir olarak: Eski bir muhbirini, "Fısıltı" lakaplı bir bilgi simsarlığını arar. Bir miktar para veya bir iyilik karşılığında, Fısıltı bu işten çıkarmaların arkasında Albay Sancak'ın yeni "Sosyal Hijyen" programının olduğunu söyler. [+Adalet, ++Propaganda Malzemesi, Albay Sancak hakkında ilk ipucu.]Sosyal Hizmetler Görevlisi olarak: Belediyenin veri tabanına erişir. İşten çıkarılanların ailelerine yapılan "yardımların" aslında bir takip mekanizması olduğunu, çocuklarının okullarına "potansiyel sorunlu" notu düşüldüğünü fark eder. [+Adalet, ++Propaganda Malzemesi, Sistemin acımasızlığını daha derinden anlama.]PERDE 1: KIVILCIMBölüm 1.0: YERALTINDAKİ FISILTILARArda, artık bir izleyici olamayacağını anlamıştır. İnternetin şifreli katmanlarında, "Ağ" olarak bilinen gizli forumlarda dolaşmaya başlar. Burada, Konsey karşıtı üç ana akımla karşılaşır.Logos Kolektifi (Elara Aydın): Felsefe, tarih ve strateji tartışmalarının döndüğü, şifreli metinlerle iletişim kuran bir grup. Sabırlı ve entelektüeller ama Vadi'nin gerçekliğinden kopuk olmakla eleştiriliyorlar.Çelik Disiplin (Kaan Demir): Eski askeri protokollerle işleyen, hiyerarşik bir yapı. Disiplinli ve etkililer ama fazlasıyla acımasız ve sorgulamaya kapalılar.Emek Yumruğu (Leyla Kaya): Fabrika işçileri, liman görevlileri ve ulaştırma çalışanlarından oluşan, daha çok anlık mesajlaşma gruplarıyla örgütlenen bir ağ. Tutkulu ve kalabalıklar ama plansız ve kaosa yatkınlar.[ANA SEÇİM] İlk adımı kiminle atacaksın?Elara ile buluşmak için: Şehrin terk edilmiş büyük kütüphanesinde buluşma ayarlanır. Elara, Arda'dan Konsey'in yasakladığı bir kitabı (örneğin, George Orwell - 1984) bulup getirmesini isteyerek onu test eder. Bu, bir gizlilik ve bulmaca görevidir.Kaan ile buluşmak için: Vadi'nin altındaki eski metro tünellerinde bir buluşma gerçekleşir. Kaan, Arda'nın peşine taktığı sivil polisleri atlatıp atlatamayacağını görmek ister. Bu, bir takip ve kaçış sekansıdır.Leyla ile buluşmak için: Gece vardiyasının en yoğun olduğu bir tekstil fabrikasında buluşulur. Leyla, Arda'dan makinelerden birini "kaza süsü vererek" sabote etmesini ister. Bu, hem zamanlama hem de ahlaki bir testtir. [--Kişisel Vicdan? veya +Güç?]Bölüm 1.1: İLK KİBRİTİlk müttefikin güvenini kazandıktan sonra, ilk eylem planlanır. Seçenekler, müttefikin karakterini yansıtır ve her birinin beklenmedik sonuçları olabilir.Eğer Elara'nın yolunu seçtiysen (Akademisyenler):[SEÇİM] Rejimin temellerini nasıl sarsacağız?a) Veri Sızıntısı: "Konsey üyelerinin Tepe Sektörü'ndeki lüks harcamalarını, yurt dışı hesaplarını ifşa edelim." [Yüksek Risk. Başarılı olursa: ++Halk Desteği, Hükümet içinde güvensizlik. Albay Sancak, sızıntının kaynağını bulmak için acımasız bir av başlatır.]b) Sessiz Yürüyüş: "Üniversite kampüsünden başlayıp Konsey Binası'na kadar, ağızlarımızı bantlayarak ve yasaklanmış kitapları taşıyarak yürüyelim." [Düşük Risk. Başarılı olursa: +Adalet, entelektüel kesimden yeni üyeler. Konsey, bunu görmezden gelerek sizi "bir avuç züppe" olarak damgalayabilir.]c) Alternatif Eğitim Ağı: "Gizli evlerde insanlara sansürlenmiş tarihi, eleştirel düşünceyi ve sistemin nasıl çalıştığını öğretelim." [Uzun Vadeli. Anlık etkisi az ama 2-3 bölüm sonra daha bilinçli ve sadık devrimciler yetiştirir. Bu evlerden biri basılabilir ve bir trajedi yaşanabilir.](Diğer gruplar için de benzer şekilde dallanan, benzersiz eylem seçenekleri...)Bölüm 1.2: BÜYÜYEN AİLE, BÜYÜYEN SORUNLARİlk eylem, başarılı ya da başarısız, bir sonuç doğurur: Grup büyür. Yeni üyeler, yeni ihtiyaçlar demektir: Güvenli evler, sahte kimlikler, silahlar, tıbbi malzeme ve en önemlisi para. Artık tek bir grupla devam etmek imkansızdır. Diğer iki liderle de masaya oturmak zorundasın.[KRİTİK SEÇİM] Devrim Konseyi nasıl bir yapıya sahip olacak?Merkezi Konsey: "Üç lider eşit haklara sahip olacak. Tüm kararlar oybirliğiyle alınacak." [+Adalet, ++Demokratik Meşruiyet. Ancak bu yapı, Albay Sancak'ın en sevdiği oyun alanıdır. Liderler arasına nifak tohumları ekerek karar mekanizmasını felç etmeye çalışacaktır. Sık sık arabuluculuk yapman gerekecek.]Hücre Yapılanması: "Ben üç lider arasında tek köprü olacağım. Herkes kendi alanında çalışacak, kimse diğerinin operasyonunu bilmeyecek." [++Güç, ++Güvenlik. Ancak bu, gruplar arasında rekabete ve güvensizliğe yol açar. Kaan, Leyla'nın grevini kendi operasyonu için bir dikkat dağıtma unsuru olarak kullanabilir ve olan işçilere olur. Bu tür olaylar ittifakı içten içe çürütür.]Tek Liderlik: "Bu işin yürümesi için tek bir lider lazım. O da benim." [Çok Riskli. Başarılı olmak için yüksek ikna veya gözdağı yeteneği gerekir. Başarılı olursan, devrim hızlanır ama Kişisel Vicdan'ın büyük bir darbe alır. Başarısız olursan, en az bir grubu kendine düşman eder, hatta suikaste uğrayabilirsin.]Bölüm 1.3: İMPARATORLUĞUN KARŞI SALDIRISIAlbay Sancak sahneye çıkar. Televizyonda yüzü belirir ve sizi "kaos tellalları" ve "terörist" ilan eder. Ama onun asıl hamleleri gölgelerde gerçekleşir.Yan Karakterin Kaçırılması: İlk eylemde sana yardım eden o küçük karakter (belki bir teknisyen, belki bir hemşire, belki de Ahmet) kaçırılır. Sancak, sana bir mesaj gönderir: "Elimdeki 'çürük elma'yı istersen, gelip almalısın." Bu, bariz bir tuzaktır.[SEÇİM] Tuzağa gidecek misin?a) Evet, bir kurtarma operasyonu düzenle. [Riskli bir görev. Başarılı olursa müttefikinin hayatını kurtarır ve grubun moralini yükseltirsin. Başarısızlık, ölüm ve hayal kırıklığı demektir.]b) Hayır, o feda edilebilir bir piyon. [Grubun güvenliğini öncelersin. --Kişisel Vicdan, --Moral. Kurtaramadığın o karakterin yüzü rüyalarına girer.]Propaganda Savaşı: Medya, eylemlerinizi çarpıtmaya başlar. Sessiz yürüyüşünüz "yağma girişimi", fabrika greviniz "ekonomik sabotaj" olarak sunulur.[SEÇİM] Nasıl karşılık vereceksin?a) Kendi propagandanı yap. (Elara'nın yolu) - Gizli vericilerle TV yayınını hack'leyip gerçekleri göster.b) Onları kendi silahlarıyla vur. (Leyla'nın yolu) - Duvarlara "Bakanın Villası > Senin Ekmeğin" gibi basit ama etkili sloganlar yazan grafiticileri örgütle.c) Korku sal. (Kaan'ın yolu) - Propagandayı yapan gazetecinin evinin önüne bir mermi kovanı bırak.KÖSTEBEK AVI: En kritik operasyonlarınızdan biri (örneğin, bir silah sevkiyatı) pusuya düşürülür. İçeriden birinin bilgi sızdırdığı kesindir. Şüpheler üç liderin en yakın adamları arasında yoğunlaşır: Elara'nın idealist öğrencisi Can, Kaan'ın sadık çavuşu Barış, Leyla'nın sağ kolu olan tecrübeli işçi Fatma.Bu, diyalog, araştırma ve çıkarım üzerine kurulu bir dedektiflik bölümüdür. Her şüphelinin bir motivasyonu olabilir: Can, kansız devrime inanıp Kaan'ın şiddetini durdurmak istemiş olabilir. Barış, Kaan'ı korumak için Leyla'nın "tehlikeli" planını sabote etmiş olabilir. Fatma, Konsey'in elinde rehin tutulan kızı için şantaja boyun eğmiş olabilir.Yanlış kişiyi suçlamak, o grubu ittifaktan koparır ve gerçek köstebek Sancak'a bilgi sızdırmaya devam eder.Bölüm 1.4: DEVRİMİN EŞİĞİNDE (PERDE FİNALİ)Konsey'in yaptığı son bir hata – belki de bir gıda konvoyuna ateş açılması veya barışçıl bir gösteride Ahmet gibi sıradan birinin yaralanması – bardağı taşırır. Halkın öfkesi patlama noktasındadır. Zaman gelmiştir. Devrim Konseyi toplanır. Masada üç plan vardır ve başarı şansın, o ana kadar biriktirdiğin statlara, kaynaklara ve müttefiklerine bağlıdır.[FİNAL SEÇİMİ] Son hamle ne olacak?Halk Ayaklanması (Leyla'nın Planı): "Tüm işçileri genel greve, tüm halkı Vadi'den Tepe'ye yürüyüşe çağırıyoruz! Şehrin kalbini insan seliyle ele geçireceğiz!" [Gereken: Çok Yüksek Halk Desteği, Yüksek Halk Memnuniyeti. Risk: En kanlı senaryo, kontrol kaybı.]Stratejik Darbe (Kaan'ın Planı): "Ordu ve polis içindeki uyuyan hücrelerimizle kilit noktaları – Başkanlık Sarayı, TV Binası, Sancak'ın karargahı – şafakla birlikte eş zamanlı olarak ele geçirelim. Şehir uyandığında her şey bitmiş olacak." [Gereken: Çok Yüksek Güç, Yüksek Silahlar, Disiplin. Risk: Halkın gözünde bir cunta olarak görülme.]Siyasi Çökertme (Elara'nın Planı): "Elimizdeki en büyük yolsuzluk belgesini (belki de Kaan'ın veya Leyla'nın kişisel görevlerinden gelen bilgileri) sızdıralım. Aynı anda ordu ve bürokrasi içindeki ılımlı isimlere 'ya onlarla batarsınız ya da bize katılıp yeni düzende yerinizi alırsınız' mesajı gönderelim. Sistemi içeriden çökertelim." [Gereken: Çok Yüksek Adalet, Yüksek Teknoloji/İkna yeteneği. Risk: En kansız yöntem ama başarısız olma ve blöfün görülme riski en yüksek olanıdır.]Bu seçim, gerilimli bir dizi görev, yetenek kontrolü ve dramatik olaylarla son bulur. Başarın, devrimin şafağını söktürürken, başarısızlığın seni ve yoldaşlarını tarihin karanlık sayfalarına gömer.(Perde 2 ve 3, bu detay seviyesinde, yapılan seçimlerin dallanarak büyümesiyle devam eder...)
+
+
+PERDE 2: YENİ ŞAFAK, ESKİ GÖLGELER
+Bölüm 2.0: ZAFERİN SABAHI, KAOSUN GÖLGESİ
+
+(Perde 1 finalindeki seçimin sonucuna göre sahne değişir)
+
+Eğer Halk Ayaklanması seçildiyse: Sahne, Konsey Sarayı'nın önündeki meydanda açılır. Binlerce insan sevinç gözyaşları içinde birbirine sarılır. Konsey heykelleri devrilir. Ancak bu coşkunun ortasında, Vadi'nin arka sokaklarında yağma ve linç olayları başlar. Eski rejim yanlısı olmakla suçlanan dükkanlar ateşe verilir.
+
+Eğer Stratejik Darbe seçildiyse: Şehir, şafakla birlikte zırhlı araçların ve Kaan'a sadık askerlerin kontrolünde uyanır. Sokaklar ürkütücü bir sessizliğe bürünmüştür. TV kanallarında sürekli olarak "Sakin olun, kontrol bizde" anonsları döner. Halkın bir kısmı rahatlamış, bir kısmı ise korku içindedir.
+
+Eğer Siyasi Çökertme seçildiyse: Konsey üyelerinin bir gecede tutuklandığı haberiyle şehirde bir şok ve belirsizlik havası hakim olur. Kimin başta olduğu belli değildir. Bürokrasi felç olmuştur. İnsanlar işe gitmeye korkar, ne yapacaklarını bilemezler.
+
+Durum ne olursa olsun, zaferin ilk saatleri, yeni bir krizin habercisidir. Arda, Elara, Kaan ve Leyla, Konsey Sarayı'nın hasar görmüş toplantı odasında bir araya gelirler. Dışarıdan gelen kutlama ve siren sesleri birbirine karışır.
+
+[İLK KRİZ SEÇİMİ] Şehirdeki kaosu nasıl kontrol altına alacaksın?
+
+Sıkıyönetim İlan Et (Kaan'ın Önerisi): "Halk şu an duygularıyla hareket ediyor. Düzen sağlanana kadar gece sokağa çıkma yasağı ilan edilmeli. Askerlerim kilit noktalarda kontrolü sağlar." [++Güç, --Halk Desteği. Şehirde düzen hızla sağlanır ama bu, devrimin ilk günden otoriterleştiği eleştirilerini beraberinde getirir.]
+
+Halk Komiteleri Kur (Leyla'nın Önerisi): "Halk kendi mahallesini korur! Her mahalleye gönüllülerden oluşan 'Halkın Muhafızları' komiteleri kuralım. Adaleti halkın kendisi sağlasın." [++Halk Desteği, --Güç. Bu, halkı devrime daha çok dahil eder ama bazı komitelerin kendi kanunlarını uygulayan çetelere dönüşme riski vardır.]
+
+Birlik Çağrısı Yap (Elara'nın Önerisi): "Korku ve intikamla hareket edemeyiz. Tüm iletişim kanallarını kullanarak halka sakin olmaları, yağmaya katılmamaları ve yeni bir başlangıç için bize güvenmeleri gerektiğini anlatalım." [+Adalet. Bu, ahlaki olarak en doğru yoldur ama somut bir etkisi olması zaman alabilir ve bu sırada kaos derinleşebilir.]
+
+Bölüm 2.1: ENKAZDAN DOĞAN KRİZ: AÇLIK
+
+İlk kaos dalgası atlatıldıktan veya görmezden gelindikten birkaç gün sonra, asıl kriz kapıyı çalar. Vestra Lojistik'in depoları yağmalanmış, şehre gıda getiren tedarik zinciri kopmuştur. Fırınların önünde kuyruklar uzamaya, karaborsa fahiş fiyatlarla ortaya çıkmaya başlar. Ahmet, seni bulur ve "Arda, insanlar kutlama yapmayı bıraktı. Şimdi çocuklarına ne yedireceklerini konuşuyorlar. Bir şeyler yapmalısın," der.
+
+[KRİZ YÖNETİMİ SEÇİMİ] Yaklaşan kıtlığı nasıl önleyeceksin?
+
+Merkezi Karne Sistemi (Kaan'ın Yolu): "Ordu, kalan tüm gıda stoklarına el koyacak. Her aileye adil bir şekilde, karneyle dağıtım yapılacak. İsraf ve karaborsa bitecek." [++Güç. Krizi kısa vadede yönetir ama halkı devlete bağımlı kılar ve bürokrasiyi artırır. Karne kuyrukları halkın memnuniyetini düşürür.]
+
+Karaborsaya Savaş Aç (Leyla'nın Yolu): "Asıl sorun stokçular! Halktan aldığımız istihbaratla bu vurguncuların depolarını basalım. Ele geçirdiğimiz malları halka bedava dağıtalım!" [++Halk Desteği, +Adalet. Bu, halkın gözünde bir kahramanlık eylemidir ama şiddetli çatışmalara ve şehrin ticaretle uğraşan kesimini tamamen düşman etmeye yol açar.]
+
+Uzun Vadeli Yatırım (Elara'nın Yolu): "Şehir çevresindeki verimli devlet arazilerini ve Tepe Sektörü'ndeki lüks villaların devasa bahçelerini halka açalım. Tarım kooperatifleri kurmalarını teşvik edelim. Tohum ve ekipman sağlayalım." [++Adalet. Uzun vadede en sürdürülebilir çözümdür ama kısa vadede açlığı çözmez. İnsanlar "Biz felsefe değil, ekmek istiyoruz!" diyerek tepki gösterebilir.]
+
+Dış Yardım Arayışı (Pragmatik Yol): "Komşu ülke Tarania, bize gıda ve ilaç yardımı teklif ediyor. Bu, krizi anında çözer." [En hızlı çözüm. Ancak Tarania'nın elçisi, bu "yardım" karşılığında limanda kendilerine özel bir serbest bölge veya askeri üs gibi "küçük" talepleri olacağını ima eder. Bu, KUKLA SONU'na giden ilk adımdır.]
+
+Bölüm 2.2: YOLDAŞLAR ARASI ÇATLAKLAR
+
+Acil krizler bir şekilde yönetildikten sonra, zaferin birleştirdiği liderler arasındaki ideolojik farklılıklar su yüzüne çıkar. Devrim Konseyi, ülkenin geleceğini belirlemek için toplanır. Bu, oyunun en önemli yol ayrımıdır.
+
+[ANA YOL AYRIMI] Aethelburg'un geleceği nasıl şekillenecek?
+
+Toplantı odasında atmosfer elektriklidir. Üç lider de kendi manifestosunu masaya koyar. Senin oyun, bu vizyonlardan birini desteklemek zorundadır.
+
+Elara'nın Vizyonu: "Aydınlanma Cumhuriyeti"
+
+Planı: "Derhal uzmanlardan oluşan bir Kurucu Meclis oluşturmalıyız. Bu meclis, bir yıl içinde yeni, adil ve demokratik bir anayasa hazırlayacak. Bu süreçte geçici hükümet, temel hizmetleri aksatmamaya odaklanacak. Güç, kişilerden alınıp kurumlara verilmeli."
+
+Desteklersen: Elara ve entelektüel çevreler senin en büyük müttefikin olur. [+Adalet]. Ancak Kaan, "Bir yıl mı? Bu zayıflıkla düşmanlarımız bizi bir haftada yutar!" diyerek bu plana şiddetle karşı çıkar ve askeri kanatta huzursuzluk başlar. Leyla ise "Yine halkın kaderini bizden daha 'akıllı' olanlar belirleyecek demek. Hiçbir şey değişmedi," diyerek hayal kırıklığına uğrar ve işçiler arasında sana karşı propaganda yapmaya başlar.
+
+Kaan'ın Vizyonu: "Çelik İrade Yönetimi"
+
+Planı: "Tam bir istikrar sağlanana ve tüm karşı-devrimci unsurlar temizlenene kadar en az iki yıl sıkıyönetim ilan edilmeli. Ordu, ülkeyi yönetecek. Disiplin, güvenlik ve düzen birinci önceliğimiz. Ancak ondan sonra demokrasiyi konuşabiliriz."
+
+Desteklersen: Kaan ve ordu arkanda kaya gibi durur. [++Güç]. Ancak Elara, "Bu, devrimin ihanetidir! Bir tiranı devirip yenisini mi başa getireceğiz?" diyerek tüm akademik bağlantılarını ve uluslararası kamuoyunu sana karşı harekete geçirir. Leyla, "Asker postalı yine işçinin ensesinde!" sloganıyla genel grev ve direniş çağrıları yapar. Bu yol, TİRAN SONU'na giden en kestirme yoldur.
+
+Leyla'nın Vizyonu: "Emekçinin Doğrudan Demokrasisi"
+
+Planı: "Güç, tepedeki birkaç kişide toplanamaz. Tüm fabrikalar, o fabrikada çalışan işçilerin meclisleri tarafından yönetilmeli. Her mahalle, kendi konseyini seçmeli. Bu konseylerden seçilen delegeler, merkezi bir Halk Meclisi'ni oluşturmalı. Güç, doğrudan halka!"
+
+Desteklersen: Halk desteğin tavan yapar. [++Halk Desteği]. Ancak Leyla'nın planı, ekonomik kaosa davetiye çıkarır. Elara, "Bu romantik bir hayal ama sonucu anarşi ve ekonomik çöküş olur," diyerek uyarır. Kaan ise bunu bir "vatan hainliği" olarak görür ve "Ülkeyi bu çapulculara bırakmam" diyerek ordu içindeki sadık birliklerle bir darbe hazırlığına girişir. Bu yol, ANARŞİ SONU'na veya İÇ SAVAŞ'a yol açabilir.
+
+Bu seçimi yaptıktan sonra, diğer iki lider ve onların grupları sana karşı "Rakip" statüsüne geçer. Artık sana karşı aktif olarak komplo kuracak, görevlerini sabote edecek ve kendi güçlerini artırmaya çalışacaklardır.
+
+Bölüm 2.3: AYNADAKİ YÜZ
+
+Sen yeni düzeni kurmaya çalışırken, üniversite gençliği arasında yeni bir hareket doğar: "Gerçek Eşitler". Liderleri, Zeynep adında, senin devrim öncesi halin gibi ateşli, idealist ve zeki bir genç kadındır. Gizli "Ağ" forumlarında, senin devriminin sadece eski elitleri yenileriyle değiştirdiğini, Vadi'deki insanlar için hiçbir şeyin özünde değişmediğini yazan makaleler yayınlarlar. Seni "yeni sistem" olmakla suçlarlar.
+
+[SEÇİM] Geçmişinle nasıl yüzleşeceksin?
+
+Baskı Kur: "Bunlar tehlikeli anarşistler. Devrimin kazanımlarını riske atıyorlar." (Kaan bu seçeneği alkışlar). Zeynep ve hareketin önde gelenleri tutuklanır. [++Güç, --Adalet, --Kişisel Vicdan. Son sahnede Zeynep'i sorgularken, Albay Sancak'ın sana söylediği sözleri tekrar ettiğini fark edersin.]
+
+Diyalog Kur: "Onları dinlemeliyiz." (Elara bu seçeneği destekler). Zeynep ile gizli bir buluşma ayarlarsın. Bu, oyunun en zorlu diyaloglarından biridir. Onu ikna etmeye, sisteme dahil etmeye veya en azından nötralize etmeye çalışırsın. Başarılı olursan gençleri kazanırsın, başarısız olursan Zeynep daha da radikalleşir.
+
+Görmezden Gel: "Onlar sadece birkaç idealist genç. Zamanla etkilerini yitirecekler." Bu, kısa vadede sorun çıkarmaz ama Gerçek Eşitler hareketi, Perde 3'te, en zayıf anında karşına çıkacak büyük bir isyanın lideri olabilir.
+
+Manipüle Et: "Düşmanını kontrol edemiyorsan, ona liderlik et." (Leyla bu kurnazlığı takdir edebilir). Hareketin içine kendi ajanlarını sızdırarak onları kendi amaçların doğrultusunda, belki de rakiplerin olan diğer devrim liderlerine karşı yönlendirirsin. [Çok karanlık bir seçim. --Kişisel Vicdan, +Güç.]
+
+Bölüm 2.4: ESKİ HAYALETLER (PERDE FİNALİ)
+
+Perde 2'nin sonunda, eski rejimin hayaletleri geri döner. Bu, Perde 1'deki olaylara ve Perde 2'deki ana yol ayrımına göre şekillenir.
+
+Senaryo A (Rakip: Kaan): Eğer Elara veya Leyla'nın yolunu seçtiysen, Kaan, "ülkeyi kaostan kurtarmak" bahanesiyle sana karşı bir askeri darbe girişiminde bulunur. Başkentin kilit noktalarında senin milislerin/halk komitelerin ile Kaan'ın askerleri arasında çatışmalar çıkar.
+
+Senaryo B (Rakip: Leyla): Eğer Elara veya Kaan'ın yolunu seçtiysen, Leyla tüm fabrikalarda ve ulaşım ağında süresiz bir genel grev başlatır. Şehir felç olur. Bu kaosu fırsat bilen eski rejim yanlısı bazı gizli hücreler, kilit hedeflere sabotajlar düzenlemeye başlar.
+
+Senaryo C (Rakip: Elara): Eğer Kaan veya Leyla'nın yolunu seçtiysen, Elara uluslararası topluma "Aethelburg'da bir tiranlık/anarşi doğuyor" diyerek acil müdahale çağrısı yapar. Sınırda komşu ülke Tarania'nın askeri hareketliliği başlar. Bir dış müdahale ve işgal tehdidiyle karşı karşıya kalırsın.
+
+Joker Kart: Albay Sancak: Eğer Perde 1'de kaçmayı başardıysa, yukarıdaki senaryolardan hangisi olursa olsun, Sancak bu kaosu körükleyen kişi olarak ortaya çıkar. Rakibini gizlice destekler, sabotajları organize eder ve son hamlesini yapmak için en zayıf anını bekler.
+
+Bu final, büyük bir görev zinciriyle sonuçlanır. Rakibinin darbesini bastırmalı, grevi kırmalı veya dış müdahaleyi diplomatik/askeri yollarla önlemelisin. Bu krizi çözme şeklin, Perde 3'ün başlangıç koşullarını ve nihai sona giden yolu tamamen belirleyecektir.
+
+
+
+PERDE 3: HASAT ZAMANI
+Bölüm 3.0: YILLARIN AĞIRLIĞI
+
+Perde 2'nin çalkantılı finalinin üzerinden beş yıl geçmiştir. Aethelburg, artık Arda'nın ve müttefiklerinin (veya rakiplerinin) vizyonuyla şekillenmiş bir şehirdir. Atmosfer, Perde 2'deki ana yol ayrımına göre tamamen farklıdır.
+
+Eğer Kaan'ın "Çelik İrade" yolu seçildiyse: Şehir düzenli, temiz ve ürkütücü derecede sessizdir. Sokaklarda devriye gezen zırhlı "Barış Muhafızları" vardır. Suç oranları sıfıra yakındır ama Sosyal Liyakat Puanı'nın yerini "Vatandaşlık Sadakat Skoru" almıştır. Propaganda posterlerinde Arda ve Kaan'ın yüzleri yan yanadır. Ancak bu düzenin altında, Vadi'nin derinliklerinde, bastırılmış bir öfke kaynamaktadır.
+
+Eğer Elara'nın "Aydınlanma Cumhuriyeti" yolu seçildiyse: Şehir, bitmek bilmeyen tartışmaların, protestoların ve siyasi manevraların merkezidir. Her köşe başında farklı bir grubun bildirisi dağıtılır. Bürokrasi o kadar yavaşlamıştır ki temel hizmetler (çöp toplama, enerji) sık sık aksar. Entelektüel bir özgürlük vardır ama halkın karnı açtır ve geleceğe dair bir belirsizlik hakimdir. Ekonomi zayıflamıştır.
+
+Eğer Leyla'nın "Emekçinin Demokrasisi" yolu seçildiyse: Şehir, birbiriyle rekabet eden özerk bölgelerin bir mozaiğidir. Her fabrika ve mahalle kendi konseyi tarafından yönetilir. Bazı bölgeler refah içinde ve iş birliğine açıkken, bazıları güçlü adamların yönettiği, kanunsuz gettolara dönüşmüştür. Merkezi bir otorite yoktur. İnovasyon ve topluluk ruhu bir yanda, kaos ve çete savaşları diğer yandadır.
+
+Bölüm 3.1: SON KRİZ
+
+Kurulan sistem, kendi doğurduğu en büyük krizle yüzleşir. Bu, oyuncunun ektiği tohumların acı meyvelerini topladığı andır.
+
+Kaan'ın Yolunda Kriz: "PASLI KAFES"
+
+Olay: Yıllardır süren baskı, Vadi'de patlak verir. Ancak bu, lidersiz bir isyan değildir. Perde 2'de diyalog kurulmayan veya baskılanan Zeynep, "Gerçek Eşitler" hareketini yeraltında gizli bir terör ağına dönüştürmüştür. Şehrin altyapısını (su, enerji) hedef alan bir dizi koordineli sabotajla şehri felç ederler. Aynı anda, Kaan'ın "fazla yumuşak" olduğunu düşünen ve gücü tamamen ele geçirmek isteyen kendi generallerinden biri, General Atılgan, bu kaosu bir darbe fırsatı olarak görür. Arda, iki ateş arasında kalır: halkın öfkesini temsil eden Zeynep'in isyanı ve düzeni temsil eden ama tiranlığa giden yolun son adımı olan General Atılgan'ın komplosu.
+
+Elara'nın Yolunda Kriz: "KAĞIT KAPLAN"
+
+Olay: Zayıflayan ekonomi ve istikrarsızlık, komşu ülke Tarania'nın iştahını kabartmıştır. Yıllardır süren "yardımların" ve "kredilerin" karşılığını istemektedirler: Aethelburg'un en büyük teknoloji şirketi GenTek'in kontrolü ve sınırda tam egemenlik. Reddettiğinde, Tarania ekonomik ambargo uygular ve sınırda askeri tatbikatlara başlar. Şehirde kıtlık yeniden baş gösterir. Bu zayıflık anını gören, Perde 2'de tasfiye edilmiş OmniCorp gibi mega şirketlerin eski yöneticileri, Tarania'nın desteğiyle bir "gölge hükümet" kurarak şehri ekonomik olarak geri almaya çalışır. Arda, bir yanda dış işgal tehdidi, diğer yanda iç ekonomik ihanetle yüzleşir.
+
+Leyla'nın Yolunda Kriz: "KIRMIZI VEBA"
+
+Olay: Merkezi otoritenin yokluğu, sağlık ve hijyen sistemini çökertmiştir. Vadi'nin en kalabalık ve yoksul bölgelerinden birinde, hızla yayılan ölümcül bir salgın hastalık baş gösterir: Kırmızı Veba. Özerk konseyler, birbirlerinin sınırlarını kapatır, kaynak (temiz su, ilaç) savaşları başlar. Şehir, bir iç savaşın eşiğindedir. Bu kaosu fırsat bilen, sürgündeki veya bir kalede gücünü biriktirmiş olan Kaan, "şehri bu anarşiden ve hastalıktan kurtaracak tek güç benim" sloganıyla sadık birlikleriyle şehrin kapılarına dayanır. Arda, bir yanda insanları öldüren bir salgın, diğer yanda düzen vaadiyle gelen eski bir tiranlık tehdidi arasında sıkışır.
+
+Bölüm 3.2: SON YÜZLEŞME
+
+Arda, son krizin arkasındaki ana figürle yüzleşmek zorundadır. Bu, sadece bir savaş değil, aynı zamanda ideolojilerin ve pişmanlıkların çarpıştığı son bir diyalogdur.
+
+Zeynep ile Yüzleşme (Paslı Kafes): Yıkılmış bir enerji santralinin kontrol odasında Zeynep'i bulursun. "Sen bize özgürlük vaat ettin Arda," der. "Ama bize sadece daha parlak bir kafes verdin. Ben o kafesi de parçalıyorum."
+
+Tarania Elçisi ve Gölge Hükümet ile Yüzleşme (Kağıt Kaplan): Lüks bir otelin çatı katında, seni kibirle karşılarlar. "Devrimler gelir geçer, Arda. Ama sermaye her zaman kalıcıdır. Sen idealist bir hayalperesttin, biz ise gerçekçiyiz."
+
+Kaan ile Yüzleşme (Kırmızı Veba): Şehrin girişindeki bir barikatta, zırhının içinde Kaan'la karşılaşırsın. "Bak eserine Arda," der enkaz halindeki şehri göstererek. "Halka güvendin. İşte sonuç bu. Düzen, merhametten daha önemlidir. Bunu sana öğretemedim."
+
+Albay Sancak ile Yüzleşme (Eğer hayattaysa): Her senaryoda, Sancak'ın bu son krizin arkasındaki gölge kuklacı olduğu ortaya çıkabilir. Belki Zeynep'i o radikalleştirmiş, Tarania'ya istihbaratı o sızdırmış veya Kaan'ın kulağına o fısıldamıştır. Son yüzleşme, onun hücresinde veya gizli sığınağında gerçekleşir. "Sana söylemiştim Arda," der sakince. "Kaos her zaman bir yolunu bulur. Ben sadece ona rehberlik ettim. Sen ve ben, aynı düzen arayışının farklı yüzleriyiz."
+
+Bölüm 3.3: NİHAİ SONLAR
+
+Son krizi çözme (veya çözememe) şeklin, Aethelburg'un ve Arda'nın nihai kaderini belirler.
+
+TİRAN SONU: Krizi demir yumrukla çözersin. Her türlü muhalefet (Zeynep, generaller, halk) acımasızca ezilir. Epilog: Yıllar sonra, yaşlanmış ve paranoyak bir Arda, Konsey Sarayı'ndaki odasında, ekranlardan şehri izler. Sokaklar kusursuz bir düzene sahiptir. Ama kimsenin yüzü gülmez. Masanın üzerindeki saksıda, metalden yapılmış, mükemmel ama yapay bir çiçek durur. Arda, ekranlardan birinde, kendisine benzeyen genç bir isyancının yüzünü görür ve yorgunlukla iç çeker. Döngü, yeniden başlamak üzeredir.
+
+AZİZ/GAZİ SONU: Krizi, ideallerinden taviz vermeden, fedakarlıkla ve halkın (veya kalan müttefiklerinin) güvenini yeniden kazanarak atlatırsın. Belki de gücü tamamen bırakarak, belki de kendini feda ederek. Epilog: Yıllar sonra, Arda, Vadi'de küçük, mütevazı bir dairede yaşar. Şehir hala gürültülü, biraz dağınık ve sorunlarla doludur ama insanlar özgürce konuşup tartışmaktadır. Pencerenin önündeki saksıda, zorlukla da olsa büyümüş, gerçek bir çiçek açmıştır. Ahmet ve ailesi ziyarete gelir, torunları Arda'ya sarılır. Yorgun ama onurlusundur.
+
+KUKLA SONU: Krizi çözmek için Tarania'nın veya şirketlerin yardımını kabul edersin. Şehir kurtulur, ekonomi düzelir. Epilog: Arda, şık bir yönetici ofisinde oturur. Ancak aldığı her kararı, masasının karşısında oturan Tarania elçisine veya OmniCorp yöneticisine onaylatmak zorundadır. Şehrin her yerinde Tarania'nın bayrakları dalgalanır. Halkın karnı toktur ama ruhları satılmıştır.
+
+ŞEHİT SONU: Son krizle yüzleşirken ölürsün. Belki Zeynep'in bombasıyla, belki Kaan'ın kurşunuyla, belki de vebayı durdurmaya çalışırken. Epilog: Şehrin ana meydanına devasa bir heykelin dikilmiştir. Ancak heykelin dibinde, insanlar senin bir kahraman mı yoksa bir maceraperest mi olduğunu ateşli bir şekilde tartışır. Adın bir efsaneye dönüşmüştür ama herkes bu efsaneyi kendi çıkarlarına göre yorumlar.
+
+DÖNGÜ SONU: Krizi çözmek için o kadar çok taviz verirsin ki, sonunda ne tiran ne de demokrat olursun. Sadece bir denge unsuruna, farklı grupları bir arada tutmaya çalışan yorgun bir bürokrata dönüşürsün. Epilog: Arda, sonu gelmeyen komite toplantılarında, birbiriyle didişen eski yoldaşları ve yeni rakipleri arasında arabuluculuk yaparken gösterilir. Şehir ne tam bir kaos ne de tam bir düzen içindedir. Sadece gri bir alacakaranlıkta, yavaşça çürümektedir.
+
+ANARŞİ SONU: Leyla'nın yolunda ilerleyip son krizi (Kırmızı Veba ve Kaan'ın saldırısı) çözemezsin. Merkezi otorite tamamen yok olur. Epilog: Aethelburg artık tek bir şehir değildir. Vadi, birbirleriyle savaşan çetelerin ve konseylerin kontrolündedir. Tepe Sektörü, Kaan'ın yönettiği müstahkem bir kaleye dönüşmüştür. Arda, ya bu kaosta ölmüştür ya da Ahmet gibi birkaç sadık dostuyla birlikte küçük bir topluluğu hayatta tutmaya çalışan, unutulmuş bir liderdir. Devrim, getirmeyi vaat ettiği her şeyi yutmuştur.
+
+
+
+
+
+

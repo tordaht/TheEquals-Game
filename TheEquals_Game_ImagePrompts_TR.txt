@@ -1,0 +1,41 @@
+SCENE: start
+TR: Brütalist, gri apartman blokları, puslu şehir, sıradan bir adam terminale bakıyor
+
+SCENE: kirilma_ani
+TR: Neon ışıklı, kalabalık bir metro istasyonu, dev ekranda bakan konuşuyor
+
+SCENE: ahmet_evi
+TR: Küçük, kasvetli bir apartman dairesi, üzgün bir adam pencere önünde, yanında ailesi
+
+SCENE: ofke_arastirma
+TR: Karanlık bir odada bilgisayar başında çalışan bir adam, ekranda veri akışı
+
+SCENE: kirilim_sonrasi
+TR: Karanlık, gizli bir odada bilgisayar ekranında forumlar, gölgeli figürler
+
+SCENE: elara_bulusma
+TR: Büyük, terk edilmiş bir kütüphane, kitaplar ve gölgeler arasında iki kişi fısıldaşıyor
+
+SCENE: kaan_bulusma
+TR: Karanlık, nemli metro tünelleri, gölgeler arasında iki adam, gerilimli bir buluşma
+
+SCENE: leyla_bulusma
+TR: Büyük, gürültülü bir fabrika, işçiler ve makineler, kenarda gizlice konuşan iki kişi
+
+SCENE: ilk_eylem_planlama
+TR: Haritalar ve strateji tahtalarıyla dolu bir oda, bir grup insan eylem planlıyor
+
+SCENE: eylem_sonuclari
+TR: Büyük bir salonda farklı gruplardan insanlar el sıkışıyor, hararetli tartışmalar
+
+SCENE: konsey_sonuclari
+TR: Karanlık bir odada tehditkar bir adam, ekranda haberler, gerilimli atmosfer
+
+SCENE: propaganda_savasi
+TR: Modern bir ofis binası, dev ekranda propaganda haberleri, insanlar izliyor
+
+SCENE: kostebek_avi
+TR: Savaş odasında harita başında tartışan insanlar, bir köşede şüpheli bakışlar
+
+SCENE: devrim_esiginde
+TR: Büyük bir meydanda toplanmış kalabalık, devrim coşkusu, liderler konuşuyor 
