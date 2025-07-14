@@ -1,0 +1,187 @@
+EKSİK BG PROMPT'LARI - The Equals Game
+========================================
+
+PROJE: The Equals Game
+VERSİYON: 2.3
+SERİ NO: TEG-004
+TARİH: 2024
+
+========================================
+
+1. KARAKTER PROFİLLERİ PROMPT'LARI:
+------------------------------------
+
+**Ana Karakterler:**
+- "Character portrait, Arda, determined revolutionary leader, serious expression, urban background"
+- "Character portrait, Elara, wise academic, intellectual expression, library background"
+- "Character portrait, Kaan, military leader, stern expression, strategic background"
+- "Character portrait, Leyla, passionate activist, determined expression, factory background"
+
+**Destek Karakterler:**
+- "Character portrait, Ahmet, working class man, worried expression, family background"
+- "Character portrait, Sema, caring mother, protective expression, home background"
+- "Character portrait, Albay Sancak, authoritarian figure, cold expression, military background"
+
+**Genel Karakter Profilleri:**
+- "Character portrait, revolutionary leader, determined expression, urban dystopia"
+- "Character portrait, wise elder, experienced revolutionary, mentor figure"
+- "Character portrait, young activist, passionate expression, idealistic energy"
+- "Character portrait, government official, bureaucratic expression, formal setting"
+
+========================================
+
+2. ÖZEL DURUM SAHNELERİ PROMPT'LARI:
+--------------------------------------
+
+**Tıbbi Sahne:**
+- "Hospital room, medical treatment, injured revolutionary, bandages, medical equipment"
+- "Emergency clinic, makeshift medical facility, wounded activists, volunteer doctors"
+- "Recovery room, convalescing revolutionary, medical monitoring, healing atmosphere"
+
+**Hapishane Sahne:**
+- "Prison cell, political prisoner, confinement atmosphere, bars, minimal furniture"
+- "Interrogation room, harsh lighting, questioning atmosphere, psychological pressure"
+- "Prison yard, limited freedom, surveillance cameras, controlled environment"
+
+**Güvenli Ev:**
+- "Safe house interior, hidden refuge, protection environment, concealed entrance"
+- "Secret apartment, revolutionary hideout, basic furnishings, security measures"
+- "Underground shelter, emergency refuge, survival atmosphere, basic supplies"
+
+**Acil Durum:**
+- "Underground bunker, emergency shelter, survival atmosphere, emergency supplies"
+- "Emergency command center, crisis management, urgent atmosphere, communication equipment"
+- "Emergency medical station, field hospital, urgent care, medical supplies"
+
+========================================
+
+3. TEKNOLOJİ SAHNELERİ PROMPT'LARI:
+-------------------------------------
+
+**Bilgisayar Odası:**
+- "Computer server room, digital infrastructure, technology hub, server racks"
+- "Data center, humming servers, digital networks, technological environment"
+- "Hacking station, multiple screens, digital interface, cyber environment"
+
+**Gözetleme Merkezi:**
+- "Surveillance control room, monitoring screens, security center, camera feeds"
+- "Security headquarters, multiple monitors, surveillance equipment, control panels"
+- "Intelligence monitoring station, digital displays, security atmosphere"
+
+**Futuristik Teknoloji:**
+- "Holographic display room, futuristic technology, advanced interface, 3D projections"
+- "Advanced control center, cutting-edge technology, digital displays, modern interface"
+- "Technology hub, innovative equipment, digital environment, modern atmosphere"
+
+**Siber Güvenlik:**
+- "Cybersecurity center, digital defense, technological protection, security systems"
+- "Digital command center, cyber operations, technological warfare, digital environment"
+- "Information warfare room, digital conflict, technological strategy, cyber atmosphere"
+
+========================================
+
+4. DOĞAL ORTAM SAHNELERİ PROMPT'LARI:
+----------------------------------------
+
+**Orman Sığınağı:**
+- "Forest hideout, natural camouflage, wilderness refuge, dense vegetation"
+- "Woodland shelter, natural concealment, outdoor refuge, forest environment"
+- "Wilderness camp, natural protection, outdoor survival, forest atmosphere"
+
+**Stratejik Konumlar:**
+- "Mountain pass, strategic location, natural barrier, elevated position"
+- "Hilltop vantage point, strategic overview, natural observation post"
+- "Cliffside location, natural defense, strategic position, elevated view"
+
+**Su Kenarı:**
+- "Riverside meeting, water source, natural boundary, flowing water"
+- "Lakeside gathering, natural setting, water reflection, peaceful atmosphere"
+- "Coastal hideout, ocean backdrop, natural protection, maritime environment"
+
+**Kırsal Alan:**
+- "Rural meeting place, countryside setting, natural environment, agricultural background"
+- "Farmhouse hideout, rural refuge, natural setting, agricultural atmosphere"
+- "Countryside gathering, natural environment, rural setting, peaceful atmosphere"
+
+========================================
+
+5. ULAŞIM SAHNELERİ PROMPT'LARI:
+----------------------------------
+
+**Metro İstasyonu:**
+- "Subway station, underground transport, mass transit, commuter atmosphere"
+- "Metro platform, urban transportation, underground environment, city transit"
+- "Underground station, mass movement, urban transport, commuter crowd"
+
+**Liman:**
+- "Harbor docks, maritime activity, port facilities, shipping atmosphere"
+- "Port area, maritime transport, dock facilities, shipping environment"
+- "Waterfront location, maritime activity, port operations, shipping atmosphere"
+
+**Havaalanı:**
+- "Airport terminal, travel hub, departure atmosphere, modern transport"
+- "Airport lobby, travel center, departure environment, modern transportation"
+- "Aviation facility, travel hub, modern transport, departure atmosphere"
+
+**Tren İstasyonu:**
+- "Train station, rail transport, departure platform, travel atmosphere"
+- "Railway terminal, train transport, departure environment, travel hub"
+- "Rail station, mass transit, departure platform, travel atmosphere"
+
+========================================
+
+6. EK ÖZEL SAHNE PROMPT'LARI:
+-------------------------------
+
+**Eğitim Sahne:**
+- "Underground classroom, secret education, revolutionary teaching, hidden learning"
+- "Alternative school, revolutionary education, passionate teaching, learning atmosphere"
+- "Secret training facility, skill development, revolutionary education, learning environment"
+
+**İletişim Sahne:**
+- "Communication hub, message center, information exchange, communication equipment"
+- "Radio station, broadcast facility, communication center, transmission equipment"
+- "Information center, data exchange, communication network, digital communication"
+
+**Üretim Sahne:**
+- "Underground workshop, secret production, revolutionary manufacturing, hidden industry"
+- "Alternative factory, revolutionary production, manufacturing facility, industrial atmosphere"
+- "Secret workshop, skill development, revolutionary production, manufacturing environment"
+
+========================================
+
+ÖNCELİK SIRASI:
+----------------
+
+**YÜKSEK ÖNCELİK (Hemen gerekli):**
+1. "Character portrait, Arda, determined revolutionary leader, serious expression"
+2. "Hospital room, medical treatment, injured revolutionary, bandages"
+3. "Computer server room, digital infrastructure, technology hub"
+4. "Subway station, underground transport, mass transit"
+5. "Safe house interior, hidden refuge, protection environment"
+
+**ORTA ÖNCELİK (Yakında gerekli):**
+6. "Prison cell, political prisoner, confinement atmosphere"
+7. "Surveillance control room, monitoring screens, security center"
+8. "Forest hideout, natural camouflage, wilderness refuge"
+9. "Harbor docks, maritime activity, port facilities"
+10. "Underground classroom, secret education, revolutionary teaching"
+
+**DÜŞÜK ÖNCELİK (Gelecekte gerekli):**
+11. "Airport terminal, travel hub, departure atmosphere"
+12. "Holographic display room, futuristic technology, advanced interface"
+13. "Mountain pass, strategic location, natural barrier"
+14. "Radio station, broadcast facility, communication center"
+15. "Underground workshop, secret production, revolutionary manufacturing"
+
+========================================
+
+SONUÇ:
+------
+- Toplam 15 ana kategori
+- 45+ spesifik prompt
+- Öncelik sırası belirlendi
+- Her prompt oyun atmosferine uygun
+- Karakter odaklı prompt'lar öncelikli
+
+======================================== 
