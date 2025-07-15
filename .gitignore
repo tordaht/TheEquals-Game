@@ -1,20 +1,29 @@
-# Sadece gerekli dosyalar hariç tutulacak
-!BGs/
-!BG-Ek/
-!Music/
-!assets/css/
-!assets/js/
-!Index.HTML
-!BetaHikayeYapisi/
-!README.md
-
-# Geri kalan her şeyi ignore et
+# Gereksiz dosya ve klasörler
+BetaHikayeYapisi/
 TheEquals_Game_v3.1_Current_Backup/
 TheEquals_Game_v2.4_Final_Backup/
-*.bat
-*.md
 *.txt
+*.md
+*.bat
+*.zip
+*.ico
 *.png
-*.jpg
-*.jpeg
-*.gif 
+Logo.png
+favicon.ico
+package.json
+start_equals_server.bat
+Structure*.txt
+HATA ÇÖZÜMLERİ.txt
+Midjourney_Promptlari.txt
+Eksik_ve_Uygun_Olmayan_Imajlar.md
+TheEquals_Game_ImagePrompts_EN.txt
+
+# Sadece gerekli dosyalar hariç tutulacak
+!Index.HTML
+!assets/js/app.js
+!assets/css/main.css
+!storyData.json
+!README.md
+!BGs/
+!BG-Ek/
+!Music/ 
