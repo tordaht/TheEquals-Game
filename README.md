@@ -93,7 +93,8 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 
 ## 🤝 İletişim
 
-- **Geliştirici**: Devrimci Oyun Stüdyosu
+- **Geliştirici**: Ozan BAYAR / Cursor AI
+- **Stüdyo**: Devrimci Oyun Stüdyosu
 - **Versiyon**: 3.0 Beta
 - **Seri No**: TEG-007
 

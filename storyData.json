@@ -2,7 +2,8 @@
   "gameInfo": {
     "title": "The Equals",
     "version": "3.0 Beta",
-    "author": "Devrimci Oyun Stüdyosu"
+    "author": "Devrimci Oyun Stüdyosu",
+    "developer": "Ozan BAYAR / Cursor AI"
   },
   "storyNodes": {
     "start": {
@@ -453,7 +454,7 @@
       "choices": [
         {
           "text": "Geleceğe bak...",
-          "nextNode": "final_degerlendirme"
+          "nextNode": "final_karar"
         }
       ]
     },
@@ -464,26 +465,18 @@
       "choices": [
         {
           "text": "Geleceğe bak...",
-          "nextNode": "final_degerlendirme"
-        }
-      ]
-    },
-    "final_degerlendirme": {
-      "text": "Yıllar geçti... Kurduğun toplum, seçimlerinin bir yansıması. Geriye dönüp baktığında ne görüyorsun?\n\n(Aşağıdaki sonuç, oyun boyunca verdiğin kararlara göre şekillendi.)",
-      "background": "BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
-      "choices": [
-        {
-          "text": "Sonucu Gör",
           "nextNode": "final_karar"
         }
       ]
     },
+
     "final_karar": {
-        "text": "...",
+        "text": "Yıllar geçti... Kurduğun toplum, seçimlerinin bir yansıması. Geriye dönüp baktığında ne görüyorsun?\n\n(Aşağıdaki sonuç, oyun boyunca verdiğin kararlara göre şekillendi.)",
+        "background": "BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
         "choices": [
-            { "if": "guc_puani > 60", "text": "Sonucu Gör", "nextNode": "final_yeni_tiranlik" },
-            { "if": "adalet_puani > 60 && halk_destegi > 50", "text": "Sonucu Gör", "nextNode": "final_zorlu_ozgurluk" },
-            { "text": "Sonucu Gör", "nextNode": "final_karma_sistem" }
+            { "if": "guc_puani > 60", "text": "Güç Odaklı Sonuç", "nextNode": "final_yeni_tiranlik" },
+            { "if": "adalet_puani > 60 && halk_destegi > 50", "text": "Adalet Odaklı Sonuç", "nextNode": "final_zorlu_ozgurluk" },
+            { "text": "Dengeli Sonuç", "nextNode": "final_karma_sistem" }
         ]
     },
     "final_yeni_tiranlik": {
