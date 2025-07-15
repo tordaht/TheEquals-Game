@@ -539,10 +539,52 @@ async function loadStoryData() {
     }
 }
 
-// Arka plan değiştir
-function changeBackground(imagePath) {
-    if (imagePath) {
-        document.body.style.backgroundImage = `url('${imagePath}')`;
+// Karakter portreleri için fonksiyonlar
+function showCharacterPortrait(characterName, portraitPath) {
+    const portraitContainer = document.getElementById('character-portrait');
+    const storyText = document.getElementById('story-text');
+    
+    // Portre container'ını temizle
+    portraitContainer.innerHTML = '';
+    
+    // Yeni portre oluştur
+    const portraitImg = document.createElement('img');
+    portraitImg.src = portraitPath;
+    portraitImg.alt = `${characterName} portresi`;
+    portraitImg.title = characterName;
+    
+    portraitContainer.appendChild(portraitImg);
+    
+    // Portreyi göster
+    portraitContainer.style.display = 'block';
+    portraitContainer.classList.add('show');
+    portraitContainer.classList.remove('hide');
+    
+    // Story text'i sola kaydır
+    storyText.style.flex = '1';
+}
+
+function hideCharacterPortrait() {
+    const portraitContainer = document.getElementById('character-portrait');
+    const storyText = document.getElementById('story-text');
+    
+    // Portreyi gizle
+    portraitContainer.classList.add('hide');
+    portraitContainer.classList.remove('show');
+    
+    // Animasyon bittikten sonra gizle
+    setTimeout(() => {
+        portraitContainer.style.display = 'none';
+        portraitContainer.classList.remove('hide');
+        storyText.style.flex = 'none';
+    }, 300);
+}
+
+// Mevcut changeBackground fonksiyonunu güncelle
+function changeBackground(backgroundPath) {
+    if (backgroundPath) {
+        const fullPath = backgroundPath.startsWith('http') ? backgroundPath : backgroundPath;
+        document.body.style.backgroundImage = `url('${fullPath}')`;
     }
 }
 
@@ -1047,6 +1089,13 @@ function showNode(nodeId) {
     if (node.background) {
         changeBackground(node.background);
     }
+
+    // Karakter portresini göster/gizle
+    if (node.character && node.character.portrait) {
+        showCharacterPortrait(node.character.name, node.character.portrait);
+    } else {
+        hideCharacterPortrait();
+    }
     
     // Metni yaz
     let text = node.text;
@@ -1088,6 +1137,44 @@ function showNode(nodeId) {
             }
         }, 4000); // 4 saniye sonra flashback kontrolü
     });
+}
+
+// Story gösterme fonksiyonu
+function displayStory(nodeId) {
+    const node = storyData.storyNodes[nodeId];
+    if (!node) return;
+
+    // Arka planı değiştir
+    if (node.background) {
+        changeBackground(node.background);
+    }
+
+    // Karakter portresini göster/gizle
+    if (node.character && node.character.portrait) {
+        showCharacterPortrait(node.character.name, node.character.portrait);
+    } else {
+        hideCharacterPortrait();
+    }
+
+    // Story metnini göster
+    const storyText = document.getElementById('story-text');
+    storyText.textContent = '';
+    
+    let index = 0;
+    const text = node.text;
+    
+    function typeWriter() {
+        if (index < text.length) {
+            storyText.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 30);
+        } else {
+            // Metin yazma tamamlandığında seçenekleri göster
+            showChoices(node.choices);
+        }
+    }
+    
+    typeWriter();
 }
 
 // Oyunu başlat
@@ -1310,6 +1397,7 @@ window.toggleHighContrast = toggleHighContrast;
 window.toggleReducedMotion = toggleReducedMotion;
 window.showRules = showRules;
 window.closeRules = closeRules;
+window.closeFlashback = closeFlashback;
 window.musicSystem = musicSystem;
 
 // Event listener'lar

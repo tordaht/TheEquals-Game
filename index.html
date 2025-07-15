@@ -44,8 +44,13 @@
         <!-- Ana Oyun Alanı -->
         <div class="game-content">
             <div class="story-container">
-                <div id="story-text" class="story-text" role="main" aria-live="polite">
-                    Oyun yükleniyor...
+                <div class="story-content-wrapper">
+                    <div id="story-text" class="story-text" role="main" aria-live="polite">
+                        Oyun yükleniyor...
+                    </div>
+                    <div id="character-portrait" class="character-portrait" style="display: none;">
+                        <!-- Karakter portreleri buraya gelecek -->
+                    </div>
                 </div>
                 <div id="choices" class="choices-container" role="group" aria-label="Seçenekler">
                     <!-- Seçenekler buraya gelecek -->
@@ -137,9 +142,11 @@
         ⏭️ Skip
     </button>
     
-    <!-- Geliştirici Bilgisi - Dipte ufak -->
+    <!-- Geliştirici Bilgisi - Dipte tıklanabilir -->
     <div class="developer-info-small">
-        Ozan BAYAR / Cursor AI
+        <a href="mailto:ozanbayar@gmail.com" style="color: inherit; text-decoration: none;">
+            Ozan BAYAR / Cursor AI
+        </a>
     </div>
 
     <!-- Oyun Kuralları Butonu - Ekranın sağ altında -->

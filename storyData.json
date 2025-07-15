@@ -8,7 +8,8 @@
   "storyNodes": {
     "start": {
       "text": "Gri ışıklar şehrinde, monoton bir döngüde yaşıyorsun.\n\nHer sabah aynı metro, aynı ofis, aynı rutin.\nHerkes aynı kıyafet, aynı ifade, aynı hayat.\n\n'Sistem eşit' diyorlar. Gerçekten mi?",
-      "background": "BGs/tordah_Urban_outskirts_gray_concrete_apartment_blocks_working_9beac87a-9211-4f41-abe8-aa8b13b93e36_1.png",
+      "background": "img/BGs/tordah_Urban_outskirts_gray_concrete_apartment_blocks_working_9beac87a-9211-4f41-abe8-aa8b13b93e36_1.png",
+      "character": null,
       "choices": [
         {
           "text": "Rutin devam etsin",
@@ -24,7 +25,11 @@
     },
     "ilk_suphe": {
       "text": "İşyerinde arkadaşın Ahmet işten çıkarıldı.\n\nYönetici: 'Ekonomik kriz, tasarruf gerekli...'\nAma aynı gün yöneticinin yeni model bir araç aldığını görüyorsun.\n\nBu adalet mi?",
-      "background": "BGs/tordah_Modern_office_hallway_with_bright_lighting_clean_corpo_a19ba994-594b-4dc0-8729-db892e4287d5_1.png",
+      "background": "img/BGs/tordah_A_stark_oppressive_office_corridor_with_harsh_lighting_1261554d-71d1-4211-a9f8-25bc7b278391_1.png",
+      "character": {
+        "name": "Ahmet",
+        "portrait": "img/characters/tordah_Ahmet_in_his_30s_short_black_hair_light_stubble_tired__fb6f8caf-33cb-41d0-af45-a9f21e0766d7_0.png"
+      },
       "choices": [
         {
           "text": "Sessizce izle",
@@ -45,7 +50,11 @@
     },
     "gizli_hiyerarsi": {
       "text": "Olaydan birkaç gün sonra, şehrin derinliklerinde gizli bir toplantıya davet edildin.\n\nÜç farklı direniş grubu var:\n- Akademisyenler (Bilgi ve strateji ile sistemi içeriden çökertmek istiyorlar)\n- Askerler (Disiplinli bir güçle yönetimi devirmek istiyorlar)\n- Sendikacılar (Halkın gücüyle sistemi değiştirmek istiyorlar)\n\nHangi gruba katılacaksın?",
-      "background": "BGs/tordah_Underground_meeting_room_with_warm_lighting_revolution_bcab4a52-5422-439d-94e6-6646b79ea023_1.png",
+      "background": "img/BGs/tordah_Underground_meeting_room_with_warm_lighting_revolution_bcab4a52-5422-439d-94e6-6646b79ea023_1.png",
+      "character": {
+        "name": "Direniş Lideri",
+        "portrait": "img/characters/tordah_Resistance_Leader_in_his_40s_short_beard_determined_an_100c0fea-8682-40d8-83bb-4e4dca39c353_2.png"
+      },
       "choices": [
         {
           "text": "Akademisyenlerle çalış",
@@ -66,7 +75,7 @@
     },
     "yanilsama_catlagi": {
       "text": "Seçtiğin {müttefik} grubuyla çalışırken, sistemin yalanlarını daha net görüyorsun.\n'Eşitlik' sadece bir kelime. Gerçekte, her şey kontrol ve güç üzerine kurulu.\n\nBu yanılsamayı kırmak için ilk adımı atma zamanı geldi. İlk eylem ne olmalı?",
-      "background": "BGs/tordah_Activist_headquarters_maps_and_strategy_boards_passion_54439e8a-7feb-4d17-b0bd-12393032b32d_2.png",
+      "background": "img/BGs/tordah_Activist_headquarters_maps_and_strategy_boards_passion_54439e8a-7feb-4d17-b0bd-12393032b32d_2.png",
       "choices": [
         {
           "text": "Propaganda yay, halkı bilinçlendir",
@@ -87,7 +96,7 @@
     },
     "ilk_direnis": {
       "text": "İlk eyleminiz ses getirdi. Küçük bir başarı, ama büyük bir umut. Artık geri dönüş yok.\n\nŞimdi daha organize olmalısınız. Bireysel direniş yetmez, yerel bir yapı kurmalısınız.",
-      "background": "BGs/tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
+      "background": "img/BGs/tordah_A_shadowy_plaza_with_scattered_groups_of_people_dim_li_ad630dd5-c790-407b-b140-2fcaedffce38_1.png",
       "choices": [
         {
           "text": "Mahallede küçük bir hücre kur",
@@ -103,7 +112,7 @@
     },
     "yerel_orgutlenme": {
       "text": "Mahallede kurduğunuz küçük grup büyüyor. İnsanlar size güveniyor.\n\nArtık sadece bir direnişçi değil, bir topluluk liderisiniz. Bu yeni gücü nasıl kullanacaksınız?",
-      "background": "BGs/tordah_Cavernous_marketplace_with_empty_shelves_desperate_cit_963c465e-6dcc-49c9-9a97-3d967ebed299_2.png",
+      "background": "img/BGs/tordah_Cavernous_marketplace_with_empty_shelves_desperate_cit_963c465e-6dcc-49c9-9a97-3d967ebed299_2.png",
       "choices": [
         {
           "text": "Yerel dayanışma ağı kur (gıda, barınma)",
@@ -124,7 +133,7 @@
     },
     "devlet_tepkisi": {
       "text": "Merkezi yönetim, yerel örgütlenmenizden rahatsız oldu.\n\nDevlet medyası sizi 'terörist' olarak yaftalıyor. Güvenlik güçleri mahallenizi ablukaya aldı. Baskı artıyor.",
-      "background": "BGs/tordah_Interrogation_room_with_balanced_lighting_tense_atmosp_d1b99622-c3ad-427f-bd3a-93023b2fb337_2.png",
+      "background": "img/BGs/tordah_Interrogation_room_with_balanced_lighting_tense_atmosp_d1b99622-c3ad-427f-bd3a-93023b2fb337_2.png",
       "choices": [
         {
           "text": "Gizlen, güç topla",
@@ -145,7 +154,7 @@
     },
     "halk_uyanisi": {
       "text": "Devletin baskısı ters tepti. Diğer mahallelerde de benzer örgütlenmeler başladı.\n\nHalk uyanıyor. Artık yalnız değilsiniz. Şehir çapında bir hareketin parçasısınız. Bu, devrim için bir fırsat.",
-      "background": "BGs/tordah_Crowded_youth_rally_new_voices_rising_chanting_youth_e_3a6f606f-1171-4cb1-98d3-092092e2055d_0.png",
+      "background": "img/BGs/tordah_A_tense_youth_gathering_in_a_dimly_lit_street_serious__e349ce48-5be1-4830-89ee-765348e4063a_3.png",
       "choices": [
         {
           "text": "Tüm grupları birleştir, tek bir cephe oluştur",
@@ -161,7 +170,7 @@
     },
     "son_hazirlik": {
       "text": "Devrim anı yaklaşıyor. Tüm hazırlıklar tamamlanmak üzere.\n\nBu, son karar anlarından biri. Devrimin karakterini belirleyecek bir seçim yapmalısın. Nasıl bir devrim olacak?",
-      "background": "BGs/tordah_War_council_chamber_with_multiple_light_sources_strate_339a0576-8b05-42eb-adb5-30e7c1bea02b_1.png",
+      "background": "img/BGs/tordah_War_council_chamber_with_multiple_light_sources_strate_339a0576-8b05-42eb-adb5-30e7c1bea02b_1.png",
       "choices": [
         {
           "text": "Kanlı ama hızlı bir darbe",
@@ -182,7 +191,7 @@
     },
     "devrim_baslangici": {
       "text": "Artık hazırlıklar tamam. Kıvılcım ateşe dönüştü. Halk sokaklarda.\n\nBu devrimin lideri sen olacaksın. İlk emir ne olacak?",
-      "background": "BGs/tordah_Through_the_bustling_thoroughfare_protesters_weave_bet_9c837784-1831-454f-9a0e-8eb866462ba9_1.png",
+      "background": "img/BGs/tordah_Through_the_bustling_thoroughfare_protesters_weave_bet_9c837784-1831-454f-9a0e-8eb866462ba9_1.png",
       "choices": [
         {
           "text": "Devlet binalarını ele geçirin!",
@@ -203,7 +212,7 @@
     },
     "faz2_baslangic": {
       "text": "Devrim başarılı oldu! Eski rejim devrildi.\n\nŞimdi asıl mücadele başlıyor: yeni bir dünya kurmak.\n\nGüç, onu ele geçirenler için bir tuzaktır. Bu tuzağa düşecek misin?",
-      "background": "BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+      "background": "img/BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
       "choices": [
         {
           "text": "Yeni bir başlangıç yap",
@@ -213,7 +222,7 @@
     },
     "ilk_zafer": {
       "text": "Şehir sizin kontrolünüzde. Halk zaferi kutluyor. Ancak kutlamaların ortasında ilk büyük sorun baş gösteriyor: GÜÇ BOŞLUĞU.\n\nKim yönetecek? Nasıl yönetilecek?",
-      "background": "BGs/tordah_In_the_marble_council_chamber_cloaked_senators_debate__cb68757a-5b55-400f-9656-116b6c255b28_3.png",
+      "background": "img/BGs/tordah_In_the_marble_council_chamber_cloaked_senators_debate__cb68757a-5b55-400f-9656-116b6c255b28_3.png",
       "choices": [
         {
           "text": "Geçici bir Devrimci Konsey kurulsun.",
@@ -229,7 +238,7 @@
     },
     "guc_boslugu": {
       "text": "Liderlik krizi derinleşiyor. Farklı devrimci gruplar kendi gündemlerini dayatıyor. Eski müttefikin, {müttefik} grubu, bir yol göstermen için sana bakıyor.\n\nBir karar vermelisin: Gücü toplayıp düzeni mi sağlayacaksın, yoksa gücü dağıtıp halka mı güveneceksin?",
-      "background": "BGs/tordah_In_the_polished_conference_chamber_delegates_lean_over_e5733949-8123-4342-ad20-fe1e2aa68994_1.png",
+      "background": "img/BGs/tordah_A_grim_conference_room_with_dim_lighting_tense_atmosph_18f6b60b-f687-4fa5-824c-a7830aec63e0_3.png",
       "choices": [
         {
           "text": "Gücü merkezileştir, istikrarı sağla.",
@@ -243,7 +252,7 @@
     },
     "merkezi_toplama": {
       "text": "Kararınla 'Devrimci Konsey' tüm yetkileri elinde topladı. Kararlar hızla alınıyor, kaos sona eriyor.\n\nAncak... Konsey giderek halktan kopuyor. Eski rejimin yöntemlerini kullanmaya başladılar: gizli oturumlar, propaganda ve 'devrim düşmanı' avı...",
-      "background": "BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "background": "img/BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
       "choices": [
         {
           "text": "Bu gidişata 'DUR' de!",
@@ -260,7 +269,7 @@
     "halk_ihaneti": {
       "text": "Konsey, tam bir tiranlığa dönüştü. Halkın devrimi, halktan çalındı. Sokaklarda fısıltılar yükseliyor: 'Hiçbir şey değişmedi, sadece tiranlar değişti.'\n\nGeçmişteki sen, şimdiki haline ne derdi?",
       "set": { "kisisel_vicdan": "it -25", "adalet_puani": "it -20", "halk_destegi": "it -30" },
-      "background": "BGs/tordah_In_the_austere_broadcast_chamber_a_lone_figures_visage_5c002841-48ea-41d1-809f-3f62723272da_2.png",
+      "background": "img/BGs/tordah_In_the_austere_broadcast_chamber_a_lone_figures_visage_5c002841-48ea-41d1-809f-3f62723272da_2.png",
       "choices": [
         {
           "text": "Artık çok geç...",
@@ -270,7 +279,7 @@
     },
     "ikinci_direnis": {
       "text": "Yeter! Artık kendi kurduğun düzene veya yozlaşmasına karşı çıkma zamanı. Halkın bir kısmı hala sana inanıyor. İkinci bir direniş başlıyor. Bu seferki hedef: devrimci tiranlar.",
-      "background": "BGs/tordah_Crowded_youth_rally_new_voices_rising_chanting_youth_e_3a6f606f-1171-4cb1-98d3-092092e2055d_0.png",
+      "background": "img/BGs/tordah_Crowded_youth_rally_new_voices_rising_chanting_youth_e_3a6f606f-1171-4cb1-98d3-092092e2055d_0.png",
       "choices": [
         {
           "text": "Konsey'e karşı silahlı mücadele başlat.",
@@ -284,7 +293,7 @@
     },
     "anarsist_alternatif": {
       "text": "Kararınla güç, merkezi bir otorite olmaksızın yerel halk meclislerine dağıtıldı. Her mahalle kendi kendini yönetiyor. Bu, gerçek bir özgürlük... ama aynı zamanda büyük bir kaos.\n\nMeclisler arasında anlaşmazlıklar çıkıyor. Şehir genelinde ortak kararlar almak neredeyse imkansız.",
-      "background": "BGs/tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
+      "background": "img/BGs/tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
       "choices": [
         {
           "text": "Koordinasyon için bir federasyon kurmayı öner.",
@@ -300,7 +309,7 @@
     },
     "halk_meclisi": {
       "text": "Önerin kabul gördü. Mahalle meclislerinden seçilen ve geri çağrılabilir delegelerin katıldığı bir 'Genel Meclis' kuruldu.\n\nBu meclisin yaptırım gücü yok, sadece meclisler arası koordinasyon sağlıyor. Bu, doğrudan demokrasinin ilk adımı. Ancak güçlerini kaybedenler bu yeni yapıyı yok etmek için hazırlanıyor.",
-      "background": "BGs/tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
+      "background": "img/BGs/tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
       "choices": [
         {
           "text": "Bu yeni yapıyı her ne pahasına olursa olsun koru.",
@@ -310,7 +319,7 @@
     },
     "guc_savasi": {
       "text": "İç savaş kapıda. Şehir ikiye bölündü:\n\nBir yanda gücü merkezde isteyen ve düzen vaat eden 'Konseyciler'.\nDiğer yanda gücü dağıtan ve özgürlük vaat eden 'Meclisçiler'.\n\nArtık bir taraf seçmelisin. Gelecek, senin kararına bağlı.",
-      "background": "BGs/tordah_Military_checkpoint_at_border_tanks_and_troops_poised__686c54ca-b97c-4814-8f1d-207171424018_0.png",
+      "background": "img/BGs/tordah_Military_checkpoint_at_border_tanks_and_troops_poised__686c54ca-b97c-4814-8f1d-207171424018_0.png",
       "choices": [
         {
           "text": "Konseycileri destekle. Düzen her şeyden önemlidir.",
@@ -326,21 +335,21 @@
     },
     "yeni_sistem_merkezi": {
       "text": "Zafer Konsey'in! Meclisçi isyanı bastırıldı. Güç yeniden merkezde toplandı. Düzen sağlandı, ama özgürlükler ve devrimin ruhu feda edildi. Kurduğun bu yeni otoriter yapı, ilk büyük sınavıyla karşı karşıya...",
-      "background": "BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "background": "img/BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
       "choices": [
         { "text": "Yüzleş...", "nextNode": "ilk_test" }
       ]
     },
     "yeni_sistem_anarsi": {
       "text": "Zafer Meclislerin! Merkeziyetçi kanat yenildi. Artık şehir, tamamen özerk mahalle meclislerinin oluşturduğu bir federasyon tarafından yönetiliyor. Bu, tarihte bir ilk.\n\nAma bu hassas ve özgür yapı, ilk büyük sınavıyla karşı karşıya...",
-      "background": "BGs/tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
+      "background": "img/BGs/tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
       "choices": [
         { "text": "Yüzleş...", "nextNode": "ilk_test" }
       ]
     },
     "ilk_test": {
       "text": "Beklenmedik bir kıtlık baş gösterdi. Tahıl ambarları boş, komşu şehirler ticareti kesti. Halk aç ve öfkeli. Yeni kurduğun sistem bu krizi nasıl çözecek?",
-      "background": "BGs/tordah_Cavernous_marketplace_with_empty_shelves_desperate_cit_963c465e-6dcc-49c9-9a97-3d967ebed299_2.png",
+      "background": "img/BGs/tordah_Cavernous_marketplace_with_empty_shelves_desperate_cit_963c465e-6dcc-49c9-9a97-3d967ebed299_2.png",
       "choices": [
         {
           "text": "Gıdayı karneye bağla ve zorla topla.",
@@ -361,7 +370,7 @@
     },
     "gecis_donemi": {
       "text": "Kriz, ağır bedellerle de olsa aşıldı. Eski sistemin hayaletlerinden tamamen kurtulup, kurduğunuz yeni düzenin gerçekleriyle yüzleşme zamanı.\n\nFaz 3: Özgürlük Denemesi başlıyor.",
-      "background": "BGs/tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
+      "background": "img/BGs/tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
       "choices": [
         {
           "text": "Denemeyi başlat...",
@@ -371,7 +380,7 @@
     },
     "yerel_yonetimler": {
       "text": "Toplum, özerk mahalle meclisleri aracılığıyla işliyor. İlk gündem: Eğitim.\n\nBazı meclisler bilimsel eğitimi, bazıları sanatı, bazıları ise askeri disiplini önceliyor. Bu çeşitlilik bir zenginlik mi, yoksa bir tehdit mi?",
-      "background": "BGs/tordah_Elegant_academic_library_room_intellectuals_in_discuss_b79324c3-4f6a-4f6f-9729-dcdcd267c731_2.png",
+      "background": "img/BGs/tordah_A_dimly_lit_worn_library_with_dusty_shelves_scattered__692f97ae-fe3d-430d-8893-1ec024eacf97_1.png",
       "choices": [
         {
           "text": "Ortak bir müfredat için federasyonu topla.",
@@ -387,7 +396,7 @@
     },
     "gonullu_birlikler": {
       "text": "Zorunlu askerlik kaldırıldı. Şehrin savunması, tamamen gönüllülerden oluşan 'Halk Milisleri'ne emanet.\n\nAncak gönüllü sayısı, eski ordunun sadece %20'si. Bu durum, şehrimizi dış tehditlere karşı savunmasız bırakıyor.",
-      "background": "BGs/tordah_Military_checkpoint_at_border_tanks_and_troops_poised__686c54ca-b97c-4814-8f1d-207171424018_0.png",
+      "background": "img/BGs/tordah_Military_checkpoint_at_border_tanks_and_troops_poised__686c54ca-b97c-4814-8f1d-207171424018_0.png",
       "choices": [
         {
           "text": "Savunmayı teşvik için propaganda yap.",
@@ -403,7 +412,7 @@
     },
     "ekonomik_ozgurluk": {
       "text": "Ekonomi, işçilerin sahip olduğu kooperatifler ve takas ağları üzerinden yürüyor. Para neredeyse ortadan kalktı.\n\nAncak bu sistem, büyük teknolojik yatırımlar ve projeler için yeterli sermayeyi üretemiyor. Şehir teknolojik olarak geri kalıyor.",
-      "background": "BGs/tordah_In_the_sleek_ministerial_offices_officials_confer_over_35a008eb-af41-4371-b69f-753e1c05b5f2_1.png",
+      "background": "img/BGs/tordah_A_grim_government_office_with_harsh_fluorescent_lighti_8b65b72f-f900-4b53-a799-8e3732bcfea1_1.png",
       "choices": [
         {
           "text": "Büyük projeler için merkezi bir yatırım fonu oluştur.",
@@ -419,7 +428,7 @@
     },
     "ic_catismalar": {
       "text": "Yeni sistemdeki sorunlar su yüzüne çıkmaya başladı.\n\nBazı mahalleler daha zengin ve kaynaklarını paylaşmak istemiyor. Diğerleri ise temel ihtiyaçlarını karşılayamıyor. 'Eşitler arasında daha eşitler' ortaya çıkıyor. Bu, anarşinin doğasında mı var?",
-      "background": "BGs/tordah_In_the_craggy_mountain_pass_narrow_trails_wind_between_8fd5fcb1-344d-4dd4-af39-f8fa4f209995_0.png",
+      "background": "img/BGs/tordah_In_the_craggy_mountain_pass_narrow_trails_wind_between_8fd5fcb1-344d-4dd4-af39-f8fa4f209995_0.png",
       "choices": [
         {
           "text": "Kaynakların adil dağıtımı için federasyona yetki ver.",
@@ -435,7 +444,7 @@
     },
     "yeni_tehditler": {
       "text": "Siz iç sorunlarla boğuşurken, komşu merkeziyetçi devlet 'CAPITALIA', sizin 'kaos düzeninizi' kendi istikrarına bir tehdit olarak gördüğünü açıkladı.\n\nSınıra ordu yığdılar. Savaş kapıda. Özgürlüğünüzün en büyük testi şimdi başlıyor.",
-      "background": "BGs/tordah_In_the_war_councils_candlelit_chamber_tattered_maps_sp_e48729e6-131f-41cd-8276-348a7f978b5c_0.png",
+      "background": "img/BGs/tordah_In_the_war_councils_candlelit_chamber_tattered_maps_sp_e48729e6-131f-41cd-8276-348a7f978b5c_0.png",
       "choices": [
         {
           "text": "Savaş için tüm gücü tek bir komutada birleştir.",
@@ -450,7 +459,7 @@
     "sistem_testi_merkezi": {
       "text": "Savaşı kazanmak için geçici bir 'Savaş Konseyi' kurdun ve tüm yetkileri ona devrettin. Halk Milisleri, disiplinli bir orduya dönüştü.\n\nSavaş kazanıldı. Capitalia geri çekildi. Ama şimdi konsey, kazandığı gücü geri vermek istemiyor. Devrim, başladığı yere mi döndü?",
       "set": { "guc_puani": "it +50", "adalet_puani": "it -40", "halk_destegi": "it -30" },
-      "background": "BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "background": "img/BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
       "choices": [
         {
           "text": "Geleceğe bak...",
@@ -461,7 +470,7 @@
     "sistem_testi_anarsi": {
       "text": "Merkezi bir ordu olmadan, her sokakta, her evde direndiniz. Şehir harabeye döndü ama halkın iradesi kırılmadı. Capitalia ordusu, bu 'başsız' düşman karşısında yıprandı ve geri çekildi.\n\nSavaşı kaybettiniz, ama özgürlüğü kazandınız. Şimdi bu yıkıntıların üzerinde yeni bir hayat kurma zamanı.",
       "set": { "halk_destegi": "it +40", "adalet_puani": "it +30", "hazine": "it -50", "halk_memnuniyeti": "it -30" },
-      "background": "BGs/tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
+      "background": "img/BGs/tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
       "choices": [
         {
           "text": "Geleceğe bak...",
@@ -472,14 +481,14 @@
 
     "final_karar": {
         "text": "Yıllar geçti... Kurduğun toplum, seçimlerinin bir yansıması. Geriye dönüp baktığında ne görüyorsun?\n\n(Aşağıdaki sonuç, oyun boyunca verdiğin kararlara göre şekillendi.)",
-        "background": "BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+        "background": "img/BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
         "choices": [
             { "text": "Sonucu Gör", "nextNode": "final_otomatik_sonuc" }
         ]
     },
     "final_otomatik_sonuc": {
         "text": "SONUÇ: {final_sonuc_baslik}\n\n{final_sonuc_metin}\n\nPuanların:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}\nHalk Memnuniyeti: {halk_memnuniyeti}\nİsyan Riski: {isyan_riski}\nHazine: {hazine}\nKişisel Vicdan: {kisisel_vicdan}",
-        "background": "BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+        "background": "img/BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
         "choices": [
             {
                 "text": "Yeniden Oyna",
@@ -489,7 +498,7 @@
     },
     "final_yeni_tiranlik": {
       "text": "SONUÇ: YENİ TİRANLIK\n\nÖzgürlük ideali, düzen ve güvenlik uğruna feda edildi. Halkın devrimi, yeni bir elit sınıf yarattı. İsimler değişti, ama sistemin özü aynı kaldı. Tarih, kendini bir kez daha tekrar etti.\n\nPuanların:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}",
-      "background": "BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "background": "img/BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
       "choices": [
         {
           "text": "Yeniden Oyna",
@@ -499,7 +508,7 @@
     },
     "final_zorlu_ozgurluk": {
       "text": "SONUÇ: ZORLU ÖZGÜRLÜK\n\nKaotik, verimsiz ve sürekli krizlerle boğuşan bir toplum yarattın. Ama özgür bir toplum. İnsanlar kendi kaderlerini tayin ediyor. Bu zorlu yolda yürümek, her gün verilen bir mücadele. Ama bu mücadele, yaşamın ta kendisi.\n\nPuanların:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}",
-      "background": "BGs/tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
+      "background": "img/BGs/tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
       "choices": [
         {
           "text": "Yeniden Oyna",
@@ -509,7 +518,7 @@
     },
     "final_karma_sistem": {
       "text": "SONUÇ: KIRILGAN DENGE\n\nNe tam bir özgürlük ne de tam bir tiranlık. İdealizm ve pragmatizm arasında bir denge kurmaya çalıştın. Toplum, sürekli olarak merkeziyetçilik ve anarşizm arasında gidip geliyor. Bu kırılgan denge ne kadar sürecek, kimse bilmiyor.\n\nPuanların:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}",
-      "background": "BGs/tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
+      "background": "img/BGs/tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
       "choices": [
         {
           "text": "Yeniden Oyna",
