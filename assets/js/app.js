@@ -1,6 +1,6 @@
 // Oyun durumu
 const gameState = {
-    perde: 1,
+    faz: 1,
     bolum: 1,
     adalet_puani: 0,
     guc_puani: 0,
@@ -8,6 +8,7 @@ const gameState = {
     halk_memnuniyeti: 0,
     isyan_riski: 0,
     hazine: 100,
+    kisisel_vicdan: 0,
     karakter_adi: "",
     secilen_yol: "",
     müttefik: "",
@@ -18,7 +19,6 @@ const gameState = {
     yonetim_stili: "",
     muhalefet_durumu: "",
     son_catisma_secimi: "",
-    kisisel_vicdan: 0,
     dis_politika_durumu: "tarafsız",
     teknoloji_seviyesi: 5,
     anahtar_karakterler: {
@@ -108,9 +108,9 @@ const newsSystem = {
     
     // Haber gösterme fonksiyonu
     showNews: function() {
-        // Her perde için farklı haberler
-        const currentPerde = gameState.perde;
-        const newsPool = this.news[`perde${currentPerde}`] || this.news.perde1;
+        // Her faz için farklı haberler
+        const currentFaz = gameState.faz;
+        const newsPool = this.news[`perde${currentFaz}`] || this.news.perde1;
         
         // Rastgele haber seç
         const randomNews = newsPool[Math.floor(Math.random() * newsPool.length)];
@@ -130,6 +130,7 @@ const newsSystem = {
             <div class="news-footer">
                 <div class="news-time">${new Date().toLocaleTimeString()}</div>
                 <div class="news-source">Vadi Haber Ajansı</div>
+                <button class="news-ok-btn" onclick="this.parentElement.parentElement.remove()">OK</button>
             </div>
         `;
         
@@ -237,6 +238,7 @@ const emotionalSystem = {
                 </div>
                 <div class="flashback-footer">
                     <div class="flashback-emotion">${this.getEmotionIcon(randomFlashback.emotion)}</div>
+                    <button class="flashback-ok-btn" onclick="closeFlashback()">OK</button>
                 </div>
             </div>
         `;
@@ -284,6 +286,7 @@ const musicSystem = {
         this.audio = new Audio('Music/adg3.com_shrivelledDissonance.mp3');
         this.audio.loop = true; // Sürekli döngü
         this.audio.volume = this.volume;
+        this.isPlaying = false; // Başta kapalı
         
         // Hata durumunda
         this.audio.addEventListener('error', (e) => {
@@ -299,6 +302,18 @@ const musicSystem = {
                 this.updateMusicButton();
             }).catch(e => {
                 console.warn('Müzik çalınamadı:', e);
+            });
+        }
+    },
+    
+    // Müziği otomatik başlat
+    autoPlay: function() {
+        if (this.audio && !this.isPlaying) {
+            this.audio.play().then(() => {
+                this.isPlaying = true;
+                this.updateMusicButton();
+            }).catch(e => {
+                console.warn('Otomatik müzik başlatılamadı:', e);
             });
         }
     },
@@ -594,6 +609,7 @@ function updateRelationshipsPanel() {
  */
 function typeWriter(text, onComplete) {
     const storyTextElement = document.getElementById('story-text');
+    const skipButton = document.getElementById('skip-button');
     if (!storyTextElement) return;
 
     // --- EN KRİTİK ADIM: MEVCUT ANİMASYONU HER ZAMAN DURDUR ---
@@ -610,11 +626,20 @@ function typeWriter(text, onComplete) {
     storyTextElement.innerHTML = ''; // İçeriği temizle
     typewriterSkip = false;
     
+    // Skip butonunu göster
+    if (skipButton) {
+        skipButton.style.display = 'block';
+    }
+    
     let i = 0;
     typewriterInterval = setInterval(() => {
         if (typewriterSkip) {
             clearInterval(typewriterInterval);
             storyTextElement.innerHTML = formattedText;
+            // Skip butonunu gizle
+            if (skipButton) {
+                skipButton.style.display = 'none';
+            }
             if (onComplete) onComplete();
             return;
         }
@@ -630,6 +655,10 @@ function typeWriter(text, onComplete) {
             }
         } else {
             clearInterval(typewriterInterval);
+            // Skip butonunu gizle
+            if (skipButton) {
+                skipButton.style.display = 'none';
+            }
             if (onComplete) onComplete();
         }
     }, 25); // Yazma hızı
@@ -767,10 +796,10 @@ function selectChoice(choice) {
         updateStats();
     }
     
-    // Perde değişikliği kontrolü
-    if (choice.set && choice.set.perde) {
-        gameState.perde = choice.set.perde;
-        // Perde değiştiğinde haber sistemini sıfırla
+            // Faz değişikliği kontrolü
+        if (choice.set && choice.set.faz) {
+            gameState.faz = choice.set.faz;
+            // Faz değiştiğinde haber sistemini sıfırla
         gameState._lastNewsTime = 0;
         gameState._newsShown = false;
     }
@@ -817,6 +846,16 @@ function showNode(nodeId) {
         text = text.replace(new RegExp(`{${key}}`, 'g'), value);
     });
     
+    // Özel değişkenler
+    if (gameState.müttefik) {
+        const müttefikNames = {
+            'akademisyen': 'Akademisyenler',
+            'asker': 'Askerler', 
+            'sendikacı': 'Sendikacılar'
+        };
+        text = text.replace(/{müttefik}/g, müttefikNames[gameState.müttefik] || gameState.müttefik);
+    }
+    
     typeWriter(text, () => {
         if (node.choices) {
             showChoices(node.choices);
@@ -842,8 +881,8 @@ function startGame() {
     const gameStatus = document.getElementById('game-status');
     if (gameStatus) gameStatus.textContent = 'Çalışıyor ✓';
     
-    // Müziği kullanıcı etkileşimi sonrası başlat
-    musicSystem.play();
+    // Müzik başta kapalı olarak başlasın
+    musicSystem.updateMusicButton();
     
     showNode('start');
 }
@@ -1018,6 +1057,12 @@ function skipAnimation() {
     if (currentTypingAnimation) {
         clearTimeout(currentTypingAnimation);
         currentTypingAnimation = null;
+    }
+    
+    // Skip butonunu gizle
+    const skipButton = document.getElementById('skip-button');
+    if (skipButton) {
+        skipButton.style.display = 'none';
     }
     
     const storyText = document.getElementById('story-text');

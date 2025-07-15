@@ -83,11 +83,17 @@ body::before {
 }
 
 .stats-panel {
-    margin-top: 24px;
-    padding: 16px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.1);
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 180px;
+    padding: 8px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.7em;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
 }
 
 .relationships-panel {
@@ -105,8 +111,8 @@ body::before {
 
 .rules-button {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    bottom: 10px;
+    right: 10px;
     background: rgba(255,255,255,0.1);
     color: #fff;
     border: 1px solid rgba(255,255,255,0.2);
@@ -141,32 +147,9 @@ body::before {
 
 .skip-button:hover {
     background: rgba(255,255,255,0.2);
-    transform: scale(1.05);
 }
 
-.debug-panel {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 0.8em;
-    z-index: 10000;
-    max-width: 250px;
-}
-
-.debug-panel h3 {
-    margin: 0 0 8px 0;
-    font-size: 0.9em;
-    color: #ff6b6b;
-}
-
-.debug-panel p {
-    margin: 4px 0;
-    font-size: 0.75em;
-}
+/* Debug panel kaldırıldı - oyuncu deneyimi için gereksiz */
 #choices {
     display: flex;
     flex-direction: column;
@@ -216,14 +199,15 @@ body::before {
 .stat-row {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
-    gap: 12px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.05);
+    margin-bottom: 4px;
+    gap: 6px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.03);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    font-size: 0.7em;
 }
 .stat-row:hover {
     background: rgba(255,255,255,0.08);
@@ -245,8 +229,8 @@ body::before {
 }
 
 .stat-label {
-    min-width: 90px;
-    font-size: 0.95em;
+    min-width: 60px;
+    font-size: 0.7em;
     color: #e0e0e0;
     font-weight: 500;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
@@ -254,9 +238,9 @@ body::before {
 
 .stat-bar {
     flex: 1;
-    height: 12px;
+    height: 8px;
     background: rgba(255,255,255,0.15);
-    border-radius: 6px;
+    border-radius: 4px;
     overflow: hidden;
     position: relative;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
@@ -287,9 +271,9 @@ body::before {
 }
 
 .stat-value {
-    min-width: 35px;
+    min-width: 25px;
     text-align: right;
-    font-size: 0.95em;
+    font-size: 0.7em;
     color: #fff;
     font-weight: 600;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
@@ -621,7 +605,19 @@ body.shake {
         border-radius: 10px;
         min-width: 150px;
     }
-
+    .stats-panel {
+        width: 150px;
+        bottom: 5px;
+        left: 5px;
+        font-size: 0.6em;
+        padding: 6px;
+    }
+    .rules-button {
+        bottom: 5px;
+        right: 5px;
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
     .stat-label {
         min-width: 70px;
         font-size: 0.85em;
@@ -713,6 +709,26 @@ body.shake {
 .news-source {
     font-weight: bold;
     color: #333;
+}
+
+.news-ok-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.news-ok-btn:hover {
+    background: #45a049;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 @keyframes newsSlideIn {
@@ -1398,7 +1414,8 @@ body.high-contrast {
 
 .flashback-footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     padding: 15px 25px;
     border-top: 2px solid #34495e;
     background: rgba(52, 73, 94, 0.8);
@@ -1411,6 +1428,26 @@ body.high-contrast {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.flashback-ok-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.flashback-ok-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 @keyframes flashbackFadeIn {

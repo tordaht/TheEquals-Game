@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Equals Game - Versiyon 2.4</title>
+    <title>The Equals Game - Versiyon 3.0 Beta</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -38,7 +38,7 @@
         <div class="game-header">
             <img src="Logo.png" alt="The Equals Game Logo" class="game-logo">
             <h1 class="game-title">The Equals Game</h1>
-            <div class="version-info">v2.4 - TEG-004</div>
+            <div class="version-info">v3.0 - TEG-007 (BETA)</div>
         </div>
 
         <!-- Ana Oyun Alanı -->
@@ -53,100 +53,96 @@
             </div>
         </div>
 
-        <!-- İstatistik Paneli -->
-        <div class="stats-panel" role="region" aria-label="Oyun İstatistikleri">
-            <div class="stat-row" id="justice-row">
-                <div class="stat-info">
-                    <span class="stat-label" id="justice-label">Adalet</span>
-                    <span class="stat-value" id="justice-value">0</span>
-                </div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="justice-fill"></div>
-                </div>
-            </div>
-            
-            <div class="stat-row" id="power-row">
-                <div class="stat-info">
-                    <span class="stat-label" id="power-label">Güç</span>
-                    <span class="stat-value" id="power-value">0</span>
-                </div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="power-fill"></div>
-                </div>
-            </div>
-            
-            <div class="stat-row" id="support-row">
-                <div class="stat-info">
-                    <span class="stat-label" id="support-label">Halk Desteği</span>
-                    <span class="stat-value" id="support-value">0</span>
-                </div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="support-fill"></div>
-                </div>
-            </div>
-            
-            <div class="stat-row" id="satisfaction-row">
-                <div class="stat-info">
-                    <span class="stat-label" id="satisfaction-label">Memnuniyet</span>
-                    <span class="stat-value" id="satisfaction-value">0</span>
-                </div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="satisfaction-fill"></div>
-                </div>
-            </div>
-            
-            <div class="stat-row" id="rebellion-row">
-                <div class="stat-info">
-                    <span class="stat-label" id="rebellion-label">İsyan Riski</span>
-                    <span class="stat-value" id="rebellion-value">0</span>
-                </div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="rebellion-fill"></div>
-                </div>
-            </div>
-            
-            <div class="stat-row" id="treasury-row">
-                <div class="stat-info">
-                    <span class="stat-label" id="treasury-label">Hazine</span>
-                    <span class="stat-value" id="treasury-value">100</span>
-                </div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="treasury-fill"></div>
-                </div>
-            </div>
-            
-            <div class="stat-row" id="conscience-row">
-                <div class="stat-info">
-                    <span class="stat-label" id="conscience-label">Vicdan</span>
-                    <span class="stat-value" id="conscience-value">0</span>
-                </div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="conscience-fill"></div>
-                </div>
-            </div>
-        </div>
-
         <!-- İlişkiler Paneli -->
         <div class="relationships-panel" id="relationships-panel" role="region" aria-label="Karakter İlişkileri">
             <!-- Karakter ilişkileri buraya gelecek -->
         </div>
-
-        <!-- Oyun Kuralları Butonu -->
-        <button class="rules-button" onclick="showRules()" aria-label="Oyun kurallarını göster">
-            📖 Kurallar
-        </button>
-
-
     </div>
 
-    <!-- Debug Paneli (F12 ile gizle/göster) -->
-    <div id="debug-info" class="debug-panel">
-        <h3>Debug Bilgileri</h3>
-        <p>Oyun Durumu: <span id="game-status">Yükleniyor...</span></p>
-        <p>Story Data: <span id="storydata-status">Yükleniyor...</span></p>
-        <p>Mevcut Node: <span id="current-node">-</span></p>
-        <p>Perde: <span id="current-perde">-</span></p>
+    <!-- İstatistik Paneli - Ekranın sol altında -->
+    <div class="stats-panel" role="region" aria-label="Oyun İstatistikleri">
+        <div class="stat-row" id="justice-row">
+            <div class="stat-info">
+                <span class="stat-label" id="justice-label">Adalet</span>
+                <span class="stat-value" id="justice-value">0</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="justice-fill"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row" id="power-row">
+            <div class="stat-info">
+                <span class="stat-label" id="power-label">Güç</span>
+                <span class="stat-value" id="power-value">0</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="power-fill"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row" id="support-row">
+            <div class="stat-info">
+                <span class="stat-label" id="support-label">Halk Desteği</span>
+                <span class="stat-value" id="support-value">0</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="support-fill"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row" id="satisfaction-row">
+            <div class="stat-info">
+                <span class="stat-label" id="satisfaction-label">Memnuniyet</span>
+                <span class="stat-value" id="satisfaction-value">0</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="satisfaction-fill"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row" id="rebellion-row">
+            <div class="stat-info">
+                <span class="stat-label" id="rebellion-label">İsyan Riski</span>
+                <span class="stat-value" id="rebellion-value">0</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="rebellion-fill"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row" id="treasury-row">
+            <div class="stat-info">
+                <span class="stat-label" id="treasury-label">Hazine</span>
+                <span class="stat-value" id="treasury-value">100</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="treasury-fill"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row" id="conscience-row">
+            <div class="stat-info">
+                <span class="stat-label" id="conscience-label">Vicdan</span>
+                <span class="stat-value" id="conscience-value">0</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="conscience-fill"></div>
+            </div>
+        </div>
     </div>
+
+    <!-- Skip Butonu - Ekranın alt ortasında -->
+    <button id="skip-button" class="skip-button" onclick="skipAnimation()" style="display: none;" aria-label="Metni hızlıca göster">
+        ⏭️ Skip
+    </button>
+
+    <!-- Oyun Kuralları Butonu - Ekranın sağ altında -->
+    <button class="rules-button" onclick="showRules()" aria-label="Oyun kurallarını göster">
+        📖 Kurallar
+    </button>
+
+    <!-- Debug paneli kaldırıldı - oyuncu deneyimi için gereksiz -->
 
     <!-- Oyun Kuralları Modal -->
     <div id="rules-modal" class="rules-modal">
