@@ -1,0 +1,72 @@
+THE EQUALS GAME - VERSİYON 2.4 BACKUP
+=====================================
+
+PROJE: The Equals Game
+VERSİYON: 2.4
+SERİ NO: TEG-004
+TARİH: 15.07.2025
+BACKUP TÜRÜ: Temiz Oyun Mekaniği Backup
+
+=====================================
+
+BACKUP İÇERİĞİ:
+---------------
+
+✅ ANA DOSYALAR:
+- index.html (ana oyun dosyası)
+- storyData.json (oyun hikayesi verileri)
+- Logo.png (oyun logosu)
+- favicon.ico (tarayıcı ikonu)
+- start_equals_server.bat (sunucu başlatma dosyası)
+- README.md (proje açıklaması)
+
+✅ ASSETS KLASÖRÜ:
+- assets/css/main.css (oyun stilleri)
+- assets/js/app.js (oyun JavaScript kodu)
+
+✅ BG GÖRSELLERİ:
+- BGs/ klasöründe 119 adet BG görseli
+- Tüm BG klasörlerinden (BGs, BGs-2, BGs-3, BGs-4) birleştirilmiş
+- Karakter portreleri, sahneler, teknoloji görselleri dahil
+
+=====================================
+
+OYUN ÖZELLİKLERİ:
+------------------
+
+✅ TAMAMLANAN ÖZELLİKLER:
+- 3 perde tam hikaye akışı
+- Karakter profilleri (Arda, Elara, Kaan, Leyla, Ahmet, Albay Sancak)
+- 119 BG görseli ile zengin atmosfer
+- Skip butonu (sayfanın ortasında)
+- Oyun kuralları butonu
+- Responsive tasarım
+- Modern UI/UX
+
+✅ TEKNİK ÖZELLİKLER:
+- HTML5 + CSS3 + JavaScript
+- JSON tabanlı hikaye sistemi
+- Modüler kod yapısı
+- Cross-browser uyumluluk
+- Local server desteği
+
+=====================================
+
+KULLANIM:
+---------
+
+1. start_equals_server.bat dosyasını çalıştır
+2. Tarayıcıda http://localhost:8000 adresine git
+3. Oyunu oynamaya başla
+
+=====================================
+
+NOTLAR:
+-------
+
+- Bu backup sadece oyun mekaniği için gerekli dosyaları içerir
+- Geliştirme dosyaları (PSD, analiz dosyaları) dahil değil
+- Tüm BG görselleri tek klasörde birleştirilmiş
+- Oyun tam çalışır durumda
+
+===================================== 

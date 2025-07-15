@@ -43,4 +43,238 @@ PROJE: The Equals Game
 TARİH: 2024
 ÇÖZÜM: Skip butonu sayfanın ortasına, oyun kuralları butonunun üstüne taşındı (bottom: 60px, left: 50%, transform: translateX(-50%))
 
+HATA #6:
+---------
+HATA: Proje dosyaları dağınık durumda, temiz backup gerekiyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: TheEquals_Game_v2.4_Backup klasörü oluşturuldu, sadece oyun mekaniği için gerekli dosyalar kopyalandı (119 BG görseli, HTML, CSS, JS, JSON, Logo, favicon, server dosyası, README)
+
+HATA #7:
+---------
+HATA: Puan sistemi görsel olarak basit ve etkileyici değildi
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: Puan sistemi görsel olarak geliştirildi - animasyonlar, renk kodlaması, hover efektleri, kritik seviye uyarıları, değişim göstergeleri eklendi
+
+HATA #8:
+---------
+HATA: Uyarı mesajları çok sık çıkıyordu, her sahne geçişinde rahatsız ediciydi
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: Uyarı sistemi iyileştirildi - sadece büyük puan düşüşlerinde (hazine -10, memnuniyet -15) uyarı çıkıyor
+
+HATA #9:
+---------
+HATA: Oyun atmosferi eksikti, gündem haberleri yoktu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: Haber sistemi eklendi - her perde için farklı gündem haberleri, beyaz messagebox tasarımı, otomatik gösterim (30-60 saniye arası), haber etkileri puanlara yansıyor
+
+HATA #10:
+----------
+HATA: Seçimlerde onay sistemi yoktu, oyuncu yanlış seçim yapabiliyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: Çoklu basamaklı seçim sistemi eklendi - seçim onay dialog'u, etki önizlemesi, geri alınamaz uyarısı, etkilerin görsel gösterimi
+
+HATA #11:
+----------
+HATA: Mobil cihazlarda oyun deneyimi zayıftı, erişilebilirlik eksikti
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: Mobil & erişilebilirlik sistemi eklendi - responsive tasarım, yazı boyutu ayarları, renk körlüğü desteği, yüksek kontrast modu, klavye navigasyonu, dokunmatik optimizasyonu
+
+HATA #12:
+----------
+HATA: Oyuncu empatisi ve duygusal bağlantı eksikti
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: Duygusal dönemeçler sistemi eklendi - flashback sistemi, duygu ikonları, anı içerikleri, etki sistemi, animasyonlu dialog'lar
+
+HATA #13:
+----------
+HATA: Oyun atmosferi eksikti, arka plan müziği yoktu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: Müzik sistemi eklendi - sürekli döngü arka plan müziği, müzik açma/kapama, ses seviyesi kontrolü, otomatik başlatma
+
+===================================== 
+
+HATA #14:
+---------
+HATA: Oyun sistemi bozulmuş, HTML yapısı ve CSS seçicileri uyuşmuyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: HTML'de game-container class'ı ID'ye çevrildi, CSS seçicileri düzeltildi, eksik stiller eklendi (game-header, game-logo, game-title, version-info, stats-panel, relationships-panel, rules-button, skip-button, debug-panel), JavaScript dosyası tamamen yeniden yazıldı, çakışan kodlar temizlendi
+
+HATA #15:
+---------
+HATA: İstatistik puanları sınırlandırılmıyordu, puanlar sonsuza kadar artıyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: selectChoice fonksiyonunda stat sınırlandırması düzeltildi, doğru anahtar isimleri kullanıldı (adalet_puani, guc_puani, halk_destegi, halk_memnuniyeti, isyan_riski, kisisel_vicdan: 0-100, hazine: 0-200), perde değişikliği kontrolü eklendi
+
+HATA #16:
+---------
+HATA: Yüksek kontrast erişilebilirlik özelliği çalışmıyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: CSS'te .high-contrast sınıfı için kapsamlı stiller eklendi (body, choice-button, stat-fill, news-messagebox, confirmation-content, flashback-content için yüksek kontrast renkler)
+
+HATA #17:
+---------
+HATA: Oyun kuralları modal'ı eksikti, sadece alert() kullanılıyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: HTML'de rules-modal yapısı eklendi, CSS'te modal stilleri eklendi, JavaScript'te showRules() ve closeRules() fonksiyonları güncellendi, detaylı oyun kuralları eklendi
+
+HATA #18:
+---------
+HATA: İki farklı skip butonu çakışıyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: HTML'deki gereksiz sabit skip butonu kaldırıldı, sadece typeWriter fonksiyonundaki dinamik skip butonu bırakıldı
+
+HATA #19:
+---------
+HATA: Müzik otomatik başlatma tarayıcılar tarafından engellenebiliyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: musicSystem.init() fonksiyonundaki otomatik başlatma kaldırıldı, müzik kullanıcı etkileşimi sonrası (startGame() fonksiyonunda) başlatılıyor
+
+HATA #20:
+---------
+HATA: Oyun kuralları modal'ı açılışta otomatik açılıyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: CSS'teki gereksiz welcome-modal stilleri kaldırıldı, rules-modal sadece butona tıklandığında açılıyor, varsayılan olarak kapalı
+
+HATA #21:
+---------
+HATA: JavaScript dosyasında loadStoryData() fonksiyonu iki kez tanımlanmıştı, çakışma oyunun yüklenmemesine neden oluyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: İkinci loadStoryData() fonksiyonu tanımı kaldırıldı, çakışma giderildi, oyun artık düzgün yükleniyor
+
+HATA #22:
+---------
+HATA: loadStoryData() fonksiyonu tamamen eksikti, oyun hiç yüklenmiyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: loadStoryData() fonksiyonu yeniden eklendi, storyData.json dosyasını yükleyip parse ediyor, oyun artık çalışıyor
+
+HATA #23:
+---------
+HATA: Oyun kuralları modal'ı açılmıyordu, CSS display özelliği çakışıyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: CSS'te .rules-modal.show sınıfına !important eklendi, JavaScript'te showRules() ve closeRules() fonksiyonlarına style.display kontrolü eklendi, console.log ile debug eklendi
+
+HATA #24:
+---------
+HATA: Türkçe metinler bozuluyordu, karakterler karışık görünüyordu
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: typeWriter fonksiyonunda text.charAt(i) yerine text[i] kullanıldı, Türkçe karakterler için güvenli karakter ekleme yapıldı
+
+HATA #25:
+---------
+HATA: Metin animasyonunda race condition ve newline karakteri sorunları vardı
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: typeWriter fonksiyonu tamamen yeniden yazıldı - önceki animasyonları iptal etme, newline karakterlerini <br> etiketine dönüştürme, setInterval kullanma, skipAnimation fonksiyonu güncellendi, selectChoice fonksiyonuna çift tıklama koruması eklendi
+
+HATA #26:
+---------
+HATA: Oyun kuralları modal'ında alfa aşaması bilgisi eksikti
+PROJE: The Equals Game
+TARİH: 15.07.2025
+ÇÖZÜM: Oyun kuralları modal'ına alfa aşaması bildirimi eklendi - geliştirme planı, geri bildirim bilgisi, CSS stilleri ile sarı renk teması
+
+=====================================
+
+VERSİYON 2.4 ÖZELLİKLERİ:
+---------------------------
+
+✅ **HABER SİSTEMİ EKLENDİ:**
+- Her perde için farklı gündem haberleri
+- Beyaz messagebox tasarımı
+- Otomatik gösterim (30-60 saniye arası)
+- Haber etkileri puanlara yansıyor
+- Perde değişikliklerinde haber sistemi sıfırlanıyor
+
+✅ **ÇOKLU BASAMAKLI SEÇİMLER:**
+- Seçim onay dialog'u
+- Etki önizlemesi (pozitif/negatif değişimler)
+- Geri alınamaz uyarısı
+- Etkilerin görsel gösterimi
+- Onay/İptal butonları
+
+✅ **MOBİL & ERİŞİLEBİLİRLİK:**
+- Responsive tasarım (768px, 480px breakpoint'leri)
+- Yazı boyutu ayarları (küçük, orta, büyük, çok büyük)
+- Renk körlüğü desteği (mavi/kırmızı renk paleti)
+- Yüksek kontrast modu
+- Klavye navigasyonu (Tab, Enter, Escape)
+- Dokunmatik optimizasyonu (44px minimum dokunma alanı)
+- Azaltılmış hareket desteği
+- Ekran okuyucu desteği (ARIA labels)
+
+✅ **DUYGUSAL DÖNEMEÇLER:**
+- Flashback sistemi (4 önemli sahne için)
+- Duygu ikonları (nostalji, cesaret, sevinç, hüzün)
+- Anı içerikleri (çocukluk, ilk protesto, zafer, fedakarlık)
+- Etki sistemi (puanlara yansıma)
+- Animasyonlu dialog'lar (fade-in, slide-in, pulse, text-glow)
+- 8 saniye otomatik kapanma
+
+✅ **MÜZİK SİSTEMİ:**
+- Sürekli döngü arka plan müziği (adg3.com_shrivelledDissonance.mp3)
+- Müzik açma/kapama butonu (🔊/🔇)
+- Ses seviyesi kontrolü (🔉/🔊)
+- Otomatik başlatma
+- Varsayılan ses seviyesi (%30)
+- Mobil responsive müzik kontrolleri
+
+✅ **PERDE 1 HABERLERİ:**
+- "ELİT'LER LÜKS YAŞAM SÜRÜYOR"
+- "İŞÇİ SENDİKALARI TOPLANIYOR"
+- "GÜVENLİK GÜÇLERİ SOKAKLARDA"
+- "ÜNİVERSİTE ÖĞRENCİLERİ HAREKETE GEÇTİ"
+
+✅ **PERDE 2 HABERLERİ:**
+- "YENİ HÜKÜMET İLK KARARLARINI ALDI"
+- "EKONOMİK REFORM PAKETİ AÇIKLANDI"
+- "ESKİ ELİT'LER SÜRGÜN EDİLDİ"
+- "HALK MECLİSİ KURULDU"
+
+✅ **PERDE 3 HABERLERİ:**
+- "MUHALEFET SESLERİ YÜKSELİYOR"
+- "GÜVENLİK GÜÇLERİ SOKAKLARDA"
+- "EKONOMİK KRİZ DERİNLEŞİYOR"
+- "YERALTI ÖRGÜTLERİ AKTİF"
+
+✅ **FLASHBACK SAHNELERİ:**
+- "Çocukluk Anısı" (start sahnesi)
+- "İlk Protesto" (devrim_esiginde sahnesi)
+- "Zafer Anısı" (perde2_baslangic sahnesi)
+- "Fedakarlık Anısı" (final_sınav sahnesi)
+
+✅ **ERİŞİLEBİLİRLİK ÖZELLİKLERİ:**
+- ♿ Erişilebilirlik toggle butonu
+- Yazı boyutu ayarları
+- Renk körlüğü modu
+- Yüksek kontrast modu
+- Azaltılmış hareket
+- Klavye navigasyonu
+- Dokunmatik optimizasyonu
+
+✅ **MÜZİK KONTROLLERİ:**
+- Sağ üst köşede müzik kontrol paneli
+- Müzik açma/kapama butonu
+- Ses seviyesi artırma/azaltma butonları
+- Ses seviyesi göstergesi (%)
+- Mobil responsive tasarım
+
 ===================================== 
