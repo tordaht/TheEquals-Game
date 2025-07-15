@@ -25,15 +25,348 @@ const gameState = {
         elif: { durum: 'güvende', iliski: 'sadık' },
         eski_yoldas: { durum: 'hayatta', iliski: 'sadık' },
         aile_uyesi: { durum: 'tehlikede', iliski: 'kırgın' }
+    },
+    // Uyarı sistemi için son değerler
+    _lastHazine: 100,
+    _lastHalkMemnuniyeti: 0,
+    // Haber sistemi için
+    _lastNewsTime: 0,
+    _newsShown: false
+};
+
+// Haber sistemi
+const newsSystem = {
+    // Haber veritabanı
+    news: {
+        perde1: [
+            {
+                title: "ELİT'LER LÜKS YAŞAM SÜRÜYOR",
+                content: "Vadi'nin üst kesimlerinde yaşayan Elit'ler, halkın açlığına rağmen lüks yaşamlarına devam ediyor. Yeni açılan 'Altın Kule' rezidansında bir daire 50 milyon kredi.",
+                impact: { halk_memnuniyeti: -5, isyan_riski: +3 }
+            },
+            {
+                title: "İŞÇİ SENDİKALARI TOPLANIYOR",
+                content: "Vadi'nin en büyük fabrikalarında çalışan işçiler, sendika temsilcileri etrafında toplanmaya başladı. Grev tehdidi giderek artıyor.",
+                impact: { halk_destegi: +2, isyan_riski: +2 }
+            },
+            {
+                title: "GÜVENLİK GÜÇLERİ SOKAKLARDA",
+                content: "Son protestolardan sonra güvenlik güçleri şehir merkezinde yoğunlaştı. Vatandaşlar endişeli.",
+                impact: { halk_memnuniyeti: -3, guc_puani: +2 }
+            },
+            {
+                title: "ÜNİVERSİTE ÖĞRENCİLERİ HAREKETE GEÇTİ",
+                content: "Aethelburg Üniversitesi öğrencileri, eğitim ücretlerinin artırılmasını protesto ediyor. Kampüs çıkışları kapatıldı.",
+                impact: { halk_destegi: +3, isyan_riski: +2 }
+            }
+        ],
+        perde2: [
+            {
+                title: "YENİ HÜKÜMET İLK KARARLARINI ALDI",
+                content: "Devrim sonrası kurulan yeni hükümet, ilk kararlarını açıkladı. Eski Elit'lerin mallarına el konuldu.",
+                impact: { adalet_puani: +5, hazine: +20 }
+            },
+            {
+                title: "EKONOMİK REFORM PAKETİ AÇIKLANDI",
+                content: "Yeni ekonomik sistem, 'herkese eşit pay' prensibi üzerine kuruldu. Vatandaşlar arasında karışık tepkiler var.",
+                impact: { halk_memnuniyeti: +3, hazine: -10 }
+            },
+            {
+                title: "ESKİ ELİT'LER SÜRGÜN EDİLDİ",
+                content: "Devrim karşıtı olduğu tespit edilen eski Elit'ler, şehrin dışına sürgün edildi. Güvenlik güçleri nöbet tutuyor.",
+                impact: { adalet_puani: +3, guc_puani: +5 }
+            },
+            {
+                title: "HALK MECLİSİ KURULDU",
+                content: "Yeni demokratik sistem için halk meclisi kuruldu. İlk toplantıda temel haklar tartışıldı.",
+                impact: { halk_destegi: +5, adalet_puani: +3 }
+            }
+        ],
+        perde3: [
+            {
+                title: "MUHALEFET SESLERİ YÜKSELİYOR",
+                content: "Yeni rejime karşı muhalefet sesleri giderek artıyor. Bazı vatandaşlar 'eski düzen daha iyiydi' diyor.",
+                impact: { halk_destegi: -3, isyan_riski: +5 }
+            },
+            {
+                title: "GÜVENLİK GÜÇLERİ SOKAKLARDA",
+                content: "Artışan protestolar nedeniyle güvenlik güçleri tekrar sokaklara çıktı. Sıkıyönetim uygulanıyor.",
+                impact: { guc_puani: +3, halk_memnuniyeti: -5 }
+            },
+            {
+                title: "EKONOMİK KRİZ DERİNLEŞİYOR",
+                content: "Yeni sistemin ekonomik sorunları giderek artıyor. Bazı temel gıda maddeleri bulunamıyor.",
+                impact: { halk_memnuniyeti: -8, hazine: -15 }
+            },
+            {
+                title: "YERALTI ÖRGÜTLERİ AKTİF",
+                content: "Devrim karşıtı yeraltı örgütleri aktif hale geldi. Güvenlik güçleri operasyon düzenliyor.",
+                impact: { isyan_riski: +8, guc_puani: +2 }
+            }
+        ]
+    },
+    
+    // Haber gösterme fonksiyonu
+    showNews: function() {
+        // Her perde için farklı haberler
+        const currentPerde = gameState.perde;
+        const newsPool = this.news[`perde${currentPerde}`] || this.news.perde1;
+        
+        // Rastgele haber seç
+        const randomNews = newsPool[Math.floor(Math.random() * newsPool.length)];
+        
+        // Haber mesaj kutusu oluştur
+        const newsBox = document.createElement('div');
+        newsBox.className = 'news-messagebox';
+        newsBox.innerHTML = `
+            <div class="news-header">
+                <div class="news-icon">📰</div>
+                <div class="news-title">${randomNews.title}</div>
+                <div class="news-close" onclick="this.parentElement.parentElement.remove()">✕</div>
+            </div>
+            <div class="news-content">
+                ${randomNews.content}
+            </div>
+            <div class="news-footer">
+                <div class="news-time">${new Date().toLocaleTimeString()}</div>
+                <div class="news-source">Vadi Haber Ajansı</div>
+            </div>
+        `;
+        
+        // Haber efektlerini uygula
+        if (randomNews.impact) {
+            Object.entries(randomNews.impact).forEach(([stat, change]) => {
+                if (gameState[stat] !== undefined) {
+                    gameState[stat] = Math.max(0, Math.min(100, gameState[stat] + change));
+                }
+            });
+            updateStats();
+        }
+        
+        document.body.appendChild(newsBox);
+        
+        // 5 saniye sonra otomatik kapat
+        setTimeout(() => {
+            if (newsBox.parentElement) {
+                newsBox.remove();
+            }
+        }, 5000);
+    },
+    
+    // Haber kontrolü
+    checkNews: function() {
+        const now = Date.now();
+        const timeSinceLastNews = now - gameState._lastNewsTime;
+        
+        // Her 30-60 saniye arası rastgele haber göster
+        if (timeSinceLastNews > 30000 && timeSinceLastNews < 60000 && !gameState._newsShown) {
+            this.showNews();
+            gameState._lastNewsTime = now;
+            gameState._newsShown = true;
+            
+            // 30 saniye sonra haber bayrağını sıfırla
+            setTimeout(() => {
+                gameState._newsShown = false;
+            }, 30000);
+        }
+    }
+};
+
+// Duygusal dönemeçler sistemi
+const emotionalSystem = {
+    // Flashback veritabanı
+    flashbacks: {
+        'start': [
+            {
+                id: 'childhood_memory',
+                title: 'Çocukluk Anısı',
+                content: 'Küçükken babamın fabrikada çalıştığını hatırlıyorum. Her akşam yorgun argın eve gelir, ellerindeki nasırları gösterirdi. "Oğlum," derdi, "biz eşit değiliz. Ama bir gün değişecek."',
+                emotion: 'nostalgia',
+                impact: { kisisel_vicdan: +3, halk_destegi: +2 }
+            }
+        ],
+        'devrim_esiginde': [
+            {
+                id: 'first_protest',
+                title: 'İlk Protesto',
+                content: 'İlk kez sokaklara çıktığım günü hatırlıyorum. Kalbim küt küt atıyordu. Elimdeki pankart titriyordu. Ama yanımda yüzlerce insan vardı. O gün anladım: yalnız değildim.',
+                emotion: 'courage',
+                impact: { halk_destegi: +5, isyan_riski: +3 }
+            }
+        ],
+        'perde2_baslangic': [
+            {
+                id: 'victory_memory',
+                title: 'Zafer Anısı',
+                content: 'Devrim başarılı olduğunda sokaklardaki sevinci hatırlıyorum. İnsanlar birbirini kucaklıyordu. O gün her şey mümkün görünüyordu.',
+                emotion: 'joy',
+                impact: { halk_destegi: +5, adalet_puani: +3 }
+            }
+        ],
+        'final_sınav': [
+            {
+                id: 'sacrifice_memory',
+                title: 'Fedakarlık Anısı',
+                content: 'Son karar anında, arkadaşlarımın gözlerindeki güveni hatırlıyorum. Bazen doğru olan şey, en zor olanıdır.',
+                emotion: 'sadness',
+                impact: { kisisel_vicdan: +5, adalet_puani: +3 }
+            }
+        ]
+    },
+    
+    // Flashback gösterme fonksiyonu
+    showFlashback: function(nodeId) {
+        const flashbacks = this.flashbacks[nodeId];
+        if (!flashbacks || flashbacks.length === 0) return;
+        
+        // Rastgele flashback seç
+        const randomFlashback = flashbacks[Math.floor(Math.random() * flashbacks.length)];
+        
+        // Flashback dialog'u oluştur
+        const flashbackDialog = document.createElement('div');
+        flashbackDialog.className = 'flashback-dialog';
+        flashbackDialog.innerHTML = `
+            <div class="flashback-content">
+                <div class="flashback-header">
+                    <div class="flashback-icon">💭</div>
+                    <div class="flashback-title">${randomFlashback.title}</div>
+                    <div class="flashback-close" onclick="closeFlashback()">✕</div>
+                </div>
+                <div class="flashback-body">
+                    <div class="flashback-text">${randomFlashback.content}</div>
+                </div>
+                <div class="flashback-footer">
+                    <div class="flashback-emotion">${this.getEmotionIcon(randomFlashback.emotion)}</div>
+                </div>
+            </div>
+        `;
+        
+        // Flashback efektlerini uygula
+        if (randomFlashback.impact) {
+            Object.entries(randomFlashback.impact).forEach(([stat, change]) => {
+                if (gameState[stat] !== undefined) {
+                    gameState[stat] = Math.max(0, Math.min(100, gameState[stat] + change));
+                }
+            });
+            updateStats();
+        }
+        
+        document.body.appendChild(flashbackDialog);
+        
+        // 8 saniye sonra otomatik kapat
+        setTimeout(() => {
+            if (flashbackDialog.parentElement) {
+                closeFlashback();
+            }
+        }, 8000);
+    },
+    
+    // Duygu ikonu getir
+    getEmotionIcon: function(emotion) {
+        const icons = {
+            'nostalgia': '🏠',
+            'courage': '⚔️',
+            'joy': '🎉',
+            'sadness': '💔'
+        };
+        return icons[emotion] || '💭';
+    }
+};
+
+// Müzik sistemi
+const musicSystem = {
+    audio: null,
+    isPlaying: false,
+    volume: 0.3, // Varsayılan ses seviyesi
+    
+    // Müzik başlat
+    init: function() {
+        this.audio = new Audio('Music/adg3.com_shrivelledDissonance.mp3');
+        this.audio.loop = true; // Sürekli döngü
+        this.audio.volume = this.volume;
+        
+        // Hata durumunda
+        this.audio.addEventListener('error', (e) => {
+            console.warn('Müzik yüklenemedi:', e);
+        });
+    },
+    
+    // Müzik çal
+    play: function() {
+        if (this.audio && !this.isPlaying) {
+            this.audio.play().then(() => {
+                this.isPlaying = true;
+                this.updateMusicButton();
+            }).catch(e => {
+                console.warn('Müzik çalınamadı:', e);
+            });
+        }
+    },
+    
+    // Müziği durdur
+    pause: function() {
+        if (this.audio && this.isPlaying) {
+            this.audio.pause();
+            this.isPlaying = false;
+            this.updateMusicButton();
+        }
+    },
+    
+    // Müziği aç/kapat
+    toggle: function() {
+        if (this.isPlaying) {
+            this.pause();
+        } else {
+            this.play();
+        }
+    },
+    
+    // Ses seviyesini ayarla
+    setVolume: function(volume) {
+        this.volume = Math.max(0, Math.min(1, volume));
+        if (this.audio) {
+            this.audio.volume = this.volume;
+        }
+        this.updateVolumeDisplay();
+    },
+    
+    // Ses seviyesini artır
+    increaseVolume: function() {
+        this.setVolume(this.volume + 0.1);
+    },
+    
+    // Ses seviyesini azalt
+    decreaseVolume: function() {
+        this.setVolume(this.volume - 0.1);
+    },
+    
+    // Müzik butonunu güncelle
+    updateMusicButton: function() {
+        const musicBtn = document.getElementById('music-toggle');
+        if (musicBtn) {
+            musicBtn.innerHTML = this.isPlaying ? '🔊' : '🔇';
+            musicBtn.title = this.isPlaying ? 'Müziği Durdur' : 'Müziği Başlat';
+        }
+    },
+    
+    // Ses seviyesi göstergesini güncelle
+    updateVolumeDisplay: function() {
+        const volumeDisplay = document.getElementById('volume-display');
+        if (volumeDisplay) {
+            const percentage = Math.round(this.volume * 100);
+            volumeDisplay.textContent = `${percentage}%`;
+        }
     }
 };
 
 let storyData = null;
 let currentNode = 'start';
-
 let currentTypingAnimation = null; // Mevcut animasyonu tutan değişken
+let typewriterInterval = null; // Animasyon ID'sini global olarak tutmak için
+let typewriterSkip = false;
+let isChoiceMade = false; // Bir seçim yapılıp yapılmadığını kontrol eden bayrak
 
-// Hikaye verilerini yükle - UTF-8 GÜVENLİ VERSİYON
+// Hikaye verilerini yükle
 async function loadStoryData() {
     try {
         const response = await fetch('storyData.json', {
@@ -73,29 +406,113 @@ function changeBackground(imagePath) {
     }
 }
 
-// Stat güncelle
+// Geliştirilmiş Stat Güncelleme Sistemi
 function updateStats() {
     const stats = [
-        { id: 'justice', value: gameState.adalet_puani, max: 100 },
-        { id: 'power', value: gameState.guc_puani, max: 100 },
-        { id: 'support', value: gameState.halk_destegi, max: 100 },
-        { id: 'satisfaction', value: gameState.halk_memnuniyeti, max: 100 },
-        { id: 'rebellion', value: gameState.isyan_riski, max: 100 },
-        { id: 'treasury', value: gameState.hazine, max: 200 },
-        { id: 'conscience', value: gameState.kisisel_vicdan, max: 100 }
+        { id: 'justice', value: gameState.adalet_puani, max: 100, name: 'Adalet' },
+        { id: 'power', value: gameState.guc_puani, max: 100, name: 'Güç' },
+        { id: 'support', value: gameState.halk_destegi, max: 100, name: 'Halk Desteği' },
+        { id: 'satisfaction', value: gameState.halk_memnuniyeti, max: 100, name: 'Memnuniyet' },
+        { id: 'rebellion', value: gameState.isyan_riski, max: 100, name: 'İsyan Riski' },
+        { id: 'treasury', value: gameState.hazine, max: 200, name: 'Hazine' },
+        { id: 'conscience', value: gameState.kisisel_vicdan, max: 100, name: 'Vicdan' }
     ];
 
     stats.forEach(stat => {
         const fill = document.getElementById(`${stat.id}-fill`);
         const value = document.getElementById(`${stat.id}-value`);
+        const row = document.getElementById(`${stat.id}-row`);
         
         if (fill && value) {
-            const percentage = Math.min((stat.value / stat.max) * 100, 100);
+            const oldValue = parseInt(value.textContent) || 0;
+            const newValue = stat.value;
+            const percentage = Math.min((newValue / stat.max) * 100, 100);
+            
+            // Animasyonlu güncelleme
             fill.style.width = `${percentage}%`;
-            value.textContent = stat.value;
+            value.textContent = newValue;
+            
+            // Değişim animasyonu
+            if (oldValue !== newValue) {
+                animateStatChange(stat.id, oldValue, newValue);
+            }
+            
+            // Kritik seviye kontrolü
+            checkCriticalLevel(stat.id, newValue, stat.max);
         }
     });
 
+    // Özel efektler
+    checkSpecialEffects();
+}
+
+// Puan değişim animasyonu
+function animateStatChange(statId, oldValue, newValue) {
+    const valueElement = document.getElementById(`${statId}-value`);
+    const fillElement = document.getElementById(`${statId}-fill`);
+    const rowElement = document.getElementById(`${statId}-row`);
+    
+    if (!valueElement || !fillElement || !rowElement) return;
+    
+    // Değişim göstergesi
+    const change = newValue - oldValue;
+    const changeText = change > 0 ? `+${change}` : `${change}`;
+    const changeClass = change > 0 ? 'positive' : 'negative';
+    
+    // Mevcut göstergeleri temizle
+    const existingIndicator = rowElement.querySelector('.stat-change-indicator');
+    if (existingIndicator) existingIndicator.remove();
+    
+    // Yeni gösterge oluştur
+    const indicator = document.createElement('div');
+    indicator.className = `stat-change-indicator ${changeClass}`;
+    indicator.textContent = changeText;
+    rowElement.appendChild(indicator);
+    
+    // Animasyon başlat
+    setTimeout(() => {
+        indicator.classList.add('show');
+        valueElement.classList.add('changed');
+        fillElement.classList.add('changed');
+        
+        // Animasyonları temizle
+        setTimeout(() => {
+            valueElement.classList.remove('changed');
+            fillElement.classList.remove('changed');
+            indicator.classList.remove('show');
+            setTimeout(() => indicator.remove(), 500);
+        }, 800);
+    }, 100);
+}
+
+// Kritik seviye kontrolü
+function checkCriticalLevel(statId, value, max) {
+    const rowElement = document.getElementById(`${statId}-row`);
+    if (!rowElement) return;
+    
+    const percentage = (value / max) * 100;
+    
+    // Kritik seviyeleri temizle
+    rowElement.classList.remove('critical', 'danger');
+    
+    // Yeni kritik seviyeleri uygula
+    if (statId === 'rebellion' && percentage >= 80) {
+        rowElement.classList.add('critical');
+    } else if (statId === 'rebellion' && percentage >= 60) {
+        rowElement.classList.add('danger');
+    } else if (statId === 'satisfaction' && percentage <= 20) {
+        rowElement.classList.add('critical');
+    } else if (statId === 'satisfaction' && percentage <= 40) {
+        rowElement.classList.add('danger');
+    } else if (statId === 'treasury' && percentage <= 15) {
+        rowElement.classList.add('critical');
+    } else if (statId === 'treasury' && percentage <= 30) {
+        rowElement.classList.add('danger');
+    }
+}
+
+// Özel efektler
+function checkSpecialEffects() {
     // İsyan riski 70+ ise sallanma efekti
     if (gameState.isyan_riski >= 70) {
         document.body.classList.add('shake');
@@ -103,6 +520,46 @@ function updateStats() {
             document.body.classList.remove('shake');
         }, 500);
     }
+    
+    // Hazine kritik seviyede ise uyarı (sadece büyük düşüşlerde)
+    if (gameState.hazine <= 30 && gameState.hazine < gameState._lastHazine - 10) {
+        showWarning('Hazine kritik seviyede!');
+    }
+    
+    // Halk memnuniyeti çok düşükse uyarı (sadece büyük düşüşlerde)
+    if (gameState.halk_memnuniyeti <= 20 && gameState.halk_memnuniyeti < gameState._lastHalkMemnuniyeti - 15) {
+        showWarning('Halk memnuniyeti çok düşük!');
+    }
+    
+    // Son değerleri güncelle
+    gameState._lastHazine = gameState.hazine;
+    gameState._lastHalkMemnuniyeti = gameState.halk_memnuniyeti;
+}
+
+// Uyarı gösterme
+function showWarning(message) {
+    const warning = document.createElement('div');
+    warning.className = 'warning-message';
+    warning.textContent = message;
+    warning.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(225, 112, 85, 0.9);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        font-weight: bold;
+        z-index: 10000;
+        animation: warningPulse 2s ease-in-out;
+    `;
+    
+    document.body.appendChild(warning);
+    
+    setTimeout(() => {
+        warning.remove();
+    }, 3000);
 }
 
 // İlişkiler panelini güncelle
@@ -111,110 +568,225 @@ function updateRelationshipsPanel() {
     if (!panel) return;
     
     const characters = gameState.anahtar_karakterler;
-    let html = '<h3>Karakterler</h3>';
+    let html = '<h3>Karakter İlişkileri</h3>';
     
-    for (const [name, data] of Object.entries(characters)) {
+    Object.entries(characters).forEach(([name, data]) => {
         const statusClass = data.durum === 'güvende' ? 'status-safe' : 
-                          data.durum === 'tehlikede' ? 'status-angry' : 
-                          data.durum === 'hayatta' ? 'status-loyal' : 'status-enemy';
-        
-        const relationClass = data.iliski === 'sadık' ? 'status-loyal' : 
-                            data.iliski === 'düşman' ? 'status-enemy' : 'status-angry';
+                           data.durum === 'hayatta' ? 'status-loyal' : 'status-angry';
         
         html += `
             <div class="character-card">
                 <div class="character-name">${name.charAt(0).toUpperCase() + name.slice(1)}</div>
-                <div class="character-status ${statusClass}">Durum: ${data.durum}</div>
-                <div class="character-status ${relationClass}">İlişki: ${data.iliski}</div>
+                <div class="character-status ${statusClass}">${data.durum}</div>
             </div>
         `;
-    }
+    });
     
     panel.innerHTML = html;
 }
 
-// Metin yazma efekti - ATOMİK VERSİYON
+// Typewriter efekti
+/**
+ * Metni "typewriter" efektiyle güvenli bir şekilde ekrana yazar.
+ * 1. Önceki animasyonları iptal ederek render çakışmasını engeller.
+ * 2. Newline karakterlerini (\n) HTML satır sonu (<br>) etiketlerine dönüştürür.
+ * 3. Animasyonu atlama (skip) mantığını içerir.
+ */
 function typeWriter(text, onComplete) {
-    // 1. Mevcut animasyon varsa, İPTAL ET
+    const storyTextElement = document.getElementById('story-text');
+    if (!storyTextElement) return;
+
+    // --- EN KRİTİK ADIM: MEVCUT ANİMASYONU HER ZAMAN DURDUR ---
+    if (typewriterInterval) {
+        clearInterval(typewriterInterval);
+    }
     if (currentTypingAnimation) {
         clearTimeout(currentTypingAnimation);
         currentTypingAnimation = null;
     }
-
-    const storyTextElement = document.getElementById('story-text');
-    storyTextElement.innerHTML = ''; // Önce metin alanını TEMİZLE
     
-    // Skip butonu ekle
-    let skipBtn = document.createElement('button');
-    skipBtn.textContent = 'SKIP';
-    skipBtn.className = 'skip-btn';
-    skipBtn.onclick = function() {
-        // Skip butonuna basıldığında da animasyonu temizle
-        if (currentTypingAnimation) {
-            clearTimeout(currentTypingAnimation);
-            currentTypingAnimation = null;
-        }
-        storyTextElement.innerHTML = text;
-        skipBtn.remove();
-        if (onComplete) onComplete();
-    };
-    document.body.appendChild(skipBtn);
+    // Metni HTML için formatla
+    const formattedText = text.replace(/\n/g, '<br>');
+    storyTextElement.innerHTML = ''; // İçeriği temizle
+    typewriterSkip = false;
     
     let i = 0;
-    function type() {
-        if (i < text.length) {
-            storyTextElement.innerHTML += text.charAt(i);
-            i++;
-            // 2. Yeni animasyonun ID'sini değişkene ata
-            currentTypingAnimation = setTimeout(type, 30);
+    typewriterInterval = setInterval(() => {
+        if (typewriterSkip) {
+            clearInterval(typewriterInterval);
+            storyTextElement.innerHTML = formattedText;
+            if (onComplete) onComplete();
+            return;
+        }
+
+        if (i < formattedText.length) {
+            // '<br>' etiketini tek seferde atlamak için
+            if (formattedText.substring(i, i + 4) === '<br>') {
+                storyTextElement.innerHTML += '<br>';
+                i += 4;
+            } else {
+                storyTextElement.innerHTML += formattedText[i];
+                i++;
+            }
         } else {
-            currentTypingAnimation = null; // Animasyon bitti, bayrağı temizle
-            skipBtn.remove();
+            clearInterval(typewriterInterval);
             if (onComplete) onComplete();
         }
-    }
-    type();
+    }, 25); // Yazma hızı
 }
 
 // Seçenekleri göster
 function showChoices(choices) {
-    const choicesElement = document.getElementById('choices');
-    choicesElement.innerHTML = '';
+    const choicesContainer = document.getElementById('choices');
+    if (!choicesContainer) return;
+    
+    choicesContainer.innerHTML = '';
     
     choices.forEach((choice, index) => {
         const button = document.createElement('button');
         button.className = 'choice-button';
         button.textContent = choice.text;
-        button.addEventListener('click', () => selectChoice(choice));
-        choicesElement.appendChild(button);
+        button.onclick = () => selectChoice(choice);
+        button.setAttribute('tabindex', index + 1);
+        choicesContainer.appendChild(button);
     });
+}
+
+// Seçim onay dialog'u
+function showChoiceConfirmation(choice) {
+    const effects = calculateChoiceEffects(choice);
+    
+    const dialog = document.createElement('div');
+    dialog.className = 'confirmation-dialog';
+    dialog.innerHTML = `
+        <div class="confirmation-content">
+            <div class="confirmation-header">
+                <h3>Seçim Onayı</h3>
+                <div class="confirmation-close" onclick="closeConfirmation()">✕</div>
+            </div>
+            <div class="confirmation-body">
+                <p><strong>Seçiminiz:</strong> ${choice.text}</p>
+                <div class="effects-preview">
+                    <h4>Beklenen Etkiler:</h4>
+                    ${effects.map(effect => `
+                        <div class="effect-item">
+                            <span class="effect-stat">${effect.stat}</span>
+                            <span class="effect-change ${effect.change > 0 ? 'positive' : 'negative'}">
+                                ${effect.change > 0 ? '+' : ''}${effect.change}
+                            </span>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="confirmation-warning">
+                    <p>⚠️ Bu seçim geri alınamaz!</p>
+                </div>
+            </div>
+            <div class="confirmation-actions">
+                <button class="confirm-btn" onclick="confirmChoice('${choice.text}')">Onayla</button>
+                <button class="cancel-btn" onclick="closeConfirmation()">İptal</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(dialog);
+}
+
+// Seçim etkilerini hesapla
+function calculateChoiceEffects(choice) {
+    const effects = [];
+    
+    if (choice.set) {
+        Object.entries(choice.set).forEach(([stat, change]) => {
+            const changeValue = parseInt(change.replace('it ', ''));
+            effects.push({
+                stat: getStatName(stat),
+                change: changeValue
+            });
+        });
+    }
+    
+    return effects;
+}
+
+// Stat adını getir
+function getStatName(statKey) {
+    const statNames = {
+        'adalet_puani': 'Adalet',
+        'guc_puani': 'Güç',
+        'halk_destegi': 'Halk Desteği',
+        'halk_memnuniyeti': 'Memnuniyet',
+        'isyan_riski': 'İsyan Riski',
+        'hazine': 'Hazine',
+        'kisisel_vicdan': 'Vicdan'
+    };
+    return statNames[statKey] || statKey;
+}
+
+// Onay dialog'unu kapat
+function closeConfirmation() {
+    const dialog = document.querySelector('.confirmation-dialog');
+    if (dialog) {
+        dialog.remove();
+    }
+}
+
+// Seçimi onayla
+function confirmChoice(choiceText) {
+    const choices = document.querySelectorAll('.choice-button');
+    for (let choice of choices) {
+        if (choice.textContent === choiceText) {
+            selectChoice({ text: choiceText });
+            break;
+        }
+    }
+    closeConfirmation();
 }
 
 // Seçim yap
 function selectChoice(choice) {
-    // Stat güncellemeleri
+    // Eğer zaten bir seçim yapıldıysa ve animasyon sürüyorsa, ikinci tıklamayı engelle
+    if (isChoiceMade) return;
+    isChoiceMade = true;
+
+    // Seçim etkilerini uygula
     if (choice.set) {
-        Object.entries(choice.set).forEach(([key, value]) => {
-            if (typeof value === 'string' && value.startsWith('it ')) {
-                const change = parseInt(value.substring(3));
-                // Statlar 0-100 arası, mantıksız artış/azalış engelle
-                if (["adalet", "guc", "halk_destegi", "halk_memnuniyeti", "isyan_riski", "kisisel_vicdan", "vicdan"].includes(key)) {
-                    gameState[key] = Math.max(0, Math.min(100, (gameState[key] || 0) + change));
-                } else if (key === "hazine") {
-                    gameState[key] = Math.max(0, Math.min(200, (gameState[key] || 0) + change));
+        Object.entries(choice.set).forEach(([stat, change]) => {
+            const changeValue = parseInt(change.replace('it ', ''));
+            if (gameState[stat] !== undefined) {
+                // Stat sınırlandırması - kritik düzeltme
+                const statKeys = ["adalet_puani", "guc_puani", "halk_destegi", "halk_memnuniyeti", "isyan_riski", "kisisel_vicdan"];
+                if (statKeys.includes(stat)) {
+                    gameState[stat] = Math.max(0, Math.min(100, gameState[stat] + changeValue));
+                } else if (stat === "hazine") {
+                    gameState[stat] = Math.max(0, Math.min(200, gameState[stat] + changeValue));
                 } else {
-                    gameState[key] = (gameState[key] || 0) + change;
+                    gameState[stat] = gameState[stat] + changeValue;
                 }
-            } else {
-                gameState[key] = value;
             }
         });
+        updateStats();
     }
-    updateStats();
+    
+    // Perde değişikliği kontrolü
+    if (choice.set && choice.set.perde) {
+        gameState.perde = choice.set.perde;
+        // Perde değiştiğinde haber sistemini sıfırla
+        gameState._lastNewsTime = 0;
+        gameState._newsShown = false;
+    }
+    
+    // İlişkiler panelini güncelle
     updateRelationshipsPanel();
+    
+    // Sonraki düğüme geç
     if (choice.nextNode) {
         showNode(choice.nextNode);
     }
+
+    // Animasyon tamamlandıktan sonra bayrağı sıfırla
+    setTimeout(() => {
+        isChoiceMade = false;
+    }, 1000); // 1 saniyelik bekleme süresi
 }
 
 // Düğümü göster
@@ -227,6 +799,10 @@ function showNode(nodeId) {
     
     const node = storyData.storyNodes[nodeId];
     currentNode = nodeId;
+    
+    // Debug bilgisi güncelle
+    const debugNode = document.getElementById('current-node');
+    if (debugNode) debugNode.textContent = nodeId;
     
     // Arka plan değiştir
     if (node.background) {
@@ -245,6 +821,18 @@ function showNode(nodeId) {
         if (node.choices) {
             showChoices(node.choices);
         }
+        
+        // Haber kontrolü - sahne geçişlerinde haber göster
+        setTimeout(() => {
+            newsSystem.checkNews();
+        }, 2000); // 2 saniye sonra haber kontrolü
+        
+        // Flashback kontrolü - önemli sahnelerde flashback göster
+        setTimeout(() => {
+            if (emotionalSystem && emotionalSystem.showFlashback) {
+                emotionalSystem.showFlashback(nodeId);
+            }
+        }, 4000); // 4 saniye sonra flashback kontrolü
     });
 }
 
@@ -254,7 +842,201 @@ function startGame() {
     const gameStatus = document.getElementById('game-status');
     if (gameStatus) gameStatus.textContent = 'Çalışıyor ✓';
     
+    // Müziği kullanıcı etkileşimi sonrası başlat
+    musicSystem.play();
+    
     showNode('start');
+}
+
+// Erişilebilirlik kontrolleri
+function toggleAccessibilityControls() {
+    const controls = document.getElementById('accessibility-controls');
+    controls.classList.toggle('show');
+}
+
+function toggleTextSize() {
+    const body = document.body;
+    const currentSize = body.className.match(/text-size-(\w+)/);
+    
+    if (currentSize) {
+        body.className = body.className.replace(/text-size-\w+/, '');
+    }
+    
+    const sizes = ['small', 'medium', 'large', 'extra-large'];
+    const currentIndex = sizes.findIndex(size => body.className.includes(`text-size-${size}`));
+    const nextIndex = (currentIndex + 1) % sizes.length;
+    
+    body.classList.add(`text-size-${sizes[nextIndex]}`);
+    
+    // Kullanıcı tercihini kaydet
+    localStorage.setItem('textSize', sizes[nextIndex]);
+}
+
+function toggleColorblindMode() {
+    const body = document.body;
+    body.classList.toggle('colorblind-friendly');
+    
+    // Kullanıcı tercihini kaydet
+    localStorage.setItem('colorblindMode', body.classList.contains('colorblind-friendly'));
+}
+
+function toggleHighContrast() {
+    const body = document.body;
+    body.classList.toggle('high-contrast');
+    
+    // Kullanıcı tercihini kaydet
+    localStorage.setItem('highContrast', body.classList.contains('high-contrast'));
+}
+
+function toggleReducedMotion() {
+    const body = document.body;
+    body.classList.toggle('reduced-motion');
+    
+    // Kullanıcı tercihini kaydet
+    localStorage.setItem('reducedMotion', body.classList.contains('reduced-motion'));
+}
+
+// Erişilebilirlik tercihlerini yükle
+function loadAccessibilityPreferences() {
+    const textSize = localStorage.getItem('textSize');
+    const colorblindMode = localStorage.getItem('colorblindMode') === 'true';
+    const highContrast = localStorage.getItem('highContrast') === 'true';
+    const reducedMotion = localStorage.getItem('reducedMotion') === 'true';
+    
+    const body = document.body;
+    
+    if (textSize) {
+        body.classList.add(`text-size-${textSize}`);
+    }
+    
+    if (colorblindMode) {
+        body.classList.add('colorblind-friendly');
+    }
+    
+    if (highContrast) {
+        body.classList.add('high-contrast');
+    }
+    
+    if (reducedMotion) {
+        body.classList.add('reduced-motion');
+    }
+}
+
+// Mobil dokunmatik optimizasyonu
+function setupMobileOptimization() {
+    // Dokunmatik cihaz kontrolü
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        document.body.classList.add('touch-device');
+    }
+    
+    // Viewport ayarları
+    const viewport = document.querySelector('meta[name=viewport]');
+    if (viewport) {
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes');
+    }
+}
+
+// Klavye navigasyonu
+function setupKeyboardNavigation() {
+    document.addEventListener('keydown', function(e) {
+        // Tab ile seçenekler arası geçiş
+        if (e.key === 'Tab') {
+            const choices = document.querySelectorAll('.choice-button');
+            const currentIndex = Array.from(choices).findIndex(choice => choice === document.activeElement);
+            
+            if (e.shiftKey) {
+                // Geriye doğru
+                const prevIndex = currentIndex > 0 ? currentIndex - 1 : choices.length - 1;
+                choices[prevIndex].focus();
+            } else {
+                // İleriye doğru
+                const nextIndex = currentIndex < choices.length - 1 ? currentIndex + 1 : 0;
+                choices[nextIndex].focus();
+            }
+            e.preventDefault();
+        }
+        
+        // Enter ile seçim
+        if (e.key === 'Enter' && document.activeElement.classList.contains('choice-button')) {
+            document.activeElement.click();
+        }
+        
+        // Escape ile dialog kapatma
+        if (e.key === 'Escape') {
+            const dialog = document.querySelector('.confirmation-dialog');
+            if (dialog) {
+                closeConfirmation();
+            }
+        }
+    });
+}
+
+// Flashback'i kapat
+function closeFlashback() {
+    const dialog = document.querySelector('.flashback-dialog');
+    if (dialog) {
+        dialog.classList.add('removing');
+        setTimeout(() => {
+            if (dialog.parentElement) {
+                dialog.remove();
+            }
+        }, 300);
+    }
+}
+
+// Oyun kurallarını göster
+function showRules() {
+    const modal = document.getElementById('rules-modal');
+    if (modal) {
+        modal.classList.add('show');
+        modal.style.display = 'flex';
+        console.log('Rules modal opened');
+    } else {
+        console.error('Rules modal not found');
+    }
+}
+
+// Oyun kurallarını kapat
+function closeRules() {
+    const modal = document.getElementById('rules-modal');
+    if (modal) {
+        modal.classList.remove('show');
+        modal.style.display = 'none';
+        console.log('Rules modal closed');
+    } else {
+        console.error('Rules modal not found');
+    }
+}
+
+// Animasyonu atla
+function skipAnimation() {
+    typewriterSkip = true;
+    
+    if (typewriterInterval) {
+        clearInterval(typewriterInterval);
+    }
+    if (currentTypingAnimation) {
+        clearTimeout(currentTypingAnimation);
+        currentTypingAnimation = null;
+    }
+    
+    const storyText = document.getElementById('story-text');
+    if (storyText && currentNode) {
+        const node = storyData.storyNodes[currentNode];
+        if (node) {
+            let text = node.text;
+            Object.entries(gameState).forEach(([key, value]) => {
+                text = text.replace(new RegExp(`{${key}}`, 'g'), value);
+            });
+            // Metni HTML için formatla
+            const formattedText = text.replace(/\n/g, '<br>');
+            storyText.innerHTML = formattedText;
+            
+            if (node.choices) {
+                showChoices(node.choices);
+            }
+        }
+    }
 }
 
 // Event listener'lar
@@ -263,6 +1045,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const debugInfo = document.getElementById('debug-info');
     if (debugInfo) debugInfo.style.display = 'block';
     
+    // Erişilebilirlik tercihlerini yükle
+    loadAccessibilityPreferences();
+    
+    // Mobil optimizasyonu kur
+    setupMobileOptimization();
+    
+    // Klavye navigasyonu kur
+    setupKeyboardNavigation();
+    
+    // Müzik sistemini başlat
+    musicSystem.init();
+    
     // F12 ile debug panelini gizle/göster
     document.addEventListener('keydown', function(e) {
         if (e.key === 'F12') {
@@ -270,77 +1064,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (debugInfo) debugInfo.style.display = debugInfo.style.display === 'none' ? 'block' : 'none';
         }
     });
-    document.getElementById('relationships-toggle').addEventListener('click', () => {
-        const panel = document.getElementById('relationships-panel');
-        panel.classList.toggle('show');
-        if (panel.classList.contains('show')) {
-            updateRelationshipsPanel();
-        }
-    });
-
-    document.getElementById('leader-toggle').addEventListener('click', () => {
-        const board = document.getElementById('leader-board');
-        board.classList.toggle('hidden');
-    });
-
-    // Oyun kuralları modal event listener'ları
-    document.getElementById('rules-toggle').addEventListener('click', () => {
-        const modal = document.getElementById('rules-modal');
-        modal.style.display = 'flex';
-    });
-
-    document.getElementById('rules-close-btn').addEventListener('click', () => {
-        const modal = document.getElementById('rules-modal');
-        modal.style.display = 'none';
-    });
-
-    // Modal dışına tıklayınca kapat
-    document.getElementById('rules-modal').addEventListener('click', (e) => {
-        if (e.target.id === 'rules-modal') {
-            e.target.style.display = 'none';
-        }
-    });
-
-    // Açılış modalı - KRİTİK ASENKRON HATA DÜZELTİLDİ
-    document.getElementById('welcome-start-btn').onclick = async function() {
-        let name = prompt('Adınızı giriniz:') || 'İsimsiz';
-        gameState.karakter_adi = name;
-        let ip = '', country = '', city = '';
-        
-        try {
-            const res = await fetch('https://ipapi.co/json/');
-            const data = await res.json();
-            ip = data.ip || '';
-            country = data.country_name || '';
-            city = data.city || '';
-        } catch(e) {
-            console.warn('IP bilgisi alınamadı:', e);
-        }
-        
-        const browser = navigator.userAgent;
-        const lang = navigator.language;
-        const screenRes = window.screen.width + 'x' + window.screen.height;
-        const now = new Date().toISOString();
-        
-        let arr = JSON.parse(localStorage.getItem('equals_userdata')||'[]');
-        arr.push({name, ip, country, city, browser, lang, screenRes, now});
-        localStorage.setItem('equals_userdata', JSON.stringify(arr));
-        
-        try {
-            await loadStoryData(); // Verinin yüklenmesini BEKLE
-            document.getElementById('welcome-modal').style.display = 'none';
-            startGame(); // Veri yüklendikten SONRA oyunu başlat
-        } catch (error) {
-            console.error("KRİTİK HATA: Oyun başlatılamadı.", error);
-            document.getElementById('story-text').innerText = "Oyun verileri yüklenemedi. Lütfen sayfayı yenileyin veya yöneticiyle iletişime geçin.";
-        }
-    };
-
+    
     // Oyunu başlat
     loadStoryData().then(() => {
-        updateStats();
-        updateRelationshipsPanel();
+        startGame();
     }).catch(error => {
         console.error('Oyun başlatılamadı:', error);
+        document.getElementById('story-text').innerText = "Hata: Oyun yüklenemedi. Lütfen sayfayı yenileyin.";
     });
 }); 
