@@ -184,18 +184,104 @@ const emotionalSystem = {
                 content: 'Küçükken babamın fabrikada çalıştığını hatırlıyorum. Her akşam yorgun argın eve gelir, ellerindeki nasırları gösterirdi. "Oğlum," derdi, "biz eşit değiliz. Ama bir gün değişecek."',
                 emotion: 'nostalgia',
                 impact: { kisisel_vicdan: +3, halk_destegi: +2 }
-            }
-        ],
-        'devrim_esiginde': [
+            },
             {
-                id: 'first_protest',
-                title: 'İlk Protesto',
-                content: 'İlk kez sokaklara çıktığım günü hatırlıyorum. Kalbim küt küt atıyordu. Elimdeki pankart titriyordu. Ama yanımda yüzlerce insan vardı. O gün anladım: yalnız değildim.',
-                emotion: 'courage',
-                impact: { halk_destegi: +5, isyan_riski: +3 }
+                id: 'school_memory',
+                title: 'Okul Anısı',
+                content: 'İlkokulda öğretmenimiz bize "herkes eşittir" diye öğretirdi. Ama aynı sınıfta, zengin çocukların daha iyi kalemleri, daha güzel çantaları vardı. O zaman anladım: eşitlik sadece kelimelerdeydi.',
+                emotion: 'realization',
+                impact: { adalet_puani: +2, kisisel_vicdan: +1 }
+            },
+            {
+                id: 'first_job_memory',
+                title: 'İlk İş Anısı',
+                content: 'İlk işime başladığım gün, patronum bana "sen de bizim ailemizden sayılırsın" dedi. Ama aynı gün, temizlikçi kadına "sen buraya ait değilsin" diye bağırdı. O gün anladım: aile sadece parayla oluyordu.',
+                emotion: 'anger',
+                impact: { adalet_puani: +3, isyan_riski: +2 }
             }
         ],
-        'perde2_baslangic': [
+        'ilk_suphe': [
+            {
+                id: 'friend_fired',
+                title: 'Arkadaşımın İşten Çıkarılması',
+                content: 'Ahmet\'in işten çıkarıldığı gün, ofiste herkes sessizdi. Kimse bir şey söylemiyordu. Ama hepimiz biliyorduk: Ahmet en çalışkanımızdı. O gün anladım: adalet yoktu, sadece güç vardı.',
+                emotion: 'frustration',
+                impact: { adalet_puani: +4, halk_destegi: +3 }
+            }
+        ],
+        'gizli_hiyerarsi': [
+            {
+                id: 'underground_meeting',
+                title: 'Yeraltı Toplantısı',
+                content: 'İlk kez yeraltı toplantısına katıldığımda, odada sadece mum ışığı vardı. Herkesin yüzünde aynı ifade: kararlılık. O gün anladım: değişim yakındı.',
+                emotion: 'hope',
+                impact: { halk_destegi: +4, isyan_riski: +2 }
+            }
+        ],
+        'yanilsama_catlagi': [
+            {
+                id: 'system_lies',
+                title: 'Sistemin Yalanları',
+                content: 'Sistemin yalanlarını gördüğüm gün, her şey netleşti. Medya, eğitim, iş hayatı... Hepsi aynı yalanı tekrarlıyordu: "Herkes eşit." Ama gerçekte kimse eşit değildi.',
+                emotion: 'enlightenment',
+                impact: { adalet_puani: +5, kisisel_vicdan: +3 }
+            }
+        ],
+        'ilk_direnis': [
+            {
+                id: 'first_action',
+                title: 'İlk Eylem',
+                content: 'İlk eylemimizde, sokaklarda yüzlerce insan vardı. Hepimiz aynı şarkıyı söylüyorduk. O gün anladım: halk uyanıyordu. Değişim artık durdurulamazdı.',
+                emotion: 'unity',
+                impact: { halk_destegi: +6, isyan_riski: +4 }
+            }
+        ],
+        'yerel_orgutlenme': [
+            {
+                id: 'community_trust',
+                title: 'Topluluk Güveni',
+                content: 'Mahallede insanlar bana güvenmeye başladığında, sorumluluğun ağırlığını hissettim. Her kararım, onların hayatını etkiliyordu. O gün anladım: liderlik, hizmet etmekti.',
+                emotion: 'responsibility',
+                impact: { halk_destegi: +5, kisisel_vicdan: +2 }
+            }
+        ],
+        'devlet_tepkisi': [
+            {
+                id: 'state_repression',
+                title: 'Devlet Baskısı',
+                content: 'Devlet güçleri mahallemizi ablukaya aldığında, korku her yerdeydi. Ama halk pes etmedi. Her evden bir ses çıkıyordu. O gün anladım: baskı, direnişi artırıyordu.',
+                emotion: 'defiance',
+                impact: { isyan_riski: +5, halk_destegi: +3 }
+            }
+        ],
+        'halk_uyanisi': [
+            {
+                id: 'people_awakening',
+                title: 'Halkın Uyanışı',
+                content: 'Diğer mahallelerde de direniş başladığında, şehrin her yerinden sesler geliyordu. Halk uyanıyordu. O gün anladım: devrim, artık kaçınılmazdı.',
+                emotion: 'inspiration',
+                impact: { halk_destegi: +7, isyan_riski: +5 }
+            }
+        ],
+        'son_hazirlik': [
+            {
+                id: 'revolution_eve',
+                title: 'Devrim Arifesi',
+                content: 'Devrim arifesinde, herkes sessizdi. Ama bu sessizlik, fırtına öncesi sessizlikti. O gün anladım: tarih, bizimle birlikte yazılacaktı.',
+                emotion: 'determination',
+                impact: { guc_puani: +4, halk_destegi: +3 }
+            }
+        ],
+        'devrim_baslangici': [
+            {
+                id: 'revolution_start',
+                title: 'Devrimin Başlangıcı',
+                content: 'Devrim başladığında, sokaklar insanlarla doluydu. Herkes aynı hedef için savaşıyordu. O gün anladım: özgürlük, bedel isterdi.',
+                emotion: 'revolution',
+                impact: { halk_destegi: +8, isyan_riski: +6 }
+            }
+        ],
+        'faz2_baslangic': [
             {
                 id: 'victory_memory',
                 title: 'Zafer Anısı',
@@ -671,7 +757,39 @@ function showChoices(choices) {
     
     choicesContainer.innerHTML = '';
     
-    choices.forEach((choice, index) => {
+    // Koşullu seçenekleri filtrele
+    const validChoices = choices.filter(choice => {
+        if (!choice.if) return true; // Koşul yoksa göster
+        
+        // Koşul değerlendirmesi
+        const condition = choice.if;
+        
+        // Basit koşul değerlendirmesi
+        if (condition.includes('>')) {
+            const [stat, value] = condition.split('>').map(s => s.trim());
+            return gameState[stat] > parseInt(value);
+        } else if (condition.includes('<')) {
+            const [stat, value] = condition.split('<').map(s => s.trim());
+            return gameState[stat] < parseInt(value);
+        } else if (condition.includes('&&')) {
+            // Çoklu koşul
+            const conditions = condition.split('&&').map(c => c.trim());
+            return conditions.every(cond => {
+                if (cond.includes('>')) {
+                    const [stat, value] = cond.split('>').map(s => s.trim());
+                    return gameState[stat] > parseInt(value);
+                } else if (cond.includes('<')) {
+                    const [stat, value] = cond.split('<').map(s => s.trim());
+                    return gameState[stat] < parseInt(value);
+                }
+                return false;
+            });
+        }
+        
+        return true; // Bilinmeyen koşul durumunda göster
+    });
+    
+    validChoices.forEach((choice, index) => {
         const button = document.createElement('button');
         button.className = 'choice-button';
         button.textContent = choice.text;

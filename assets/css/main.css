@@ -1139,7 +1139,7 @@ body.high-contrast {
 }
 
 .rules-modal.show {
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: center;
 }

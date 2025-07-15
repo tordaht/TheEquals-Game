@@ -23,7 +23,7 @@
     },
     "ilk_suphe": {
       "text": "İşyerinde arkadaşın Ahmet işten çıkarıldı.\n\nYönetici: 'Ekonomik kriz, tasarruf gerekli...'\nAma aynı gün yöneticinin yeni model bir araç aldığını görüyorsun.\n\nBu adalet mi?",
-      "background": "BGs/tordah_Indoor_office_hallway_subdued_lighting_solitary_figure_28bd36ad-c4d4-4e83-af39-b06159512f2f_3.png",
+      "background": "BGs/tordah_Modern_office_hallway_with_bright_lighting_clean_corpo_a19ba994-594b-4dc0-8729-db892e4287d5_1.png",
       "choices": [
         {
           "text": "Sessizce izle",
@@ -44,7 +44,7 @@
     },
     "gizli_hiyerarsi": {
       "text": "Olaydan birkaç gün sonra, şehrin derinliklerinde gizli bir toplantıya davet edildin.\n\nÜç farklı direniş grubu var:\n- Akademisyenler (Bilgi ve strateji ile sistemi içeriden çökertmek istiyorlar)\n- Askerler (Disiplinli bir güçle yönetimi devirmek istiyorlar)\n- Sendikacılar (Halkın gücüyle sistemi değiştirmek istiyorlar)\n\nHangi gruba katılacaksın?",
-      "background": "BGs/tordah_Secret_underground_meeting_room_dimly_lit_small_group__2a2a3ec5-0dd8-4ec4-87f3-18ce9de3249a_1.png",
+      "background": "BGs/tordah_Underground_meeting_room_with_warm_lighting_revolution_bcab4a52-5422-439d-94e6-6646b79ea023_1.png",
       "choices": [
         {
           "text": "Akademisyenlerle çalış",
@@ -102,7 +102,7 @@
     },
     "yerel_orgutlenme": {
       "text": "Mahallede kurduğunuz küçük grup büyüyor. İnsanlar size güveniyor.\n\nArtık sadece bir direnişçi değil, bir topluluk liderisiniz. Bu yeni gücü nasıl kullanacaksınız?",
-      "background": "BGs/tordah_In_the_cavernous_marketplace_once-empty_shelves_overfl_2dec6c1-23f1-43e1-b6c1-b962da5cc60a_0.png",
+      "background": "BGs/tordah_Cavernous_marketplace_with_empty_shelves_desperate_cit_963c465e-6dcc-49c9-9a97-3d967ebed299_2.png",
       "choices": [
         {
           "text": "Yerel dayanışma ağı kur (gıda, barınma)",
@@ -123,7 +123,7 @@
     },
     "devlet_tepkisi": {
       "text": "Merkezi yönetim, yerel örgütlenmenizden rahatsız oldu.\n\nDevlet medyası sizi 'terörist' olarak yaftalıyor. Güvenlik güçleri mahallenizi ablukaya aldı. Baskı artıyor.",
-      "background": "BGs/tordah_A_graphic_novel-style_depiction_of_an_interrogation_ro_25062c80-8f0f-45f1-82bf-31ec2b81c71c_1.png",
+      "background": "BGs/tordah_Interrogation_room_with_balanced_lighting_tense_atmosp_d1b99622-c3ad-427f-bd3a-93023b2fb337_2.png",
       "choices": [
         {
           "text": "Gizlen, güç topla",
@@ -160,7 +160,7 @@
     },
     "son_hazirlik": {
       "text": "Devrim anı yaklaşıyor. Tüm hazırlıklar tamamlanmak üzere.\n\nBu, son karar anlarından biri. Devrimin karakterini belirleyecek bir seçim yapmalısın. Nasıl bir devrim olacak?",
-      "background": "BGs/tordah_In_the_war_councils_candlelit_chamber_tattered_maps_sp_e48729e6-131f-41cd-8276-348a7f978b5c_0.png",
+      "background": "BGs/tordah_War_council_chamber_with_multiple_light_sources_strate_339a0576-8b05-42eb-adb5-30e7c1bea02b_1.png",
       "choices": [
         {
           "text": "Kanlı ama hızlı bir darbe",
@@ -339,7 +339,7 @@
     },
     "ilk_test": {
       "text": "Beklenmedik bir kıtlık baş gösterdi. Tahıl ambarları boş, komşu şehirler ticareti kesti. Halk aç ve öfkeli. Yeni kurduğun sistem bu krizi nasıl çözecek?",
-      "background": "BGs/tordah_In_the_cavernous_marketplace_once-empty_shelves_overfl_2dec6c1-23f1-43e1-b6c1-b962da5cc60a_0.png",
+      "background": "BGs/tordah_Cavernous_marketplace_with_empty_shelves_desperate_cit_963c465e-6dcc-49c9-9a97-3d967ebed299_2.png",
       "choices": [
         {
           "text": "Gıdayı karneye bağla ve zorla topla.",
@@ -359,16 +359,160 @@
       ]
     },
     "gecis_donemi": {
-      "text": "Kriz, ağır bedellerle de olsa aşıldı. Eski sistemin hayaletlerinden tamamen kurtulup, kurduğunuz yeni düzenin gerçekleriyle yüzleşme zamanı.\n\nFAZ 2 TAMAMLANDI.\n\n(Faz 3: Özgürlük Denemesi, sonraki güncellemede eklenecektir.)",
+      "text": "Kriz, ağır bedellerle de olsa aşıldı. Eski sistemin hayaletlerinden tamamen kurtulup, kurduğunuz yeni düzenin gerçekleriyle yüzleşme zamanı.\n\nFaz 3: Özgürlük Denemesi başlıyor.",
       "background": "BGs/tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
       "choices": [
         {
-          "text": "Yeni Bir Oyuna Başla",
-          "nextNode": "start"
+          "text": "Denemeyi başlat...",
+          "nextNode": "yerel_yonetimler"
+        }
+      ]
+    },
+    "yerel_yonetimler": {
+      "text": "Toplum, özerk mahalle meclisleri aracılığıyla işliyor. İlk gündem: Eğitim.\n\nBazı meclisler bilimsel eğitimi, bazıları sanatı, bazıları ise askeri disiplini önceliyor. Bu çeşitlilik bir zenginlik mi, yoksa bir tehdit mi?",
+      "background": "BGs/tordah_Elegant_academic_library_room_intellectuals_in_discuss_b79324c3-4f6a-4f6f-9729-dcdcd267c731_2.png",
+      "choices": [
+        {
+          "text": "Ortak bir müfredat için federasyonu topla.",
+          "set": { "guc_puani": "it +10", "adalet_puani": "it -10" },
+          "nextNode": "gonullu_birlikler"
         },
         {
-          "text": "Faz 3'ü Bekle...",
-          "nextNode": "gecis_donemi"
+          "text": "Her mahalle kendi yolunu çizmekte özgürdür.",
+          "set": { "adalet_puani": "it +15", "halk_destegi": "it +10" },
+          "nextNode": "gonullu_birlikler"
+        }
+      ]
+    },
+    "gonullu_birlikler": {
+      "text": "Zorunlu askerlik kaldırıldı. Şehrin savunması, tamamen gönüllülerden oluşan 'Halk Milisleri'ne emanet.\n\nAncak gönüllü sayısı, eski ordunun sadece %20'si. Bu durum, şehrimizi dış tehditlere karşı savunmasız bırakıyor.",
+      "background": "BGs/tordah_Military_checkpoint_at_border_tanks_and_troops_poised__686c54ca-b97c-4814-8f1d-207171424018_0.png",
+      "choices": [
+        {
+          "text": "Savunmayı teşvik için propaganda yap.",
+          "set": { "halk_destegi": "it +10", "guc_puani": "it +5" },
+          "nextNode": "ekonomik_ozgurluk"
+        },
+        {
+          "text": "Zorunlu ama kısa süreli bir savunma hizmeti getir.",
+          "set": { "guc_puani": "it +25", "adalet_puani": "it -20", "halk_memnuniyeti": "it -15" },
+          "nextNode": "ekonomik_ozgurluk"
+        }
+      ]
+    },
+    "ekonomik_ozgurluk": {
+      "text": "Ekonomi, işçilerin sahip olduğu kooperatifler ve takas ağları üzerinden yürüyor. Para neredeyse ortadan kalktı.\n\nAncak bu sistem, büyük teknolojik yatırımlar ve projeler için yeterli sermayeyi üretemiyor. Şehir teknolojik olarak geri kalıyor.",
+      "background": "BGs/tordah_In_the_sleek_ministerial_offices_officials_confer_over_35a008eb-af41-4371-b69f-753e1c05b5f2_1.png",
+      "choices": [
+        {
+          "text": "Büyük projeler için merkezi bir yatırım fonu oluştur.",
+          "set": { "hazine": "it +20", "guc_puani": "it +10", "adalet_puani": "it -5" },
+          "nextNode": "ic_catismalar"
+        },
+        {
+          "text": "Yavaş ama adil büyüme daha iyidir. Dokunma.",
+          "set": { "adalet_puani": "it +20", "hazine": "it -15" },
+          "nextNode": "ic_catismalar"
+        }
+      ]
+    },
+    "ic_catismalar": {
+      "text": "Yeni sistemdeki sorunlar su yüzüne çıkmaya başladı.\n\nBazı mahalleler daha zengin ve kaynaklarını paylaşmak istemiyor. Diğerleri ise temel ihtiyaçlarını karşılayamıyor. 'Eşitler arasında daha eşitler' ortaya çıkıyor. Bu, anarşinin doğasında mı var?",
+      "background": "BGs/tordah_In_the_craggy_mountain_pass_narrow_trails_wind_between_8fd5fcb1-344d-4dd4-af39-f8fa4f209995_0.png",
+      "choices": [
+        {
+          "text": "Kaynakların adil dağıtımı için federasyona yetki ver.",
+          "set": { "adalet_puani": "it +20", "guc_puani": "it +15", "halk_destegi": "it -10" },
+          "nextNode": "yeni_tehditler"
+        },
+        {
+          "text": "Sorunlarını kendileri çözmeli. Dayanışma zorla olmaz.",
+          "set": { "kisisel_vicdan": "it +10", "isyan_riski": "it +15", "adalet_puani": "it -15" },
+          "nextNode": "yeni_tehditler"
+        }
+      ]
+    },
+    "yeni_tehditler": {
+      "text": "Siz iç sorunlarla boğuşurken, komşu merkeziyetçi devlet 'CAPITALIA', sizin 'kaos düzeninizi' kendi istikrarına bir tehdit olarak gördüğünü açıkladı.\n\nSınıra ordu yığdılar. Savaş kapıda. Özgürlüğünüzün en büyük testi şimdi başlıyor.",
+      "background": "BGs/tordah_In_the_war_councils_candlelit_chamber_tattered_maps_sp_e48729e6-131f-41cd-8276-348a7f978b5c_0.png",
+      "choices": [
+        {
+          "text": "Savaş için tüm gücü tek bir komutada birleştir.",
+          "nextNode": "sistem_testi_merkezi"
+        },
+        {
+          "text": "Halkı topyekûn direnişe ve gerilla savaşına çağır.",
+          "nextNode": "sistem_testi_anarsi"
+        }
+      ]
+    },
+    "sistem_testi_merkezi": {
+      "text": "Savaşı kazanmak için geçici bir 'Savaş Konseyi' kurdun ve tüm yetkileri ona devrettin. Halk Milisleri, disiplinli bir orduya dönüştü.\n\nSavaş kazanıldı. Capitalia geri çekildi. Ama şimdi konsey, kazandığı gücü geri vermek istemiyor. Devrim, başladığı yere mi döndü?",
+      "set": { "guc_puani": "it +50", "adalet_puani": "it -40", "halk_destegi": "it -30" },
+      "background": "BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "choices": [
+        {
+          "text": "Geleceğe bak...",
+          "nextNode": "final_degerlendirme"
+        }
+      ]
+    },
+    "sistem_testi_anarsi": {
+      "text": "Merkezi bir ordu olmadan, her sokakta, her evde direndiniz. Şehir harabeye döndü ama halkın iradesi kırılmadı. Capitalia ordusu, bu 'başsız' düşman karşısında yıprandı ve geri çekildi.\n\nSavaşı kaybettiniz, ama özgürlüğü kazandınız. Şimdi bu yıkıntıların üzerinde yeni bir hayat kurma zamanı.",
+      "set": { "halk_destegi": "it +40", "adalet_puani": "it +30", "hazine": "it -50", "halk_memnuniyeti": "it -30" },
+      "background": "BGs/tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
+      "choices": [
+        {
+          "text": "Geleceğe bak...",
+          "nextNode": "final_degerlendirme"
+        }
+      ]
+    },
+    "final_degerlendirme": {
+      "text": "Yıllar geçti... Kurduğun toplum, seçimlerinin bir yansıması. Geriye dönüp baktığında ne görüyorsun?\n\n(Aşağıdaki sonuç, oyun boyunca verdiğin kararlara göre şekillendi.)",
+      "background": "BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+      "choices": [
+        {
+          "text": "Sonucu Gör",
+          "nextNode": "final_karar"
+        }
+      ]
+    },
+    "final_karar": {
+        "text": "...",
+        "choices": [
+            { "if": "guc_puani > 60", "text": "Sonucu Gör", "nextNode": "final_yeni_tiranlik" },
+            { "if": "adalet_puani > 60 && halk_destegi > 50", "text": "Sonucu Gör", "nextNode": "final_zorlu_ozgurluk" },
+            { "text": "Sonucu Gör", "nextNode": "final_karma_sistem" }
+        ]
+    },
+    "final_yeni_tiranlik": {
+      "text": "SONUÇ: YENİ TİRANLIK\n\nÖzgürlük ideali, düzen ve güvenlik uğruna feda edildi. Halkın devrimi, yeni bir elit sınıf yarattı. İsimler değişti, ama sistemin özü aynı kaldı. Tarih, kendini bir kez daha tekrar etti.\n\nPuanların:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}",
+      "background": "BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "choices": [
+        {
+          "text": "Yeniden Oyna",
+          "nextNode": "start"
+        }
+      ]
+    },
+    "final_zorlu_ozgurluk": {
+      "text": "SONUÇ: ZORLU ÖZGÜRLÜK\n\nKaotik, verimsiz ve sürekli krizlerle boğuşan bir toplum yarattın. Ama özgür bir toplum. İnsanlar kendi kaderlerini tayin ediyor. Bu zorlu yolda yürümek, her gün verilen bir mücadele. Ama bu mücadele, yaşamın ta kendisi.\n\nPuanların:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}",
+      "background": "BGs/tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
+      "choices": [
+        {
+          "text": "Yeniden Oyna",
+          "nextNode": "start"
+        }
+      ]
+    },
+    "final_karma_sistem": {
+      "text": "SONUÇ: KIRILGAN DENGE\n\nNe tam bir özgürlük ne de tam bir tiranlık. İdealizm ve pragmatizm arasında bir denge kurmaya çalıştın. Toplum, sürekli olarak merkeziyetçilik ve anarşizm arasında gidip geliyor. Bu kırılgan denge ne kadar sürecek, kimse bilmiyor.\n\nPuanların:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}",
+      "background": "BGs/tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
+      "choices": [
+        {
+          "text": "Yeniden Oyna",
+          "nextNode": "start"
         }
       ]
     }
