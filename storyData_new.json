@@ -145,6 +145,13 @@
         { "text": "Stratejik Darbe (Kaan)", "set": { "guc": "it +20" }, "nextNode": "perde2_baslangic" },
         { "text": "Siyasi Çökertme (Elara)", "set": { "adalet": "it +20" }, "nextNode": "perde2_baslangic" }
       ]
+    },
+    "perde2_baslangic": {
+      "text": "PERDE 2: DEVRİM\n\nDevrim kazanıldı ve Aethelburg sokakları coşkuyla dolu. Ancak asıl sınav şimdi başlıyor. Bu bölüm henüz geliştirme aşamasında.",
+      "background": "BGs/tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
+      "choices": [
+        { "text": "Başa dön", "nextNode": "start" }
+      ]
     }
   }
-} 
+}
