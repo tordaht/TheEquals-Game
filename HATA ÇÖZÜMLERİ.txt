@@ -9,27 +9,17 @@ TARİH: 2024
 =====================================
 
 HATA #1:
-- HATA: Bölüm ve perde başlıkları hikayeyi yavaşlatıyor
-- YER: storyData.json dosyası
-- TARİH: 2024
-- ÇÖZÜM: Tüm "Bölüm X.X:" ve "PERDE X:" başlıkları kaldırıldı, hikaye daha akıcı hale getirildi
+---------
+HATA: Perde 2 sonrasında üçüncü bölüm eksikti, oyun başa dönüyordu
+PROJE: The Equals Game
+TARİH: 2024
+ÇÖZÜM: Perde 3 bölümü eklendi (perde3_baslangic, anayasa_krizi, ekonomik_reform, dış_tehdit, iç_karışıklık, yeni_nesil, teknoloji_devrimi, çevre_krizi, final_sınav ve 3 farklı sonuç düğümü)
 
 HATA #2:
-- HATA: "küçük kızları oyuncaklarıyla oynuyor" gramer hatası
-- YER: storyData.json dosyası
-- TARİH: 2024
-- ÇÖZÜM: "küçük kızı oyuncaklarıyla oynuyor" olarak düzeltildi
-
-HATA #3:
-- HATA: UTF-8 karakter kodlama sorunları
-- YER: storyData.json dosyası
-- TARİH: 2024
-- ÇÖZÜM: JSON dosyası UTF-8 olarak yeniden kaydedildi, fetch işlemi UTF-8 header ile güvenli hale getirildi
-
-HATA #4:
-- HATA: typeWriter animasyonu çakışması
-- YER: app.js dosyası
-- TARİH: 2024
-- ÇÖZÜM: typeWriter fonksiyonu atomik ve çakışmasız çalışacak şekilde yeniden yazıldı
+---------
+HATA: JavaScript dosyası storyData_new.json yüklüyordu ama storyData.json kullanılıyordu
+PROJE: The Equals Game
+TARİH: 2024
+ÇÖZÜM: app.js dosyasında fetch('storyData_new.json') → fetch('storyData.json') olarak düzeltildi
 
 ===================================== 

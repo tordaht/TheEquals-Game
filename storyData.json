@@ -1,7 +1,7 @@
 {
   "gameInfo": {
     "title": "The Equals",
-    "version": "2.1",
+    "version": "2.4",
     "author": "Devrimci Oyun Stüdyosu"
   },
   "storyNodes": {
@@ -268,6 +268,260 @@
     "final_dış_bağımlı": {
       "text": "Dış yardımla krizi aştınız.\n\nAncak artık bağımsızlığınızı kaybettiniz.\n\nPuanlarınız:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}\nHalk Memnuniyeti: {halk_memnuniyeti}\nİsyan Riski: {isyan_riski}\nHazine: {hazine}\nKişisel Vicdan: {kisisel_vicdan}",
       "background": "BGs/tordah_In_the_twilight-lit_public_square_robed_dignitaries_st_89cf1d80-2c01-4871-b6bc-8479a64f3b68_0.png",
+      "choices": [
+        {
+          "text": "Yeniden Oyna",
+          "nextNode": "start"
+        }
+      ]
+    },
+    "leyla_ayaklanmasi": {
+      "text": "Halk ayaklanması Leyla'nın liderliğinde başladı. Şehirde büyük bir değişim rüzgarı esiyor. Yeni bir dönem başlıyor.",
+      "background": "BGs/tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
+      "choices": [
+        { "text": "Yeniden Oyna", "nextNode": "start" }
+      ]
+    },
+    "kaan_darbe": {
+      "text": "Kaan'ın stratejik darbesiyle yönetim el değiştirdi. Askeri disiplin ve düzen ön planda. Yeni bir otorite kuruldu.",
+      "background": "BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "choices": [
+        { "text": "Yeniden Oyna", "nextNode": "start" }
+      ]
+    },
+    "elara_cokertme": {
+      "text": "Elara'nın siyasi zekasıyla rakipler bertaraf edildi. Akademik ve entelektüel bir yönetim dönemi başladı.",
+      "background": "BGs/tordah_Elegant_academic_library_room_intellectuals_in_discuss_b79324c3-4f6a-4f6f-9729-dcdcd267c731_2.png",
+      "choices": [
+        { "text": "Yeniden Oyna", "nextNode": "start" }
+      ]
+    },
+    "perde2_baslangic": {
+      "text": "Devrimin ikinci perdesi başlıyor. Şehirde yeni bir dönem, yeni umutlar ve yeni mücadeleler var.",
+      "background": "BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+      "choices": [
+        {
+          "text": "Devam et",
+          "nextNode": "perde3_baslangic"
+        },
+        { 
+          "text": "Yeniden Oyna", 
+          "nextNode": "start" 
+        }
+      ]
+    },
+    "perde3_baslangic": {
+      "text": "PERDE 3: YENİ DÜZENİN SINAVI\n\nDevrim başarılı oldu ama şimdi gerçek sınav başlıyor. Yeni düzeni kurarken eski sistemin kalıntıları hala direniyor.\n\nİlk görev: Yeni anayasayı yazmak.",
+      "background": "BGs/tordah_In_the_marble_council_chamber_cloaked_senators_debate__cb68757a-5b55-400f-9656-116b6c255b28_3.png",
+      "choices": [
+        {
+          "text": "Radikal değişimler",
+          "set": { "adalet_puani": "it +20", "isyan_riski": "it +15" },
+          "nextNode": "anayasa_krizi"
+        },
+        {
+          "text": "Dengeli yaklaşım",
+          "set": { "halk_memnuniyeti": "it +15", "adalet_puani": "it +10" },
+          "nextNode": "anayasa_krizi"
+        },
+        {
+          "text": "Eski sistemi koru",
+          "set": { "halk_memnuniyeti": "it -10", "isyan_riski": "it +20" },
+          "nextNode": "anayasa_krizi"
+        }
+      ]
+    },
+    "anayasa_krizi": {
+      "text": "Anayasa taslağı hazırlandı ama farklı gruplar arasında çatışma çıktı:\n\n- İşçi sınıfı daha fazla hak istiyor\n- İş dünyası ekonomik özgürlük talep ediyor\n- Askeri çevreler güvenlik önceliği istiyor\n\nHangi grubu önceliklendireceksiniz?",
+      "background": "BGs/tordah_In_the_polished_conference_chamber_delegates_lean_over_e5733949-8123-4342-ad20-fe1e2aa68994_1.png",
+      "choices": [
+        {
+          "text": "İşçi haklarını öncelikle",
+          "set": { "adalet_puani": "it +25", "halk_destegi": "it +20" },
+          "nextNode": "ekonomik_reform"
+        },
+        {
+          "text": "Ekonomik özgürlükleri destekle",
+          "set": { "hazine": "it +30", "halk_memnuniyeti": "it +10" },
+          "nextNode": "ekonomik_reform"
+        },
+        {
+          "text": "Güvenlik önlemlerini artır",
+          "set": { "guc_puani": "it +25", "adalet_puani": "it -10" },
+          "nextNode": "ekonomik_reform"
+        }
+      ]
+    },
+    "ekonomik_reform": {
+      "text": "Anayasa kabul edildi. Şimdi ekonomik reformlar başlıyor.\n\nHangi ekonomik modeli benimseyeceksiniz?\n\n- Sosyalist ekonomi (devlet kontrolü)\n- Karma ekonomi (devlet + özel sektör)\n- Serbest piyasa (tam özelleştirme)",
+      "background": "BGs/tordah_In_the_sleek_ministerial_offices_officials_confer_over_35a008eb-af41-4371-b69f-753e1c05b5f2_1.png",
+      "choices": [
+        {
+          "text": "Sosyalist ekonomi modeli",
+          "set": { "adalet_puani": "it +20", "hazine": "it -20" },
+          "nextNode": "dış_tehdit"
+        },
+        {
+          "text": "Karma ekonomi sistemi",
+          "set": { "halk_memnuniyeti": "it +15", "adalet_puani": "it +10" },
+          "nextNode": "dış_tehdit"
+        },
+        {
+          "text": "Serbest piyasa ekonomisi",
+          "set": { "hazine": "it +25", "adalet_puani": "it -15" },
+          "nextNode": "dış_tehdit"
+        }
+      ]
+    },
+    "dış_tehdit": {
+      "text": "Ekonomik reformlar devam ederken dış tehditler ortaya çıktı.\n\nKomşu ülkeler yeni rejiminizi tehdit olarak görüyor. Askeri müdahale tehdidi var.\n\nNe yapacaksınız?",
+      "background": "BGs/tordah_Military_checkpoint_at_border_tanks_and_troops_poised__686c54ca-b97c-4814-8f1d-207171424018_0.png",
+      "choices": [
+        {
+          "text": "Askeri güçle karşılık ver",
+          "set": { "guc_puani": "it +30", "hazine": "it -40" },
+          "nextNode": "iç_karışıklık"
+        },
+        {
+          "text": "Diplomatik çözüm ara",
+          "set": { "dis_politika_durumu": "barışçıl", "halk_memnuniyeti": "it +20" },
+          "nextNode": "iç_karışıklık"
+        },
+        {
+          "text": "İttifak arayışı",
+          "set": { "dis_politika_durumu": "ittifak", "halk_destegi": "it +15" },
+          "nextNode": "iç_karışıklık"
+        }
+      ]
+    },
+    "iç_karışıklık": {
+      "text": "Dış tehdit aşıldı ama şimdi iç karışıklık başladı.\n\nEski rejimin destekçileri geri dönüş için propaganda yapıyor. Halk arasında bölünme var.\n\nBu durumu nasıl ele alacaksınız?",
+      "background": "BGs/tordah_In_the_austere_broadcast_chamber_a_lone_figures_visage_5c002841-48ea-41d1-809f-3f62723272da_2.png",
+      "choices": [
+        {
+          "text": "Sert önlemler al",
+          "set": { "guc_puani": "it +25", "adalet_puani": "it -20" },
+          "nextNode": "yeni_nesil"
+        },
+        {
+          "text": "Eğitim ve propaganda",
+          "set": { "halk_destegi": "it +25", "hazine": "it -15" },
+          "nextNode": "yeni_nesil"
+        },
+        {
+          "text": "Uzlaşma politikası",
+          "set": { "halk_memnuniyeti": "it +20", "isyan_riski": "it -10" },
+          "nextNode": "yeni_nesil"
+        }
+      ]
+    },
+    "yeni_nesil": {
+      "text": "Yeni nesil büyüyor. Devrimden sonra doğan çocuklar artık gençler oldu.\n\nBu gençler devrimin değerlerini sorguluyor. Bazıları daha radikal değişim istiyor.\n\nGençlik hareketini nasıl yöneteceksiniz?",
+      "background": "BGs/tordah_Crowded_youth_rally_new_voices_rising_chanting_youth_e_3a6f606f-1171-4cb1-98d3-092092e2055d_0.png",
+      "choices": [
+        {
+          "text": "Gençleri bastır",
+          "set": { "guc_puani": "it +20", "halk_destegi": "it -15" },
+          "nextNode": "teknoloji_devrimi"
+        },
+        {
+          "text": "Gençlere özgürlük ver",
+          "set": { "adalet_puani": "it +25", "isyan_riski": "it +10" },
+          "nextNode": "teknoloji_devrimi"
+        },
+        {
+          "text": "Gençleri yönlendir",
+          "set": { "halk_destegi": "it +20", "adalet_puani": "it +10" },
+          "nextNode": "teknoloji_devrimi"
+        }
+      ]
+    },
+    "teknoloji_devrimi": {
+      "text": "Teknoloji devrimi başladı. Yapay zeka ve otomasyon işsizlik yaratıyor.\n\nYeni teknolojileri nasıl entegre edeceksiniz?\n\n- Tam otomasyon (verimlilik odaklı)\n- İnsan odaklı teknoloji (iş güvencesi)\n- Dengeli yaklaşım",
+      "background": "BGs/tordah_A_graphic_novel-style_scene_in_a_holographic_display_r_e61e040c-242a-4451-bf3c-8923ab6e3175_1.png",
+      "choices": [
+        {
+          "text": "Tam otomasyonu benimse",
+          "set": { "hazine": "it +40", "halk_memnuniyeti": "it -25" },
+          "nextNode": "çevre_krizi"
+        },
+        {
+          "text": "İnsan odaklı teknoloji",
+          "set": { "halk_memnuniyeti": "it +25", "hazine": "it -20" },
+          "nextNode": "çevre_krizi"
+        },
+        {
+          "text": "Dengeli teknoloji politikası",
+          "set": { "adalet_puani": "it +15", "halk_memnuniyeti": "it +10" },
+          "nextNode": "çevre_krizi"
+        }
+      ]
+    },
+    "çevre_krizi": {
+      "text": "Teknoloji devrimi sürerken çevre krizi patlak verdi.\n\nİklim değişikliği ve kirlilik halk sağlığını tehdit ediyor.\n\nÇevre politikasını nasıl şekillendireceksiniz?",
+      "background": "BGs/tordah_In_the_craggy_mountain_pass_narrow_trails_wind_between_8fd5fcb1-344d-4dd4-af39-f8fa4f209995_0.png",
+      "choices": [
+        {
+          "text": "Yeşil ekonomiye geç",
+          "set": { "adalet_puani": "it +30", "hazine": "it -30" },
+          "nextNode": "final_sınav"
+        },
+        {
+          "text": "Ekonomiyi öncelikle",
+          "set": { "hazine": "it +25", "adalet_puani": "it -20" },
+          "nextNode": "final_sınav"
+        },
+        {
+          "text": "Dengeli çevre politikası",
+          "set": { "halk_memnuniyeti": "it +20", "adalet_puani": "it +10" },
+          "nextNode": "final_sınav"
+        }
+      ]
+    },
+    "final_sınav": {
+      "text": "PERDE 3'ÜN SON SINAVI\n\nYeni düzeniniz 10 yılını doldurdu. Şimdi gerçek sınav başlıyor.\n\nHalk referandumu yapılacak. Yeni düzeninizin geleceği oylanda.\n\nSon hamleniz ne olacak?",
+      "background": "BGs/tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
+      "choices": [
+        {
+          "text": "Demokratik seçimlere git",
+          "set": { "adalet_puani": "it +40", "halk_destegi": "it +30" },
+          "nextNode": "perde3_sonuc_demokratik"
+        },
+        {
+          "text": "Güçlü liderlik sürdür",
+          "set": { "guc_puani": "it +40", "adalet_puani": "it -20" },
+          "nextNode": "perde3_sonuc_otoriter"
+        },
+        {
+          "text": "Halkla birlikte karar ver",
+          "set": { "halk_memnuniyeti": "it +40", "halk_destegi": "it +25" },
+          "nextNode": "perde3_sonuc_halk"
+        }
+      ]
+    },
+    "perde3_sonuc_demokratik": {
+      "text": "Demokratik seçimler yapıldı. Halk yeni düzeninizi onayladı.\n\nDemokrasi kök saldı. Adalet ve özgürlük değerleri korundu.\n\nPERDE 3 SONUÇ: Demokratik Başarı\n\nPuanlarınız:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}\nHalk Memnuniyeti: {halk_memnuniyeti}\nİsyan Riski: {isyan_riski}\nHazine: {hazine}\nKişisel Vicdan: {kisisel_vicdan}",
+      "background": "BGs/tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
+      "choices": [
+        {
+          "text": "Yeniden Oyna",
+          "nextNode": "start"
+        }
+      ]
+    },
+    "perde3_sonuc_otoriter": {
+      "text": "Güçlü liderlikle yeni düzeni korudunuz.\n\nAncak demokratik değerler zayıfladı. Otoriter bir yönetim kuruldu.\n\nPERDE 3 SONUÇ: Otoriter Başarı\n\nPuanlarınız:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}\nHalk Memnuniyeti: {halk_memnuniyeti}\nİsyan Riski: {isyan_riski}\nHazine: {hazine}\nKişisel Vicdan: {kisisel_vicdan}",
+      "background": "BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "choices": [
+        {
+          "text": "Yeniden Oyna",
+          "nextNode": "start"
+        }
+      ]
+    },
+    "perde3_sonuc_halk": {
+      "text": "Halkla birlikte yeni düzeni korudunuz.\n\nToplumsal uyum ve refah sağlandı. Halk memnuniyeti yüksek.\n\nPERDE 3 SONUÇ: Toplumsal Başarı\n\nPuanlarınız:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}\nHalk Memnuniyeti: {halk_memnuniyeti}\nİsyan Riski: {isyan_riski}\nHazine: {hazine}\nKişisel Vicdan: {kisisel_vicdan}",
+      "background": "BGs/tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
       "choices": [
         {
           "text": "Yeniden Oyna",

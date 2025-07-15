@@ -36,7 +36,7 @@ let currentTypingAnimation = null; // Mevcut animasyonu tutan değişken
 // Hikaye verilerini yükle - UTF-8 GÜVENLİ VERSİYON
 async function loadStoryData() {
     try {
-        const response = await fetch('storyData_new.json', {
+        const response = await fetch('storyData.json', {
             headers: {
                 'Accept': 'application/json; charset=utf-8'
             }
@@ -281,6 +281,24 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('leader-toggle').addEventListener('click', () => {
         const board = document.getElementById('leader-board');
         board.classList.toggle('hidden');
+    });
+
+    // Oyun kuralları modal event listener'ları
+    document.getElementById('rules-toggle').addEventListener('click', () => {
+        const modal = document.getElementById('rules-modal');
+        modal.style.display = 'flex';
+    });
+
+    document.getElementById('rules-close-btn').addEventListener('click', () => {
+        const modal = document.getElementById('rules-modal');
+        modal.style.display = 'none';
+    });
+
+    // Modal dışına tıklayınca kapat
+    document.getElementById('rules-modal').addEventListener('click', (e) => {
+        if (e.target.id === 'rules-modal') {
+            e.target.style.display = 'none';
+        }
     });
 
     // Açılış modalı - KRİTİK ASENKRON HATA DÜZELTİLDİ
