@@ -474,9 +474,17 @@
         "text": "Yıllar geçti... Kurduğun toplum, seçimlerinin bir yansıması. Geriye dönüp baktığında ne görüyorsun?\n\n(Aşağıdaki sonuç, oyun boyunca verdiğin kararlara göre şekillendi.)",
         "background": "BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
         "choices": [
-            { "if": "guc_puani > 60", "text": "Güç Odaklı Sonuç", "nextNode": "final_yeni_tiranlik" },
-            { "if": "adalet_puani > 60 && halk_destegi > 50", "text": "Adalet Odaklı Sonuç", "nextNode": "final_zorlu_ozgurluk" },
-            { "text": "Dengeli Sonuç", "nextNode": "final_karma_sistem" }
+            { "text": "Sonucu Gör", "nextNode": "final_otomatik_sonuc" }
+        ]
+    },
+    "final_otomatik_sonuc": {
+        "text": "SONUÇ: {final_sonuc_baslik}\n\n{final_sonuc_metin}\n\nPuanların:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}\nHalk Memnuniyeti: {halk_memnuniyeti}\nİsyan Riski: {isyan_riski}\nHazine: {hazine}\nKişisel Vicdan: {kisisel_vicdan}",
+        "background": "BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+        "choices": [
+            {
+                "text": "Yeniden Oyna",
+                "nextNode": "start"
+            }
         ]
     },
     "final_yeni_tiranlik": {

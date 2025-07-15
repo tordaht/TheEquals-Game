@@ -1,14 +1,29 @@
 // Oyun durumu
+// gameState sınır kontrollü
 const gameState = {
+    _adalet_puani: 0,
+    _guc_puani: 0,
+    _halk_destegi: 0,
+    _halk_memnuniyeti: 0,
+    _isyan_riski: 0,
+    _hazine: 100,
+    _kisisel_vicdan: 0,
     faz: 1,
     bolum: 1,
-    adalet_puani: 0,
-    guc_puani: 0,
-    halk_destegi: 0,
-    halk_memnuniyeti: 0,
-    isyan_riski: 0,
-    hazine: 100,
-    kisisel_vicdan: 0,
+    get adalet_puani() { return this._adalet_puani; },
+    set adalet_puani(v) { this._adalet_puani = Math.max(0, Math.min(100, v)); },
+    get guc_puani() { return this._guc_puani; },
+    set guc_puani(v) { this._guc_puani = Math.max(0, Math.min(100, v)); },
+    get halk_destegi() { return this._halk_destegi; },
+    set halk_destegi(v) { this._halk_destegi = Math.max(0, Math.min(100, v)); },
+    get halk_memnuniyeti() { return this._halk_memnuniyeti; },
+    set halk_memnuniyeti(v) { this._halk_memnuniyeti = Math.max(0, Math.min(100, v)); },
+    get isyan_riski() { return this._isyan_riski; },
+    set isyan_riski(v) { this._isyan_riski = Math.max(0, Math.min(100, v)); },
+    get hazine() { return this._hazine; },
+    set hazine(v) { this._hazine = Math.max(0, Math.min(200, v)); },
+    get kisisel_vicdan() { return this._kisisel_vicdan; },
+    set kisisel_vicdan(v) { this._kisisel_vicdan = Math.max(0, Math.min(100, v)); },
     karakter_adi: "",
     secilen_yol: "",
     müttefik: "",
@@ -306,6 +321,10 @@ const emotionalSystem = {
         const flashbacks = this.flashbacks[nodeId];
         if (!flashbacks || flashbacks.length === 0) return;
         
+        // Önceki flashback'leri temizle
+        const existingDialogs = document.querySelectorAll('.flashback-dialog');
+        existingDialogs.forEach(dialog => dialog.remove());
+        
         // Rastgele flashback seç
         const randomFlashback = flashbacks[Math.floor(Math.random() * flashbacks.length)];
         
@@ -365,7 +384,7 @@ const emotionalSystem = {
 const musicSystem = {
     audio: null,
     isPlaying: false,
-    volume: 0.3, // Varsayılan ses seviyesi
+    volume: 0.15, // %15 ses seviyesi ile başla
     
     // Müzik başlat
     init: function() {
@@ -378,6 +397,25 @@ const musicSystem = {
         this.audio.addEventListener('error', (e) => {
             console.warn('Müzik yüklenemedi:', e);
         });
+        
+        // Otomatik başlatma için kullanıcı etkileşimi bekle
+        this.setupAutoPlay();
+    },
+    
+    // Otomatik başlatma kurulumu
+    setupAutoPlay: function() {
+        const startAutoPlay = () => {
+            this.autoPlay();
+            // Event listener'ları temizle
+            document.removeEventListener('click', startAutoPlay);
+            document.removeEventListener('keydown', startAutoPlay);
+            document.removeEventListener('touchstart', startAutoPlay);
+        };
+        
+        // İlk kullanıcı etkileşiminde müziği başlat
+        document.addEventListener('click', startAutoPlay, { once: true });
+        document.addEventListener('keydown', startAutoPlay, { once: true });
+        document.addEventListener('touchstart', startAutoPlay, { once: true });
     },
     
     // Müzik çal
@@ -398,6 +436,7 @@ const musicSystem = {
             this.audio.play().then(() => {
                 this.isPlaying = true;
                 this.updateMusicButton();
+                this.updateVolumeDisplay();
             }).catch(e => {
                 console.warn('Otomatik müzik başlatılamadı:', e);
             });
@@ -889,6 +928,59 @@ function confirmChoice(choiceText) {
     closeConfirmation();
 }
 
+// Final sonucu hesapla
+function calculateFinalResult() {
+    const storyText = document.getElementById('story-text');
+    if (!storyText) return;
+    
+    let finalBaslik = '';
+    let finalMetin = '';
+    
+    // Puanlara göre sonuç belirle - daha detaylı analiz
+    const gucPuani = gameState.guc_puani;
+    const adaletPuani = gameState.adalet_puani;
+    const halkDestegi = gameState.halk_destegi;
+    const halkMemnuniyeti = gameState.halk_memnuniyeti;
+    const isyanRiski = gameState.isyan_riski;
+    const hazine = gameState.hazine;
+    const vicdan = gameState.kisisel_vicdan;
+    
+    // En yüksek puanı bul
+    const enYuksekPuan = Math.max(gucPuani, adaletPuani, halkDestegi, halkMemnuniyeti, isyanRiski, vicdan);
+    
+    if (gucPuani > 75) {
+        finalBaslik = 'YENİ TİRANLIK';
+        finalMetin = `Güç zehirlenmesi yaşadın. Güç puanın ${gucPuani} ile en yüksek. Özgürlük ideali, düzen ve güvenlik uğruna feda edildi. Halkın devrimi, yeni bir elit sınıf yarattı. İsimler değişti, ama sistemin özü aynı kaldı. Tarih, kendini bir kez daha tekrar etti.`;
+    } else if (adaletPuani > 70 && halkDestegi > 60) {
+        finalBaslik = 'ZORLU ÖZGÜRLÜK';
+        finalMetin = `Adalet puanın ${adaletPuani}, halk desteğin ${halkDestegi}. Kaotik, verimsiz ve sürekli krizlerle boğuşan bir toplum yarattın. Ama özgür bir toplum. İnsanlar kendi kaderlerini tayin ediyor. Bu zorlu yolda yürümek, her gün verilen bir mücadele. Ama bu mücadele, yaşamın ta kendisi.`;
+    } else if (halkDestegi > 80) {
+        finalBaslik = 'HALK DEVRİMİ';
+        finalMetin = `Halk desteğin ${halkDestegi} ile çok yüksek. Halkın gücüyle gerçek bir değişim sağladın. Toplum, tabandan yukarıya doğru örgütlendi. Her karar halk meclislerinde alınıyor. Bu, gerçek demokrasinin ilk adımı.`;
+    } else if (isyanRiski > 80) {
+        finalBaslik = 'KAOS VE ANARŞİ';
+        finalMetin = `İsyan riskin ${isyanRiski} ile çok yüksek. Kontrolü tamamen kaybettin. Şehir kaos içinde, herkes kendi başının çaresine bakıyor. Devrim, kendi çocuklarını yedi. Bu, özgürlüğün en karanlık yüzü.`;
+    } else if (hazine > 150) {
+        finalBaslik = 'EKONOMİK BAŞARI';
+        finalMetin = `Hazine puanın ${hazine} ile çok yüksek. Zenginlik ve refah sağladın, ama eşitsizlik de arttı. Yeni bir ekonomik elit oluştu. Para her şeyi satın alıyor. Bu, kapitalizmin zaferi mi, yoksa devrimin ihaneti mi?`;
+    } else if (vicdan > 70) {
+        finalBaslik = 'VİCDANLI LİDER';
+        finalMetin = `Vicdan puanın ${vicdan} ile çok yüksek. Ahlaki değerlerle yönettin. Her kararında vicdanını dinledin. Toplum, adalet ve merhamet üzerine kuruldu. Ama bu idealizm, gerçek dünyanın zorluklarıyla başa çıkabiliyor mu?`;
+    } else if (halkMemnuniyeti > 70) {
+        finalBaslik = 'HALK MUTLULUĞU';
+        finalMetin = `Halk memnuniyetin ${halkMemnuniyeti} ile yüksek. Halkı mutlu ettin ama belki de çok fazla taviz verdin. Toplum refah içinde ama belki de devrimin ruhu kayboldu. Bu, başarı mı yoksa ihanet mi?`;
+    } else {
+        finalBaslik = 'KIRILGAN DENGE';
+        finalMetin = `Hiçbir puanın çok yüksek değil. En yüksek puanın ${enYuksekPuan}. Ne tam bir özgürlük ne de tam bir tiranlık. İdealizm ve pragmatizm arasında bir denge kurmaya çalıştın. Toplum, sürekli olarak merkeziyetçilik ve anarşizm arasında gidip geliyor. Bu kırılgan denge ne kadar sürecek, kimse bilmiyor.`;
+    }
+    
+    // Metni güncelle
+    let text = storyText.innerHTML;
+    text = text.replace('{final_sonuc_baslik}', finalBaslik);
+    text = text.replace('{final_sonuc_metin}', finalMetin);
+    storyText.innerHTML = text;
+}
+
 // Seçim yap
 function selectChoice(choice) {
     // Eğer zaten bir seçim yapıldıysa ve animasyon sürüyorsa, ikinci tıklamayı engelle
@@ -979,6 +1071,11 @@ function showNode(nodeId) {
             showChoices(node.choices);
         }
         
+        // Final sonucu hesapla
+        if (nodeId === 'final_otomatik_sonuc') {
+            calculateFinalResult();
+        }
+        
         // Haber kontrolü - sahne geçişlerinde haber göster
         setTimeout(() => {
             newsSystem.checkNews();
@@ -999,8 +1096,9 @@ function startGame() {
     const gameStatus = document.getElementById('game-status');
     if (gameStatus) gameStatus.textContent = 'Çalışıyor ✓';
     
-    // Müzik başta kapalı olarak başlasın
+    // Müzik sistemi otomatik başlatılacak
     musicSystem.updateMusicButton();
+    musicSystem.updateVolumeDisplay();
     
     showNode('start');
 }
@@ -1130,15 +1228,15 @@ function setupKeyboardNavigation() {
 
 // Flashback'i kapat
 function closeFlashback() {
-    const dialog = document.querySelector('.flashback-dialog');
-    if (dialog) {
+    const dialogs = document.querySelectorAll('.flashback-dialog');
+    dialogs.forEach(dialog => {
         dialog.classList.add('removing');
         setTimeout(() => {
             if (dialog.parentElement) {
                 dialog.remove();
             }
         }, 300);
-    }
+    });
 }
 
 // Oyun kurallarını göster
@@ -1171,6 +1269,7 @@ function skipAnimation() {
     
     if (typewriterInterval) {
         clearInterval(typewriterInterval);
+        typewriterInterval = null;
     }
     if (currentTypingAnimation) {
         clearTimeout(currentTypingAnimation);
@@ -1202,8 +1301,23 @@ function skipAnimation() {
     }
 }
 
+// HTML onclick'lerin çalışması için global scope'a ata (DOMContentLoaded'dan önce)
+window.skipAnimation = skipAnimation;
+window.toggleAccessibilityControls = toggleAccessibilityControls;
+window.toggleTextSize = toggleTextSize;
+window.toggleColorblindMode = toggleColorblindMode;
+window.toggleHighContrast = toggleHighContrast;
+window.toggleReducedMotion = toggleReducedMotion;
+window.showRules = showRules;
+window.closeRules = closeRules;
+window.musicSystem = musicSystem;
+
 // Event listener'lar
 document.addEventListener('DOMContentLoaded', function() {
+    // Önceki event listener'ları temizle (flashback üst üste çıkmasını engelle)
+    const existingListeners = document.querySelectorAll('.flashback-dialog');
+    existingListeners.forEach(listener => listener.remove());
+    
     // Debug panelini göster (F12 ile gizle/göster)
     const debugInfo = document.getElementById('debug-info');
     if (debugInfo) debugInfo.style.display = 'block';
@@ -1228,11 +1342,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Oyunu başlat
+    // Oyunu başlat - storyData yükleme sırasını düzelt
     loadStoryData().then(() => {
-        startGame();
+        // storyData yüklendikten sonra oyunu başlat
+        setTimeout(() => {
+            startGame();
+        }, 100); // 100ms gecikme ile storyData'nın tam yüklenmesini bekle
     }).catch(error => {
         console.error('Oyun başlatılamadı:', error);
         document.getElementById('story-text').innerText = "Hata: Oyun yüklenemedi. Lütfen sayfayı yenileyin.";
     });
 }); 
+
+export {
+  gameState,
+  calculateChoiceEffects,
+  updateStats,
+  showNode,
+  selectChoice,
+  startGame,
+  loadStoryData,
+  musicSystem
+  // metricsSystem // varsa ekle
+}; 

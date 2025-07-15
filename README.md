@@ -10,8 +10,9 @@
 - **Dinamik İstatistikler**: 7 farklı puan sistemi
 - **Çoklu Son**: Kararlarınıza göre değişen sonlar
 - **Erişilebilirlik**: Renk körlüğü desteği, yüksek kontrast modu
-- **Müzik Sistemi**: Atmosferik arka plan müziği
+- **Müzik Sistemi**: Atmosferik arka plan müziği (%15 otomatik başlatma)
 - **Responsive Tasarım**: Tüm cihazlarda uyumlu
+- **Modern Altyapı**: npm scripts, CI/CD pipeline, metrik sistemi
 
 ## 🎯 Oyun Mekanikleri
 
@@ -33,23 +34,56 @@
 
 ## 🛠️ Kurulum
 
-### Otomatik Başlatma (Windows)
+### Modern Altyapı (Önerilen)
+```bash
+# Bağımlılıkları yükle
+npm install
+
+# Geliştirme sunucusu başlat
+npm run dev
+
+# Production build
+npm run build
+
+# Test çalıştır
+npm test
+```
+
+### Alternatif Başlatma Yöntemleri
+```bash
+# Python HTTP sunucusu ile
+npm run serve
+
+# PHP ile
+npm run serve-php
+
+# Node.js ile
+npm start
+```
+
+### Eski Yöntem (Windows)
 ```bash
 # Oyunu başlatmak için
 start-game.bat
 ```
 
-### Manuel Başlatma
-```bash
-# Python HTTP sunucusu ile
-python -m http.server 8000
+## 📊 Metrik Sistemi
 
-# Node.js ile
-npx http-server
+### Lighthouse Skorları
+- **Performance**: Web performansı
+- **Accessibility**: Erişilebilirlik
+- **SEO**: Arama motoru optimizasyonu
+- **Best Practices**: En iyi uygulamalar
 
-# PHP ile
-php -S localhost:8000
-```
+### Test Coverage
+- **Hedef**: %85 test coverage
+- **Mevcut**: Sürekli güncelleniyor
+
+### Performance Metrikleri
+- **FCP**: First Contentful Paint
+- **LCP**: Largest Contentful Paint
+- **FID**: First Input Delay
+- **CLS**: Cumulative Layout Shift
 
 ## 📁 Proje Yapısı
 
@@ -57,6 +91,8 @@ php -S localhost:8000
 TheEquals_Game/
 ├── Index.HTML          # Ana oyun dosyası
 ├── storyData.json      # Hikaye verileri
+├── package.json        # Modern npm yapılandırması
+├── metrics.js          # Metrik sistemi
 ├── assets/
 │   ├── css/
 │   │   └── main.css    # Stil dosyaları
@@ -64,7 +100,10 @@ TheEquals_Game/
 │       └── app.js      # Oyun mantığı
 ├── BGs/                # Arka plan görselleri
 ├── Music/              # Müzik dosyaları
-└── start-game.bat      # Otomatik başlatma
+├── .github/
+│   ├── workflows/      # CI/CD pipeline
+│   └── branch-protection.yml
+└── start-game.bat      # Eski başlatma (kaldırılacak)
 ```
 
 ## 🎨 Teknolojiler
@@ -73,12 +112,22 @@ TheEquals_Game/
 - **CSS3**: Modern styling ve animasyonlar
 - **JavaScript (ES6+)**: Oyun mantığı ve etkileşim
 - **JSON**: Veri yönetimi
+- **npm**: Modern paket yönetimi
+- **GitHub Actions**: CI/CD pipeline
+- **Lighthouse**: Performance monitoring
 
 ## 🔧 Geliştirme
 
 ### Gereksinimler
+- Node.js >= 14.0.0
 - Modern web tarayıcısı
 - HTTP sunucusu (geliştirme için)
+
+### Güvenlik
+- Branch protection rules aktif
+- Pull Request zorunlu
+- Code review gerekli
+- Otomatik test ve linting
 
 ### Katkıda Bulunma
 1. Fork yapın
@@ -100,8 +149,14 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 
 ## 🎮 Oynama
 
-Oyunu oynamak için `Index.HTML` dosyasını bir web tarayıcısında açın veya `start-game.bat` dosyasını çalıştırın.
+Oyunu oynamak için:
+```bash
+npm install
+npm run dev
+```
+
+Veya `Index.HTML` dosyasını bir web tarayıcısında açın.
 
 ---
 
-**⚠️ Not**: Bu oyun şu anda Beta aşamasındadır. Geliştirme sürecinde olabilir. 
+**⚠️ Not**: Bu oyun şu anda Beta aşamasındadır. Modern altyapı ile geliştirilmektedir. 
