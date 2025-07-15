@@ -15,6 +15,31 @@ body {
     background-attachment: fixed;
     transition: background-image 1s ease-in-out;
 }
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: -999px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    left: 10px;
+    top: 10px;
+}
+
+button {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+button:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
 body::before {
     content: '';
     position: fixed;

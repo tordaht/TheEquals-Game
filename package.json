@@ -1,0 +1,24 @@
+{
+  "name": "the-equals-game",
+  "version": "3.1.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "start": "http-server -p 8000",
+    "dev": "http-server -c-1 -p 8000",
+    "lint": "eslint assets/js/**/*.js",
+    "build": "echo 'Building...'"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.0.4",
+    "eslint": "^8.55.0",
+    "http-server": "^14.1.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFiles": ["./tests/setup.js"],
+    "transform": {}
+  }
+}

@@ -1,5 +1,6 @@
 // The Equals Game - Ana Test Dosyas
 // Bu dosya oyunun temel fonksiyonlarını test eder
+import { jest } from '@jest/globals';
 
 // Test dosyalarını yükle
 import { calculateChoiceEffects, gameState, showNode, selectChoice, updateStats, startGame, loadStoryData } from '../assets/js/app.js';

@@ -1,53 +1,37 @@
-// Oyun durumu
-// gameState sınır kontrollü
-const gameState = {
-    _adalet_puani: 0,
-    _guc_puani: 0,
-    _halk_destegi: 0,
-    _halk_memnuniyeti: 0,
-    _isyan_riski: 0,
-    _hazine: 100,
-    _kisisel_vicdan: 0,
-    faz: 1,
-    bolum: 1,
-    get adalet_puani() { return this._adalet_puani; },
-    set adalet_puani(v) { this._adalet_puani = Math.max(0, Math.min(100, v)); },
-    get guc_puani() { return this._guc_puani; },
-    set guc_puani(v) { this._guc_puani = Math.max(0, Math.min(100, v)); },
-    get halk_destegi() { return this._halk_destegi; },
-    set halk_destegi(v) { this._halk_destegi = Math.max(0, Math.min(100, v)); },
-    get halk_memnuniyeti() { return this._halk_memnuniyeti; },
-    set halk_memnuniyeti(v) { this._halk_memnuniyeti = Math.max(0, Math.min(100, v)); },
-    get isyan_riski() { return this._isyan_riski; },
-    set isyan_riski(v) { this._isyan_riski = Math.max(0, Math.min(100, v)); },
-    get hazine() { return this._hazine; },
-    set hazine(v) { this._hazine = Math.max(0, Math.min(200, v)); },
-    get kisisel_vicdan() { return this._kisisel_vicdan; },
-    set kisisel_vicdan(v) { this._kisisel_vicdan = Math.max(0, Math.min(100, v)); },
-    karakter_adi: "",
-    secilen_yol: "",
-    müttefik: "",
-    yoldas_durumu: "",
-    secilen_strateji: "",
-    elit_cevabi: "",
-    devrim_tipi: "",
-    yonetim_stili: "",
-    muhalefet_durumu: "",
-    son_catisma_secimi: "",
-    dis_politika_durumu: "tarafsız",
-    teknoloji_seviyesi: 5,
-    anahtar_karakterler: {
-        elif: { durum: 'güvende', iliski: 'sadık' },
-        eski_yoldas: { durum: 'hayatta', iliski: 'sadık' },
-        aile_uyesi: { durum: 'tehlikede', iliski: 'kırgın' }
-    },
-    // Uyarı sistemi için son değerler
-    _lastHazine: 100,
-    _lastHalkMemnuniyeti: 0,
-    // Haber sistemi için
-    _lastNewsTime: 0,
-    _newsShown: false
-};
+// Core state and stat utilities
+import {
+  gameState,
+  updateStats,
+  animateStatChange,
+  checkCriticalLevel,
+  checkSpecialEffects,
+  showWarning
+} from './modules/stats.js';
+
+// Object pooling helper
+import ObjectPool from './modules/objectPool.js';
+
+// Save/load helpers
+import { saveGame, loadGame } from './modules/saveLoad.js';
+
+// Game loop utilities
+import { startLoop, stopLoop } from './modules/gameLoop.js';
+
+// Lazy load metrics system when needed
+let metricsSystem;
+async function loadMetrics() {
+  if (!metricsSystem) {
+    const mod = await import('../metrics.js');
+    metricsSystem = mod.default || mod.metricsSystem;
+  }
+  return metricsSystem;
+}
+
+const flashbackPool = new ObjectPool(() => {
+  const el = document.createElement('div');
+  el.className = 'flashback-dialog';
+  return el;
+});
 
 // Haber sistemi
 const newsSystem = {
@@ -329,8 +313,9 @@ const emotionalSystem = {
         const randomFlashback = flashbacks[Math.floor(Math.random() * flashbacks.length)];
         
         // Flashback dialog'u oluştur
-        const flashbackDialog = document.createElement('div');
+        const flashbackDialog = flashbackPool.acquire();
         flashbackDialog.className = 'flashback-dialog';
+        flashbackDialog.innerHTML = '';
         flashbackDialog.innerHTML = `
             <div class="flashback-content">
                 <div class="flashback-header">
@@ -547,160 +532,6 @@ function changeBackground(imagePath) {
 }
 
 // Geliştirilmiş Stat Güncelleme Sistemi
-function updateStats() {
-    const stats = [
-        { id: 'justice', value: gameState.adalet_puani, max: 100, name: 'Adalet' },
-        { id: 'power', value: gameState.guc_puani, max: 100, name: 'Güç' },
-        { id: 'support', value: gameState.halk_destegi, max: 100, name: 'Halk Desteği' },
-        { id: 'satisfaction', value: gameState.halk_memnuniyeti, max: 100, name: 'Memnuniyet' },
-        { id: 'rebellion', value: gameState.isyan_riski, max: 100, name: 'İsyan Riski' },
-        { id: 'treasury', value: gameState.hazine, max: 200, name: 'Hazine' },
-        { id: 'conscience', value: gameState.kisisel_vicdan, max: 100, name: 'Vicdan' }
-    ];
-
-    stats.forEach(stat => {
-        const fill = document.getElementById(`${stat.id}-fill`);
-        const value = document.getElementById(`${stat.id}-value`);
-        const row = document.getElementById(`${stat.id}-row`);
-        
-        if (fill && value) {
-            const oldValue = parseInt(value.textContent) || 0;
-            const newValue = stat.value;
-            const percentage = Math.min((newValue / stat.max) * 100, 100);
-            
-            // Animasyonlu güncelleme
-            fill.style.width = `${percentage}%`;
-            value.textContent = newValue;
-            
-            // Değişim animasyonu
-            if (oldValue !== newValue) {
-                animateStatChange(stat.id, oldValue, newValue);
-            }
-            
-            // Kritik seviye kontrolü
-            checkCriticalLevel(stat.id, newValue, stat.max);
-        }
-    });
-
-    // Özel efektler
-    checkSpecialEffects();
-}
-
-// Puan değişim animasyonu
-function animateStatChange(statId, oldValue, newValue) {
-    const valueElement = document.getElementById(`${statId}-value`);
-    const fillElement = document.getElementById(`${statId}-fill`);
-    const rowElement = document.getElementById(`${statId}-row`);
-    
-    if (!valueElement || !fillElement || !rowElement) return;
-    
-    // Değişim göstergesi
-    const change = newValue - oldValue;
-    const changeText = change > 0 ? `+${change}` : `${change}`;
-    const changeClass = change > 0 ? 'positive' : 'negative';
-    
-    // Mevcut göstergeleri temizle
-    const existingIndicator = rowElement.querySelector('.stat-change-indicator');
-    if (existingIndicator) existingIndicator.remove();
-    
-    // Yeni gösterge oluştur
-    const indicator = document.createElement('div');
-    indicator.className = `stat-change-indicator ${changeClass}`;
-    indicator.textContent = changeText;
-    rowElement.appendChild(indicator);
-    
-    // Animasyon başlat
-    setTimeout(() => {
-        indicator.classList.add('show');
-        valueElement.classList.add('changed');
-        fillElement.classList.add('changed');
-        
-        // Animasyonları temizle
-        setTimeout(() => {
-            valueElement.classList.remove('changed');
-            fillElement.classList.remove('changed');
-            indicator.classList.remove('show');
-            setTimeout(() => indicator.remove(), 500);
-        }, 800);
-    }, 100);
-}
-
-// Kritik seviye kontrolü
-function checkCriticalLevel(statId, value, max) {
-    const rowElement = document.getElementById(`${statId}-row`);
-    if (!rowElement) return;
-    
-    const percentage = (value / max) * 100;
-    
-    // Kritik seviyeleri temizle
-    rowElement.classList.remove('critical', 'danger');
-    
-    // Yeni kritik seviyeleri uygula
-    if (statId === 'rebellion' && percentage >= 80) {
-        rowElement.classList.add('critical');
-    } else if (statId === 'rebellion' && percentage >= 60) {
-        rowElement.classList.add('danger');
-    } else if (statId === 'satisfaction' && percentage <= 20) {
-        rowElement.classList.add('critical');
-    } else if (statId === 'satisfaction' && percentage <= 40) {
-        rowElement.classList.add('danger');
-    } else if (statId === 'treasury' && percentage <= 15) {
-        rowElement.classList.add('critical');
-    } else if (statId === 'treasury' && percentage <= 30) {
-        rowElement.classList.add('danger');
-    }
-}
-
-// Özel efektler
-function checkSpecialEffects() {
-    // İsyan riski 70+ ise sallanma efekti
-    if (gameState.isyan_riski >= 70) {
-        document.body.classList.add('shake');
-        setTimeout(() => {
-            document.body.classList.remove('shake');
-        }, 500);
-    }
-    
-    // Hazine kritik seviyede ise uyarı (sadece büyük düşüşlerde)
-    if (gameState.hazine <= 30 && gameState.hazine < gameState._lastHazine - 10) {
-        showWarning('Hazine kritik seviyede!');
-    }
-    
-    // Halk memnuniyeti çok düşükse uyarı (sadece büyük düşüşlerde)
-    if (gameState.halk_memnuniyeti <= 20 && gameState.halk_memnuniyeti < gameState._lastHalkMemnuniyeti - 15) {
-        showWarning('Halk memnuniyeti çok düşük!');
-    }
-    
-    // Son değerleri güncelle
-    gameState._lastHazine = gameState.hazine;
-    gameState._lastHalkMemnuniyeti = gameState.halk_memnuniyeti;
-}
-
-// Uyarı gösterme
-function showWarning(message) {
-    const warning = document.createElement('div');
-    warning.className = 'warning-message';
-    warning.textContent = message;
-    warning.style.cssText = `
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(225, 112, 85, 0.9);
-        color: white;
-        padding: 15px 25px;
-        border-radius: 10px;
-        font-weight: bold;
-        z-index: 10000;
-        animation: warningPulse 2s ease-in-out;
-    `;
-    
-    document.body.appendChild(warning);
-    
-    setTimeout(() => {
-        warning.remove();
-    }, 3000);
-}
 
 // İlişkiler panelini güncelle
 function updateRelationshipsPanel() {
@@ -1022,6 +853,8 @@ function selectChoice(choice) {
         showNode(choice.nextNode);
     }
 
+    saveGame(gameState);
+
     // Animasyon tamamlandıktan sonra bayrağı sıfırla
     setTimeout(() => {
         isChoiceMade = false;
@@ -1095,6 +928,12 @@ function startGame() {
     // Debug bilgisi güncelle
     const gameStatus = document.getElementById('game-status');
     if (gameStatus) gameStatus.textContent = 'Çalışıyor ✓';
+
+    const saved = loadGame();
+    if (saved) {
+        Object.assign(gameState, saved);
+        updateStats();
+    }
     
     // Müzik sistemi otomatik başlatılacak
     musicSystem.updateMusicButton();
@@ -1234,6 +1073,7 @@ function closeFlashback() {
         setTimeout(() => {
             if (dialog.parentElement) {
                 dialog.remove();
+                flashbackPool.release(dialog);
             }
         }, 300);
     });
@@ -1333,12 +1173,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Müzik sistemini başlat
     musicSystem.init();
+
+    // Başlatılmış oyun döngüsü
+    startLoop(() => {
+        newsSystem.checkNews();
+    });
     
     // F12 ile debug panelini gizle/göster
     document.addEventListener('keydown', function(e) {
         if (e.key === 'F12') {
             e.preventDefault();
             if (debugInfo) debugInfo.style.display = debugInfo.style.display === 'none' ? 'block' : 'none';
+            loadMetrics();
         }
     });
     
@@ -1362,6 +1208,10 @@ export {
   selectChoice,
   startGame,
   loadStoryData,
-  musicSystem
+  musicSystem,
+  saveGame,
+  loadGame,
+  startLoop,
+  stopLoop
   // metricsSystem // varsa ekle
-}; 
+};

@@ -10,6 +10,7 @@
 - **Dinamik İstatistikler**: 7 farklı puan sistemi
 - **Çoklu Son**: Kararlarınıza göre değişen sonlar
 - **Erişilebilirlik**: Renk körlüğü desteği, yüksek kontrast modu
+- **Klavye Desteği**: ARIA etiketleri ve atlanabilir bağlantı
 - **Müzik Sistemi**: Atmosferik arka plan müziği (%15 otomatik başlatma)
 - **Responsive Tasarım**: Tüm cihazlarda uyumlu
 - **Modern Altyapı**: npm scripts, CI/CD pipeline, metrik sistemi
@@ -154,6 +155,15 @@ Oyunu oynamak için:
 npm install
 npm run dev
 ```
+
+### Test Çalıştırma
+```bash
+npm test
+```
+
+### Kaydetme ve Yükleme
+Oyun otomatik olarak yerel depolamaya kaydolur. Kaydınızı silmek için tarayıcı
+verilerini temizleyebilirsiniz.
 
 Veya `Index.HTML` dosyasını bir web tarayıcısında açın.
 
