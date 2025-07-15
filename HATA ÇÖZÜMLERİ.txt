@@ -22,4 +22,25 @@ PROJE: The Equals Game
 TARİH: 2024
 ÇÖZÜM: app.js dosyasında fetch('storyData_new.json') → fetch('storyData.json') olarak düzeltildi
 
+HATA #3:
+---------
+HATA: Skip butonu seçeneklerin üzerinde duruyordu, mouse ile seçim yaparken engel oluyordu
+PROJE: The Equals Game
+TARİH: 2024
+ÇÖZÜM: Skip butonu sayfanın sağ alt köşesine sabitlendi, artık seçenekleri engellemiyor
+
+HATA #4:
+---------
+HATA: Oyun logosu SVG formatında basit bir tasarımdı
+PROJE: The Equals Game
+TARİH: 2024
+ÇÖZÜM: Logo.png dosyası oyun logosu olarak yerleştirildi, CSS stilleri güncellendi
+
+HATA #5:
+---------
+HATA: Skip butonu oyun kuralları butonunun üzerine denk geliyordu
+PROJE: The Equals Game
+TARİH: 2024
+ÇÖZÜM: Skip butonu sayfanın ortasına, oyun kuralları butonunun üstüne taşındı (bottom: 60px, left: 50%, transform: translateX(-50%))
+
 ===================================== 

@@ -158,7 +158,7 @@ function typeWriter(text, onComplete) {
         skipBtn.remove();
         if (onComplete) onComplete();
     };
-    storyTextElement.parentElement.appendChild(skipBtn);
+    document.body.appendChild(skipBtn);
     
     let i = 0;
     function type() {
