@@ -1,13 +1,20 @@
-BGs/
-BG-Ek/
-Music/
+# Sadece gerekli dosyalar hariç tutulacak
+!BGs/
+!BG-Ek/
+!Music/
+!assets/css/
+!assets/js/
+!Index.HTML
+!BetaHikayeYapisi/
+!README.md
+
+# Geri kalan her şeyi ignore et
 TheEquals_Game_v3.1_Current_Backup/
 TheEquals_Game_v2.4_Final_Backup/
-*.mp3
+*.bat
+*.md
+*.txt
 *.png
 *.jpg
 *.jpeg
-*.gif
-*.bat
-*.md
-*.txt 
+*.gif 
