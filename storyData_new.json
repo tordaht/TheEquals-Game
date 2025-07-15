@@ -1,149 +1,306 @@
 {
   "gameInfo": {
-    "title": "Gri Şafak",
-    "version": "3.0",
-    "author": "Devrimci Oyun Stüdyosu",
-    "world": "Aethelburg Şehri"
+    "title": "The Equals",
+    "version": "2.1",
+    "author": "Devrimci Oyun Stüdyosu"
   },
   "storyNodes": {
     "start": {
-      "text": "PROLOG: PASLANMIŞ DİŞLİLER\n\nAynı gün, farklı maske\n\nSosyal Liyakat Puanı terminaline bakıyorsun. Puanın ortalamanın biraz üzerinde; ne çok iyi, ne de çok kötü. Sıradan bir gün gibi. Şimdi geçmişini seçmelisin.",
+      "text": "Gri ışıklar şehrinde, monoton bir döngüde yaşıyorsun.\n\nHer sabah aynı metro, aynı ofis, aynı rutin.\n\nBugün farklı bir gün olacak mı?",
       "background": "BGs/tordah_Urban_outskirts_gray_concrete_apartment_blocks_working_9beac87a-9211-4f41-abe8-aa8b13b93e36_1.png",
       "choices": [
         {
-          "text": "Veri Analisti (OmniCorp)",
-          "set": { "gecmis": "veri_analisti", "hacking_bonus": true },
-          "nextNode": "kirilma_ani"
+          "text": "Rutin devam etsin",
+          "nextNode": "monoton_dongu"
         },
         {
-          "text": "Sokak Muhabiri (Vadi Postası)",
-          "set": { "gecmis": "muhabir", "ikna_bonus": true },
-          "nextNode": "kirilma_ani"
-        },
-        {
-          "text": "Sosyal Hizmetler Görevlisi (Belediye)",
-          "set": { "gecmis": "sosyal_hizmet", "halk_bonus": true },
-          "nextNode": "kirilma_ani"
+          "text": "Farklı bir şeyler yap",
+          "nextNode": "kırılma_anı"
         }
       ]
     },
-    "kirilma_ani": {
-      "text": "Kırılma anı\n\nVadi'nin kalabalık metro istasyonunda ilerliyorsun. Holografik reklamlar, anonslar, insanlar... Bir anda telefonun titriyor. Ahmet: 'İşten çıkarıldım. Konuşacak halde değilim.'",
+    "monoton_dongu": {
+      "text": "Rutin devam ediyor. Metroda yanındaki insanların konuşmalarını duyuyorsun:\n\n'Ekonomi kötü, işsizlik artıyor...'\n'Devlet bizi umursamıyor...'\n'Bir şeyler değişmeli...'\n\nBu sesler seni rahatsız ediyor mu?",
       "background": "BGs/tordah_Industrial_factory_interior_workers_in_uniforms_with_c_7b0c1859-10de-4326-b715-a245569f7257_2.png",
       "choices": [
         {
-          "text": "Ahmet'in evine git",
-          "nextNode": "ahmet_evi"
+          "text": "Kulaklarını kapat, rutine devam et",
+          "set": { "halk_memnuniyeti": "it -5" },
+          "nextNode": "start"
         },
         {
-          "text": "Öfkeyle durumu araştır",
-          "nextNode": "ofke_arastirma"
+          "text": "Dinlemeye devam et",
+          "set": { "adalet_puani": "it +5" },
+          "nextNode": "kırılma_anı"
         }
       ]
     },
-    "ahmet_evi": {
-      "text": "Ahmet'in yaşadığı, Konsey'in 'Kovan Blokları'ndan birine gidiyorsun. Dar koridorlar, isli duvarlar. Kapıyı Sema açıyor. İçeride, küçük kızı oyuncaklarıyla oynuyor. Ahmet pencereden dışarı bakıyor.\n\nNe söylersin?",
-      "background": "BGs/tordah_Urban_outskirts_gray_concrete_apartment_blocks_working_9beac87a-9211-4f41-abe8-aa8b13b93e36_1.png",
-      "choices": [
-        { "text": "Biraz param var, istersen alabilirsin.", "set": { "hazine": "it -10", "vicdan": "it +5", "ahmet_iliskisi": "it +10" }, "nextNode": "kirilim_sonrasi" },
-        { "text": "Bunu onların yanına bırakmayacağız.", "set": { "adalet": "it +10", "ahmet_iliskisi": "it +5" }, "nextNode": "kirilim_sonrasi" },
-        { "text": "Yanındayım, konuşmak zorunda değilsin.", "set": { "ahmet_iliskisi": "it +15" }, "nextNode": "kirilim_sonrasi" },
-        { "text": "Neden seni işten attılar, bir sebep söylediler mi?", "set": { "propaganda_ipucu": true }, "nextNode": "kirilim_sonrasi" }
-      ]
-    },
-    "ofke_arastirma": {
-      "text": "Eve dönüp bilgisayarını açıyorsun. Geçmişine göre farklı bir yol izliyorsun.\n\nVeri Analistiysen: OmniCorp'un sistemine sızıp işten çıkarılanların listesini buluyorsun.\nMuhabirsen: Eski bir muhbirini arıyorsun. Fısıltı, işten çıkarmaların arkasında Albay Sancak'ın olduğunu söylüyor.\nSosyal Hizmetlerciysen: Belediyenin veri tabanında, yardımların aslında bir takip mekanizması olduğunu fark ediyorsun.",
+    "kırılma_anı": {
+      "text": "İşyerinde arkadaşın Ahmet işten çıkarıldı. Ailesi var, çocukları var.\n\nYönetici: 'Ekonomik kriz, tasarruf gerekli...'\n\nAhmet'in gözlerindeki umutsuzluğu görüyorsun.",
       "background": "BGs/tordah_Indoor_office_hallway_subdued_lighting_solitary_figure_28bd36ad-c4d4-4e83-af39-b06159512f2f_3.png",
       "choices": [
-        { "text": "Devam et", "set": { "adalet": "it +10", "propaganda_malzemesi": true }, "nextNode": "kirilim_sonrasi" }
+        {
+          "text": "Sessizce izle",
+          "set": { "kisisel_vicdan": "it -10" },
+          "nextNode": "ilk_hücre"
+        },
+        {
+          "text": "Gizlice yardım et",
+          "set": { "adalet_puani": "it +10", "kisisel_vicdan": "it +5" },
+          "nextNode": "ilk_hücre"
+        },
+        {
+          "text": "Açıkça protesto et",
+          "set": { "adalet_puani": "it +15", "isyan_riski": "it +5" },
+          "nextNode": "ilk_hücre"
+        }
       ]
     },
-    "kirilim_sonrasi": {
-      "text": "Artık izleyici kalmak istemiyorsun. İnternetteki gizli forumlarda dolaşmaya başlıyorsun. Karşında üç farklı grup var.\n\nKiminle ilk adımı atacaksın?",
+    "ilk_hücre": {
+      "text": "Birkaç gün sonra, gizli bir toplantıya davet edildin.\n\nÜç farklı grup var:\n- Akademisyenler (bilgi ve strateji)\n- Askerler (güç ve organizasyon)\n- Sendikacılar (halk desteği)\n\nHangi gruba katılacaksın?",
       "background": "BGs/tordah_Secret_underground_meeting_room_dimly_lit_small_group__2a2a3ec5-0dd8-4ec4-87f3-18ce9de3249a_1.png",
       "choices": [
-        { "text": "Elara (Akademisyen)", "nextNode": "elara_bulusma" },
-        { "text": "Kaan (Asker)", "nextNode": "kaan_bulusma" },
-        { "text": "Leyla (Sendikacı)", "nextNode": "leyla_bulusma" }
+        {
+          "text": "Akademisyenlerle çalış",
+          "set": { "adalet_puani": "it +10", "müttefik": "akademisyen" },
+          "nextNode": "ses_getirme"
+        },
+        {
+          "text": "Askerlerle birleş",
+          "set": { "guc_puani": "it +15", "müttefik": "asker" },
+          "nextNode": "ses_getirme"
+        },
+        {
+          "text": "Sendikacılarla hareket et",
+          "set": { "halk_destegi": "it +15", "müttefik": "sendikacı" },
+          "nextNode": "ses_getirme"
+        }
       ]
     },
-    "elara_bulusma": {
-      "text": "Büyük, terk edilmiş kütüphanede Elara ile buluşuyorsun. Elara, Konsey'in yasakladığı bir kitabı bulmanı istiyor.\n\nNe yapacaksın?",
-      "background": "BGs/tordah_Elegant_academic_library_room_intellectuals_in_discuss_b79324c3-4f6a-4f6f-9729-dcdcd267c731_2.png",
-      "choices": [
-        { "text": "Kitabı bulmaya çalış", "set": { "elara_guven": "it +10" }, "nextNode": "ilk_eylem_planlama" },
-        { "text": "Elara'ya güvenmediğini belli et", "set": { "elara_guven": "it -5" }, "nextNode": "ilk_eylem_planlama" }
-      ]
-    },
-    "kaan_bulusma": {
-      "text": "Eski metro tünellerinde Kaan ile buluşuyorsun. Kaan, peşine taktığın sivil polisleri atlatıp atlatamayacağını görmek istiyor.\n\nNe yapacaksın?",
-      "background": "BGs/tordah_Indoor_office_hallway_subdued_lighting_solitary_figure_28bd36ad-c4d4-4e83-af39-b06159512f2f_3.png",
-      "choices": [
-        { "text": "Polisleri atlatmaya çalış", "set": { "kaan_guven": "it +10" }, "nextNode": "ilk_eylem_planlama" },
-        { "text": "Kaan'a açıkça meydan oku", "set": { "kaan_guven": "it -5" }, "nextNode": "ilk_eylem_planlama" }
-      ]
-    },
-    "leyla_bulusma": {
-      "text": "Gece vardiyasının en yoğun olduğu bir tekstil fabrikasında Leyla ile buluşuyorsun. Leyla, makinelerden birini 'kaza süsü vererek' sabote etmeni istiyor.\n\nNe yapacaksın?",
-      "background": "BGs/tordah_Industrial_factory_interior_workers_in_uniforms_with_c_7b0c1859-10de-4326-b715-a245569f7257_2.png",
-      "choices": [
-        { "text": "Sabotajı yap", "set": { "leyla_guven": "it +10", "vicdan": "it -5" }, "nextNode": "ilk_eylem_planlama" },
-        { "text": "Reddet, başka yol öner", "set": { "leyla_guven": "it -5" }, "nextNode": "ilk_eylem_planlama" }
-      ]
-    },
-    "ilk_eylem_planlama": {
-      "text": "İlk müttefikin güvenini kazandıktan sonra, ilk eylem planlanır. Seçenekler, müttefikin karakterini yansıtır ve her birinin beklenmedik sonuçları olabilir.\n\nİlk eylem türünü seç:",
+    "ses_getirme": {
+      "text": "İlk eylemi planlıyorsunuz. {müttefik} grubuyla birlikte çalışıyorsun.\n\nEylem türü:\n- Barışçıl protesto (güvenli ama etkisiz)\n- Sivil itaatsizlik (riskli ama etkili)\n- Gizli propaganda (uzun vadeli)",
       "background": "BGs/tordah_Activist_headquarters_maps_and_strategy_boards_passion_54439e8a-7feb-4d17-b0bd-12393032b32d_2.png",
       "choices": [
-        { "text": "Veri Sızıntısı (Elara)", "set": { "adalet": "it +10", "halk_destegi": "it +10" }, "nextNode": "eylem_sonuclari" },
-        { "text": "Sessiz Yürüyüş (Elara)", "set": { "adalet": "it +5" }, "nextNode": "eylem_sonuclari" },
-        { "text": "Alternatif Eğitim Ağı (Elara)", "set": { "adalet": "it +5", "halk_destegi": "it +5" }, "nextNode": "eylem_sonuclari" },
-        { "text": "Gizli Operasyon (Kaan)", "set": { "guc": "it +10" }, "nextNode": "eylem_sonuclari" },
-        { "text": "Fabrika Grevi (Leyla)", "set": { "halk_destegi": "it +10" }, "nextNode": "eylem_sonuclari" }
+        {
+          "text": "Barışçıl protesto düzenle",
+          "set": { "halk_memnuniyeti": "it +10", "isyan_riski": "it -5" },
+          "nextNode": "müttefik_arayışı"
+        },
+        {
+          "text": "Sivil itaatsizlik eylemi",
+          "set": { "adalet_puani": "it +15", "isyan_riski": "it +10" },
+          "nextNode": "müttefik_arayışı"
+        },
+        {
+          "text": "Gizli propaganda kampanyası",
+          "set": { "halk_destegi": "it +10", "hazine": "it -20" },
+          "nextNode": "müttefik_arayışı"
+        }
       ]
     },
-    "eylem_sonuclari": {
-      "text": "İlk eylemin sonuçları ortaya çıkıyor. Başarı ya da başarısızlık, grubun moralini ve kaynaklarını etkiliyor. Yeni üyeler katılıyor, yeni ihtiyaçlar doğuyor.\n\nArtık tek bir grupla devam etmek imkansız. Diğer iki liderle de masaya oturmak zorundasın.\n\nDevrim Konseyi nasıl bir yapıya sahip olacak?",
-      "background": "BGs/tordah_Diverse_group_of_activists_in_a_grand_hall_shaking_han_4c9953bf-212a-4725-9daf-495e9e1ed89c_2.png",
+    "müttefik_arayışı": {
+      "text": "İlk eylemden sonra daha güçlü ittifaklar arıyorsunuz.\n\nHangi yolu seçeceksiniz?\n- Akademik çevreler (strateji ve bilgi)\n- Askeri çevreler (güç ve organizasyon)\n- Halk hareketleri (kitle desteği)",
+      "background": "BGs/tordah_Elegant_academic_library_room_intellectuals_in_discuss_b79324c3-4f6a-4f6f-9729-dcdcd267c731_2.png",
       "choices": [
-        { "text": "Merkezi Konsey (Demokratik)", "set": { "adalet": "it +10", "demokratik_meşruiyet": true }, "nextNode": "konsey_sonuclari" },
-        { "text": "Hücre Yapılanması (Güvenlik)", "set": { "guc": "it +10", "gizlilik": true }, "nextNode": "konsey_sonuclari" },
-        { "text": "Tek Liderlik (Riskli)", "set": { "guc": "it +15", "vicdan": "it -10", "tek_lider": true }, "nextNode": "konsey_sonuclari" }
+        {
+          "text": "Akademik çevrelerle ittifak",
+          "set": { "adalet_puani": "it +15", "secilen_yol": "akademik" },
+          "nextNode": "devletin_cevabı"
+        },
+        {
+          "text": "Askeri çevrelerle ittifak",
+          "set": { "guc_puani": "it +20", "secilen_yol": "askeri" },
+          "nextNode": "devletin_cevabı"
+        },
+        {
+          "text": "Halk hareketleriyle ittifak",
+          "set": { "halk_destegi": "it +20", "secilen_yol": "halk" },
+          "nextNode": "devletin_cevabı"
+        }
       ]
     },
-    "konsey_sonuclari": {
-      "text": "Konsey yapısı belirlendi. Ancak Albay Sancak sahneye çıkıyor. Televizyonda sizi 'kaos tellalları' ve 'terörist' ilan ediyor.\n\nİlk eylemde sana yardım eden küçük karakter kaçırılıyor. Sancak, 'Elimdeki çürük elma'yı istersen, gelip almalısın' diyor.\n\nTuzağa gidecek misin?",
-      "background": "BGs/tordah_Intense_private_confrontation_in_dim_lit_room_one_figu_b3ae36f9-3f3f-4fad-b3c4-8341bf959fc8_3.png",
+    "devletin_cevabı": {
+      "text": "Eyleminiz medyada yer buldu. Devlet tepki veriyor:\n\n- Tutuklamalar başladı\n- Medya manipülasyonu\n- İçeriden sızıntılar\n\nGrubunuzda şüphe uyanıyor. Ne yapacaksınız?",
+      "background": "BGs/tordah_A_graphic_novel-style_depiction_of_an_interrogation_ro_25062c80-8f0f-45f1-82bf-31ec2b81c71c_1.png",
       "choices": [
-        { "text": "Kurtarma operasyonu düzenle (Riskli)", "set": { "guc": "it +10", "vicdan": "it +5" }, "nextNode": "propaganda_savasi" },
-        { "text": "Feda edilebilir piyon de, güvenliği öncelikle", "set": { "vicdan": "it -10", "moral": "it -10" }, "nextNode": "propaganda_savasi" }
+        {
+          "text": "Daha agresif eylemler planla",
+          "set": { "guc_puani": "it +20", "isyan_riski": "it +20" },
+          "nextNode": "devrimin_eşiğinde"
+        },
+        {
+          "text": "Halk desteğini artır",
+          "set": { "halk_destegi": "it +20", "halk_memnuniyeti": "it +15" },
+          "nextNode": "devrimin_eşiğinde"
+        },
+        {
+          "text": "Gizli kal, güç topla",
+          "set": { "hazine": "it +30", "isyan_riski": "it -10" },
+          "nextNode": "devrimin_eşiğinde"
+        }
       ]
     },
-    "propaganda_savasi": {
-      "text": "Medya, eylemlerinizi çarpıtmaya başlıyor. Sessiz yürüyüşünüz 'yağma girişimi', fabrika greviniz 'ekonomik sabotaj' olarak sunuluyor.\n\nNasıl karşılık vereceksin?",
-      "background": "BGs/tordah_Office_building_exterior_sleek_corporate_facade_luxury_b5c5fac0-53c5-4776-af88-71ebf5cf4394_2.png",
+    "devrimin_eşiğinde": {
+      "text": "Devrimin eşiğindesiniz. Halk ayaklanması başlamak üzere.\n\nSon hamleniz ne olacak?\n\n- Halkı yönlendir ve liderlik et\n- Arkada dur, güvenliği sağla\n- Radikal eylemler planla",
+      "background": "BGs/tordah_Through_the_bustling_thoroughfare_protesters_weave_bet_9c837784-1831-454f-9a0e-8eb866462ba9_1.png",
       "choices": [
-        { "text": "Kendi propagandanı yap (Elara)", "set": { "adalet": "it +10" }, "nextNode": "kostebek_avi" },
-        { "text": "Grafiti ve sloganlarla karşılık ver (Leyla)", "set": { "halk_destegi": "it +10" }, "nextNode": "kostebek_avi" },
-        { "text": "Korku sal (Kaan)", "set": { "guc": "it +10" }, "nextNode": "kostebek_avi" }
+        {
+          "text": "Halkın önünde liderlik et",
+          "set": { "adalet_puani": "it +25", "halk_destegi": "it +20", "secilen_strateji": "liderlik" },
+          "nextNode": "yeni_şafak"
+        },
+        {
+          "text": "Güvenlik ve organizasyon",
+          "set": { "guc_puani": "it +25", "hazine": "it +20", "secilen_strateji": "organizasyon" },
+          "nextNode": "yeni_şafak"
+        },
+        {
+          "text": "Radikal devrimci eylemler",
+          "set": { "isyan_riski": "it +25", "guc_puani": "it +15", "secilen_strateji": "radikal" },
+          "nextNode": "yeni_şafak"
+        }
       ]
     },
-    "kostebek_avi": {
-      "text": "Kritik bir operasyon pusuya düşürüldü. İçeriden birinin bilgi sızdırdığı kesin.\n\nŞüpheliler: Elara'nın öğrencisi Can, Kaan'ın çavuşu Barış, Leyla'nın sağ kolu Fatma.\n\nKöstebeği bulmaya çalış!",
-      "background": "BGs/tordah_Intelligence_officers_around_war_room_table_watching_m_044fc08f-20f9-4c41-9c07-d9c52851a561_1.png",
+    "yeni_şafak": {
+      "text": "Devrim başarılı! Eski rejim devrildi.\n\nŞimdi yeni bir düzen kurmanız gerekiyor.\n\nİlk kriz: Gıda kıtlığı başladı.\n\nNe yapacaksınız?",
+      "background": "BGs/tordah_In_the_cavernous_marketplace_once-empty_shelves_overfl_2dec70c1-23f1-43e1-b6c1-b962da5cc60a_0.png",
       "choices": [
-        { "text": "Can'ı suçla", "set": { "elara_guven": "it -10" }, "nextNode": "devrim_esiginde" },
-        { "text": "Barış'ı suçla", "set": { "kaan_guven": "it -10" }, "nextNode": "devrim_esiginde" },
-        { "text": "Fatma'yı suçla", "set": { "leyla_guven": "it -10" }, "nextNode": "devrim_esiginde" }
+        {
+          "text": "Acil gıda dağıtımı",
+          "set": { "halk_memnuniyeti": "it +20", "hazine": "it -30" },
+          "nextNode": "yoldaşlar_arası"
+        },
+        {
+          "text": "Tarım reformu başlat",
+          "set": { "adalet_puani": "it +15", "hazine": "it -20" },
+          "nextNode": "yoldaşlar_arası"
+        },
+        {
+          "text": "Dış yardım kabul et",
+          "set": { "halk_memnuniyeti": "it +10", "dis_politika_durumu": "bağımlı" },
+          "nextNode": "yoldaşlar_arası"
+        }
       ]
     },
-    "devrim_esiginde": {
-      "text": "Konsey'in yaptığı son bir hata bardağı taşırıyor. Halkın öfkesi patlama noktasında. Devrim Konseyi toplanıyor. Masada üç plan var.\n\nSon hamleni seç!",
-      "background": "BGs/tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
+    "yoldaşlar_arası": {
+      "text": "Kriz çözüldü ama yoldaşlarınız arasında fikir ayrılıkları başladı.\n\n- Bazıları daha radikal değişim istiyor\n- Bazıları istikrarı önceliyor\n- Bazıları eski sisteme dönüş arıyor\n\nNe yapacaksınız?",
+      "background": "BGs/tordah_In_the_marble_council_chamber_cloaked_senators_debate__cb68757a-5b55-400f-9656-116b6c255b28_3.png",
       "choices": [
-        { "text": "Halk Ayaklanması (Leyla)", "set": { "halk_destegi": "it +20" }, "nextNode": "perde2_baslangic" },
-        { "text": "Stratejik Darbe (Kaan)", "set": { "guc": "it +20" }, "nextNode": "perde2_baslangic" },
-        { "text": "Siyasi Çökertme (Elara)", "set": { "adalet": "it +20" }, "nextNode": "perde2_baslangic" }
+        {
+          "text": "Radikalleri destekle",
+          "set": { "adalet_puani": "it +20", "isyan_riski": "it +15" },
+          "nextNode": "aynadaki_yüz"
+        },
+        {
+          "text": "İstikrarı sağla",
+          "set": { "halk_memnuniyeti": "it +15", "isyan_riski": "it -10" },
+          "nextNode": "aynadaki_yüz"
+        },
+        {
+          "text": "Uzlaşma arayışı",
+          "set": { "halk_destegi": "it +15", "adalet_puani": "it +10" },
+          "nextNode": "aynadaki_yüz"
+        }
+      ]
+    },
+    "aynadaki_yüz": {
+      "text": "Yeni bir gençlik hareketi ortaya çıktı: 'Gerçek Eşitler'\n\nSizin devriminizi yetersiz buluyorlar. Daha radikal değişim istiyorlar.\n\nBu hareket sizin geçmişinizi yansıtıyor. Ne yapacaksınız?",
+      "background": "BGs/tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
+      "choices": [
+        {
+          "text": "Onları bastır",
+          "set": { "guc_puani": "it +20", "adalet_puani": "it -15" },
+          "nextNode": "hasat_zamanı"
+        },
+        {
+          "text": "Onlarla birleş",
+          "set": { "adalet_puani": "it +20", "halk_destegi": "it +15" },
+          "nextNode": "hasat_zamanı"
+        },
+        {
+          "text": "Onları yönlendir",
+          "set": { "halk_destegi": "it +10", "adalet_puani": "it +10" },
+          "nextNode": "hasat_zamanı"
+        }
+      ]
+    },
+    "hasat_zamanı": {
+      "text": "Zaman geçti. Devriminizin meyvelerini topluyorsunuz.\n\nAncak yeni tehditler ortaya çıktı:\n- Dış müdahale tehdidi\n- İç karışıklık\n- Ekonomik kriz\n\nSon krizle karşı karşıyasınız.",
+      "background": "BGs/tordah_In_the_war_councils_candlelit_chamber_tattered_maps_sp_e48729e6-131f-41cd-8276-348a7f978b5c_0.png",
+      "choices": [
+        {
+          "text": "Güçlü liderlik göster",
+          "set": { "guc_puani": "it +25", "isyan_riski": "it +10" },
+          "nextNode": "final_güçlü_lider"
+        },
+        {
+          "text": "Demokratik çözüm ara",
+          "set": { "adalet_puani": "it +25", "halk_destegi": "it +15" },
+          "nextNode": "final_demokratik"
+        },
+        {
+          "text": "Dış yardım kabul et",
+          "set": { "dis_politika_durumu": "bağımlı", "halk_memnuniyeti": "it -10" },
+          "nextNode": "final_dış_bağımlı"
+        }
+      ]
+    },
+    "final_güçlü_lider": {
+      "text": "Güçlü liderlikle krizi aştınız.\n\nAncak artık bir tiran olarak görülüyorsunuz.\n\nPuanlarınız:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}\nHalk Memnuniyeti: {halk_memnuniyeti}\nİsyan Riski: {isyan_riski}\nHazine: {hazine}\nKişisel Vicdan: {kisisel_vicdan}",
+      "background": "BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "choices": [
+        {
+          "text": "Yeniden Oyna",
+          "nextNode": "start"
+        }
+      ]
+    },
+    "final_demokratik": {
+      "text": "Demokratik yollarla krizi çözdünüz.\n\nHalk sizi seviyor ama sistem yavaş işliyor.\n\nPuanlarınız:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}\nHalk Memnuniyeti: {halk_memnuniyeti}\nİsyan Riski: {isyan_riski}\nHazine: {hazine}\nKişisel Vicdan: {kisisel_vicdan}",
+      "background": "BGs/tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
+      "choices": [
+        {
+          "text": "Yeniden Oyna",
+          "nextNode": "start"
+        }
+      ]
+    },
+    "final_dış_bağımlı": {
+      "text": "Dış yardımla krizi aştınız.\n\nAncak artık bağımsızlığınızı kaybettiniz.\n\nPuanlarınız:\nAdalet: {adalet_puani}\nGüç: {guc_puani}\nHalk Desteği: {halk_destegi}\nHalk Memnuniyeti: {halk_memnuniyeti}\nİsyan Riski: {isyan_riski}\nHazine: {hazine}\nKişisel Vicdan: {kisisel_vicdan}",
+      "background": "BGs/tordah_In_the_twilight-lit_public_square_robed_dignitaries_st_89cf1d80-2c01-4871-b6bc-8479a64f3b68_0.png",
+      "choices": [
+        {
+          "text": "Yeniden Oyna",
+          "nextNode": "start"
+        }
+      ]
+    },
+    "leyla_ayaklanmasi": {
+      "text": "Halk ayaklanması Leyla'nın liderliğinde başladı. Şehirde büyük bir değişim rüzgarı esiyor. Yeni bir dönem başlıyor.",
+      "background": "BGs/tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
+      "choices": [
+        { "text": "Yeniden Oyna", "nextNode": "start" }
+      ]
+    },
+    "kaan_darbe": {
+      "text": "Kaan'ın stratejik darbesiyle yönetim el değiştirdi. Askeri disiplin ve düzen ön planda. Yeni bir otorite kuruldu.",
+      "background": "BGs/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "choices": [
+        { "text": "Yeniden Oyna", "nextNode": "start" }
+      ]
+    },
+    "elara_cokertme": {
+      "text": "Elara'nın siyasi zekasıyla rakipler bertaraf edildi. Akademik ve entelektüel bir yönetim dönemi başladı.",
+      "background": "BGs/tordah_Elegant_academic_library_room_intellectuals_in_discuss_b79324c3-4f6a-4f6f-9729-dcdcd267c731_2.png",
+      "choices": [
+        { "text": "Yeniden Oyna", "nextNode": "start" }
+      ]
+    },
+    "perde2_baslangic": {
+      "text": "Devrimin ikinci perdesi başlıyor. Şehirde yeni bir dönem, yeni umutlar ve yeni mücadeleler var.",
+      "background": "BGs/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+      "choices": [
+        { "text": "Yeniden Oyna", "nextNode": "start" }
       ]
     }
   }

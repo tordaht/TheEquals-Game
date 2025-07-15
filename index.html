@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>The Equals v2.3</title>
+    <title>The Equals v2.4</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMTIxMjEyIi8+CjxwYXRoIGQ9Ik04IDhoMTZ2MTZIOHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2M5NGE0YSIgc3Ryb2tlLXdpZHRoPSIxIi8+CjxwYXRoIGQ9Ik0xMiAxMmg0djRIMTJ6IiBmaWxsPSIjYzk0YTRhIi8+CjxwYXRoIGQ9Ik0xNiAxMmg0djRIMTZ6IiBmaWxsPSIjYzk0YTRhIi8+CjxwYXRoIGQ9Ik0xMiAxNmg0djRIMTJ6IiBmaWxsPSIjYzk0YTRhIi8+CjxwYXRoIGQ9Ik0xNiAxNmg0djRIMTZ6IiBmaWxsPSIjYzk0YTRhIi8+Cjwvc3ZnPg==" type="image/svg+xml">
 </head>
 <body>
     <!-- Debug Bilgisi -->
     <div id="debug-info" style="position: fixed; top: 10px; left: 10px; background: rgba(0,0,0,0.8); color: white; padding: 10px; font-size: 12px; z-index: 9999; display: none;">
-        <div>Versiyon: v2.3</div>
+        <div>Versiyon: v2.4</div>
         <div>StoryData: <span id="storydata-status">Yükleniyor...</span></div>
         <div>Oyun Durumu: <span id="game-status">Başlatılmadı</span></div>
     </div>
@@ -18,11 +18,50 @@
     <!-- Açılış Modal -->
     <div id="welcome-modal">
         <div class="content">
-            <b>The Equals v2.3</b> oyununa hoşgeldiniz.<br><br>
+            <b>The Equals v2.4</b> oyununa hoşgeldiniz.<br><br>
             Bu oyun deneysel olarak geliştirildi. Oyun deneyiminiz ve bazı bilgileriniz oyun kalitesini artırmak için saklanabilir.<br><br>
             <span style="font-size:0.95em;opacity:0.7;">Devam etmek için aşağıdaki butona tıklayın.</span>
         </div>
         <button id="welcome-start-btn">BAŞLA</button>
+    </div>
+
+    <!-- Oyun Kuralları Modal -->
+    <div id="rules-modal" style="display: none;">
+        <div class="rules-content">
+            <h2>🎮 OYUN KURALLARI</h2>
+            
+            <h3>📖 NASIL OYNANIR?</h3>
+            <p>• Hikayeyi okuyun ve size sunulan seçeneklerden birini seçin</p>
+            <p>• Her seçiminiz farklı statlarınızı etkiler</p>
+            <p>• Seçimleriniz hikayenin gidişatını ve sonucunu belirler</p>
+            
+            <h3>📊 STATLAR</h3>
+            <p><strong>Adalet (0-100):</strong> Doğru kararlar, halk yararına seçimler</p>
+            <p><strong>Güç (0-100):</strong> Askeri seçimler, agresif eylemler</p>
+            <p><strong>Halk Desteği (0-100):</strong> Halk odaklı seçimler, protestolar</p>
+            <p><strong>Halk Memnuniyeti (0-100):</strong> Halk refahı, barışçıl çözümler</p>
+            <p><strong>İsyan Riski (0-100):</strong> Radikal eylemler, devrim atmosferi</p>
+            <p><strong>Hazine (0-200):</strong> Ekonomik güç, kaynak yönetimi</p>
+            <p><strong>Vicdan (0-100):</strong> Ahlaki seçimler, karakter gelişimi</p>
+            
+            <h3>🎯 STRATEJİ</h3>
+            <p>• <strong>Radikal seçimler:</strong> İsyan riski artar</p>
+            <p>• <strong>Barışçıl seçimler:</strong> Halk memnuniyeti artar</p>
+            <p>• <strong>Askeri seçimler:</strong> Güç artar, vicdan azalır</p>
+            <p>• <strong>Ahlaki seçimler:</strong> Vicdan artar, güç azalır</p>
+            
+            <h3>🏆 SONUÇLAR</h3>
+            <p>• <strong>Güçlü Lider:</strong> Yüksek güç + yüksek isyan riski</p>
+            <p>• <strong>Demokratik:</strong> Yüksek adalet + yüksek halk desteği</p>
+            <p>• <strong>Bağımlı:</strong> Düşük hazine + düşük güç</p>
+            
+            <h3>⚡ ÖZELLİKLER</h3>
+            <p>• <strong>SKIP:</strong> Metin animasyonunu atlayın</p>
+            <p>• <strong>📊:</strong> Stat panelini aç/kapat</p>
+            <p>• <strong>👥:</strong> Karakter ilişkilerini gör</p>
+            <p>• <strong>F12:</strong> Debug panelini aç/kapat</p>
+        </div>
+        <button id="rules-close-btn">KAPAT</button>
     </div>
 
     <!-- Ana Oyun Konteyneri -->
@@ -112,6 +151,7 @@
     <!-- Toggle Butonları -->
     <button id="leader-toggle">📊</button>
     <button id="relationships-toggle">👥</button>
+    <button id="rules-toggle">📖</button>
 
     <script src="assets/js/app.js"></script>
 </body>

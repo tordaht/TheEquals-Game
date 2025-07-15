@@ -183,7 +183,7 @@ body::before {
 .status-enemy { color: #e17055; }
 
 /* Toggle Butonları */
-#leader-toggle, #relationships-toggle {
+#leader-toggle, #relationships-toggle, #rules-toggle {
     position: fixed;
     background: rgba(30,30,40,0.65);
     border: 1.5px solid rgba(255,255,255,0.18);
@@ -204,11 +204,113 @@ body::before {
     top: 18px;
     left: 18px;
 }
-#leader-toggle:hover, #relationships-toggle:hover {
-    background: rgba(255,94,94,0.18);
-    color: #ff5e5e;
+#rules-toggle {
+    bottom: 18px;
+    right: 18px;
+}
+#leader-toggle:hover, #relationships-toggle:hover, #rules-toggle:hover {
+    background: rgba(255,255,255,0.22);
     border-color: #ff5e5e;
-    transform: scale(1.08);
+    transform: scale(1.05);
+}
+
+/* Oyun Kuralları Modal */
+#rules-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.rules-content {
+    background: rgba(30, 30, 40, 0.95);
+    border-radius: 24px;
+    padding: 32px;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border: 1.5px solid rgba(255,255,255,0.12);
+    color: #e0e0e0;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+}
+
+.rules-content h2 {
+    color: #ff5e5e;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.8em;
+}
+
+.rules-content h3 {
+    color: #74b9ff;
+    margin: 20px 0 10px 0;
+    font-size: 1.2em;
+}
+
+.rules-content p {
+    margin: 8px 0;
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+
+.rules-content strong {
+    color: #fdcb6e;
+}
+
+#rules-close-btn {
+    background: rgba(255,255,255,0.13);
+    color: #ff5e5e;
+    border: 1.5px solid rgba(255,255,255,0.22);
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.2s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+}
+
+#rules-close-btn:hover {
+    background: rgba(255,255,255,0.22);
+    color: #fff;
+    border-color: #ff5e5e;
+    box-shadow: 0 4px 16px 0 rgba(255,94,94,0.10);
+    transform: scale(1.03);
+}
+
+/* Skip Butonu */
+.skip-btn {
+    background: rgba(255,255,255,0.13);
+    color: #ff5e5e;
+    border: 1.5px solid rgba(255,255,255,0.22);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.2s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+}
+
+.skip-btn:hover {
+    background: rgba(255,255,255,0.22);
+    color: #fff;
+    border-color: #ff5e5e;
+    box-shadow: 0 4px 16px 0 rgba(255,94,94,0.10);
+    transform: scale(1.03);
 }
 
 /* Welcome Modal */
