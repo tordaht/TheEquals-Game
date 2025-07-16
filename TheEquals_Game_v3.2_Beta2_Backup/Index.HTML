@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Equals Game - Versiyon 3.0 Beta</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <!-- Erişilebilirlik Kontrolleri -->
+    <div class="accessibility-controls" id="accessibility-controls">
+        <button onclick="toggleTextSize()">Yazı Boyutu</button>
+        <button onclick="toggleColorblindMode()">Renk Körlüğü</button>
+        <button onclick="toggleHighContrast()">Yüksek Kontrast</button>
+        <button onclick="toggleReducedMotion()">Azaltılmış Hareket</button>
+    </div>
+
+    <!-- Erişilebilirlik Toggle Butonu -->
+    <button class="accessibility-toggle" onclick="toggleAccessibilityControls()" aria-label="Erişilebilirlik ayarları">
+        ♿
+    </button>
+
+    <!-- Müzik Kontrolleri -->
+    <div class="music-controls">
+        <button id="music-toggle" onclick="musicSystem.toggle()" class="music-toggle" aria-label="Müziği aç/kapat">
+            🔇
+        </button>
+        <div class="volume-controls">
+            <button onclick="musicSystem.decreaseVolume()" class="volume-btn" aria-label="Sesi azalt">🔉</button>
+            <span id="volume-display" class="volume-display">30%</span>
+            <button onclick="musicSystem.increaseVolume()" class="volume-btn" aria-label="Sesi artır">🔊</button>
+        </div>
+    </div>
+
+    <div id="game-container">
+        <!-- Oyun Başlığı -->
+        <div class="game-header">
+            <img src="logo.png" alt="The Equals Game Logo" class="game-logo">
+            <h1 class="game-title">The Equals Game</h1>
+            <div class="version-info">v3.0 - TEG-007 (BETA)</div>
+        </div>
+
+        <!-- Ana Oyun Alanı -->
+        <div class="game-content">
+            <div class="story-container">
+                <div class="story-content-wrapper">
+                    <div id="story-text" class="story-text" role="main" aria-live="polite">
+                        Oyun yükleniyor...
+                    </div>
+                    <div id="character-portrait" class="character-portrait" style="display: none;">
+                        <!-- Karakter portreleri buraya gelecek -->
+                    </div>
+                </div>
+                <div id="choices" class="choices-container" role="group" aria-label="Seçenekler">
+                    <!-- Seçenekler buraya gelecek -->
+                </div>
+            </div>
+        </div>
+
+        <!-- İlişkiler Paneli -->
+        <div class="relationships-panel" id="relationships-panel" role="region" aria-label="Karakter İlişkileri">
+            <!-- Karakter ilişkileri buraya gelecek -->
+        </div>
+    </div>
+
+    <!-- İstatistik Paneli - Ekranın sol altında -->
+    <div class="stats-panel" role="region" aria-label="Oyun İstatistikleri">
+        <div class="stat-row" id="justice-row">
+            <div class="stat-info">
+                <span class="stat-label" id="justice-label">Adalet</span>
+                <span class="stat-value" id="justice-value">0</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="justice-fill"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row" id="power-row">
+            <div class="stat-info">
+                <span class="stat-label" id="power-label">Güç</span>
+                <span class="stat-value" id="power-value">0</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="power-fill"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row" id="support-row">
+            <div class="stat-info">
+                <span class="stat-label" id="support-label">Halk Desteği</span>
+                <span class="stat-value" id="support-value">0</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="support-fill"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row" id="satisfaction-row">
+            <div class="stat-info">
+                <span class="stat-label" id="satisfaction-label">Memnuniyet</span>
+                <span class="stat-value" id="satisfaction-value">0</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="satisfaction-fill"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row" id="rebellion-row">
+            <div class="stat-info">
+                <span class="stat-label" id="rebellion-label">İsyan Riski</span>
+                <span class="stat-value" id="rebellion-value">0</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="rebellion-fill"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row" id="treasury-row">
+            <div class="stat-info">
+                <span class="stat-label" id="treasury-label">Hazine</span>
+                <span class="stat-value" id="treasury-value">100</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="treasury-fill"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row" id="conscience-row">
+            <div class="stat-info">
+                <span class="stat-label" id="conscience-label">Vicdan</span>
+                <span class="stat-value" id="conscience-value">0</span>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-fill" id="conscience-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skip Butonu - Ekranın alt ortasında -->
+    <button id="skip-button" class="skip-button" onclick="skipAnimation()" style="display: none;" aria-label="Metni hızlıca göster">
+        ⏭️ Skip
+    </button>
+    
+    <!-- Geliştirici Bilgisi - Dipte tıklanabilir -->
+    <div class="developer-info-small">
+        <a href="mailto:ozanbayar@gmail.com" style="color: inherit; text-decoration: none;">
+            Ozan BAYAR / Cursor AI
+        </a>
+    </div>
+
+    <!-- Oyun Kuralları Butonu - Ekranın sağ altında -->
+    <button class="rules-button" onclick="showRules()" aria-label="Oyun kurallarını göster">
+        📖 Kurallar
+    </button>
+
+    <!-- Debug paneli kaldırıldı - oyuncu deneyimi için gereksiz -->
+
+    <!-- Oyun Kuralları Modal -->
+    <div id="rules-modal" class="rules-modal" style="display: none;">
+        <div class="rules-content">
+            <div class="rules-header">
+                <h2>🎮 OYUN KURALLARI</h2>
+                <div class="rules-close" onclick="closeRules()">✕</div>
+            </div>
+            <div class="rules-body">
+                <h3>📊 İstatistikler</h3>
+                <p><strong>Adalet:</strong> Toplumsal adalet seviyesi (0-100)</p>
+                <p><strong>Güç:</strong> Siyasi ve askeri güç (0-100)</p>
+                <p><strong>Halk Desteği:</strong> Halkın size olan desteği (0-100)</p>
+                <p><strong>Memnuniyet:</strong> Halkın genel memnuniyeti (0-100)</p>
+                <p><strong>İsyan Riski:</strong> Halk ayaklanması riski (0-100)</p>
+                <p><strong>Hazine:</strong> Devlet hazinesi (0-200)</p>
+                <p><strong>Vicdan:</strong> Kişisel ahlaki değerler (0-100)</p>
+                
+                <h3>⚡ Oyun Mekanikleri</h3>
+                <p><strong>Seçimler:</strong> Her seçimin sonuçları vardır ve geri alınamaz</p>
+                <p><strong>Denge:</strong> Puanlarınızı dengede tutun, aşırılıklardan kaçının</p>
+                <p><strong>Haberler:</strong> Gündem haberleri puanlarınızı etkiler</p>
+                <p><strong>Flashback'ler:</strong> Duygusal anılar karakterinizi şekillendirir</p>
+                
+                <h3>🎯 Hedef</h3>
+                <p>Devrimci bir lider olarak Vadi şehrini yönetin. Halkın güvenini kazanın, adaleti sağlayın ve isyan riskini kontrol altında tutun.</p>
+                
+                <div class="alpha-notice">
+                    <h3>⚠️ ALFA AŞAMASI</h3>
+                    <p><strong>The Equals Game</strong> şu anda <strong>Alfa Aşaması</strong>nda geliştirilmektedir. Bu versiyon temel oyun mekaniklerini ve hikaye akışını içermektedir.</p>
+                    <p><strong>Geliştirme Planı:</strong></p>
+                    <ul>
+                        <li>Daha fazla hikaye düğümü ve seçenek</li>
+                        <li>Gelişmiş karakter ilişkileri sistemi</li>
+                        <li>Daha detaylı istatistik ve etki mekanikleri</li>
+                        <li>Mobil uygulama versiyonu</li>
+                        <li>Çoklu dil desteği</li>
+                        <li>Oyun kaydetme sistemi</li>
+                    </ul>
+                    <p><strong>Geri Bildirim:</strong> Oyun deneyiminiz hakkında geri bildirimlerinizi bekliyoruz. Geliştirme sürecinde sizin önerileriniz önemlidir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
