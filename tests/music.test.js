@@ -1,8 +1,9 @@
+import { jest } from '@jest/globals';
 import { musicSystem } from '../assets/js/app.js';
 
 // Mock Audio API
 global.Audio = jest.fn().mockImplementation(() => ({
-  play: jest.fn(),
+  play: jest.fn().mockResolvedValue(),
   pause: jest.fn(),
   load: jest.fn(),
   addEventListener: jest.fn(),
@@ -81,28 +82,26 @@ describe('Music System Tests', () => {
     expect(musicSystem.volume).toBe(0);
   });
 
-  test('Music system play/pause functionality', () => {
+  test('Music system play/pause functionality', async () => {
     musicSystem.init();
-    
-    // Test play
+
     musicSystem.play();
+    await Promise.resolve();
     expect(musicSystem.isPlaying).toBe(true);
     expect(musicSystem.audio.play).toHaveBeenCalled();
-    
-    // Test pause
+
     musicSystem.pause();
     expect(musicSystem.isPlaying).toBe(false);
     expect(musicSystem.audio.pause).toHaveBeenCalled();
   });
 
-  test('Music system toggle functionality', () => {
+  test('Music system toggle functionality', async () => {
     musicSystem.init();
-    
-    // Test toggle from stopped to playing
+
     musicSystem.toggle();
+    await Promise.resolve();
     expect(musicSystem.isPlaying).toBe(true);
-    
-    // Test toggle from playing to stopped
+
     musicSystem.toggle();
     expect(musicSystem.isPlaying).toBe(false);
   });
