@@ -1,0 +1,160 @@
+{
+  "browserPath": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "consoleErrors": [],
+  "captures": [
+    {
+      "nodeId": "start",
+      "screenshot": "docs/screenshots/start.png",
+      "snapshot": {
+        "mode": "story",
+        "nodeId": "start",
+        "phase": 1,
+        "phaseLabel": "Uyanis",
+        "visibleText": "Gri ışıklar şehrinde, monoton bir döngüde yaşıyorsun.\n\nHer sabah aynı metro, aynı ofis, aynı rutin.\nHerkes aynı kıyafet, aynı ifade, aynı hayat.\n\n'Sistem eşit' diyorlar. Gerçekten mi?",
+        "fullText": "Gri ışıklar şehrinde, monoton bir döngüde yaşıyorsun.\n\nHer sabah aynı metro, aynı ofis, aynı rutin.\nHerkes aynı kıyafet, aynı ifade, aynı hayat.\n\n'Sistem eşit' diyorlar. Gerçekten mi?",
+        "typing": false,
+        "choices": [
+          "Rutin devam etsin",
+          "Farklı bir şeyler yap"
+        ],
+        "stats": {
+          "adalet_puani": 0,
+          "guc_puani": 0,
+          "halk_destegi": 0,
+          "halk_memnuniyeti": 0,
+          "isyan_riski": 0,
+          "hazine": 100,
+          "kisisel_vicdan": 0
+        },
+        "ally": "",
+        "overlay": null,
+        "portrait": null,
+        "background": "assets/media/backgrounds/tordah_Urban_outskirts_gray_concrete_apartment_blocks_working_9beac87a-9211-4f41-abe8-aa8b13b93e36_1.png",
+        "consoleErrors": []
+      }
+    },
+    {
+      "nodeId": "gizli_hiyerarsi",
+      "screenshot": "docs/screenshots/gizli_hiyerarsi.png",
+      "snapshot": {
+        "mode": "story",
+        "nodeId": "gizli_hiyerarsi",
+        "phase": 1,
+        "phaseLabel": "Uyanis",
+        "visibleText": "Olaydan birkaç gün sonra, şehrin derinliklerinde gizli bir toplantıya davet edildin.\n\nÜç farklı direniş grubu var:\n- Akademisyenler (Bilgi ve strateji ile sistemi içeriden çökertmek istiyorlar)\n- Askerler (Disiplinli bir güçle yönetimi devirmek istiyorlar)\n- Sendikacılar (Halkın gücüyle sistemi değiştirmek istiyorlar)\n\nHangi gruba katılacaksın?",
+        "fullText": "Olaydan birkaç gün sonra, şehrin derinliklerinde gizli bir toplantıya davet edildin.\n\nÜç farklı direniş grubu var:\n- Akademisyenler (Bilgi ve strateji ile sistemi içeriden çökertmek istiyorlar)\n- Askerler (Disiplinli bir güçle yönetimi devirmek istiyorlar)\n- Sendikacılar (Halkın gücüyle sistemi değiştirmek istiyorlar)\n\nHangi gruba katılacaksın?",
+        "typing": false,
+        "choices": [
+          "Akademisyenlerle çalış",
+          "Askerlerle birleş",
+          "Sendikacılarla hareket et"
+        ],
+        "stats": {
+          "adalet_puani": 0,
+          "guc_puani": 0,
+          "halk_destegi": 0,
+          "halk_memnuniyeti": 0,
+          "isyan_riski": 0,
+          "hazine": 100,
+          "kisisel_vicdan": 0
+        },
+        "ally": "",
+        "overlay": null,
+        "portrait": "Direnis Lideri",
+        "background": "assets/media/backgrounds/tordah_Underground_meeting_room_with_warm_lighting_revolution_bcab4a52-5422-439d-94e6-6646b79ea023_1.png",
+        "consoleErrors": []
+      }
+    },
+    {
+      "nodeId": "faz2_baslangic",
+      "screenshot": "docs/screenshots/faz2_baslangic.png",
+      "snapshot": {
+        "mode": "story",
+        "nodeId": "faz2_baslangic",
+        "phase": 2,
+        "phaseLabel": "Kurulus",
+        "visibleText": "Devrim başarılı oldu! Eski rejim devrildi.\n\nŞimdi asıl mücadele başlıyor: yeni bir dünya kurmak.\n\nGüç, onu ele geçirenler için bir tuzaktır. Bu tuzağa düşecek misin?",
+        "fullText": "Devrim başarılı oldu! Eski rejim devrildi.\n\nŞimdi asıl mücadele başlıyor: yeni bir dünya kurmak.\n\nGüç, onu ele geçirenler için bir tuzaktır. Bu tuzağa düşecek misin?",
+        "typing": false,
+        "choices": [
+          "Yeni bir başlangıç yap"
+        ],
+        "stats": {
+          "adalet_puani": 0,
+          "guc_puani": 0,
+          "halk_destegi": 0,
+          "halk_memnuniyeti": 0,
+          "isyan_riski": 0,
+          "hazine": 100,
+          "kisisel_vicdan": 0
+        },
+        "ally": "",
+        "overlay": null,
+        "portrait": null,
+        "background": "assets/media/backgrounds/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+        "consoleErrors": []
+      }
+    },
+    {
+      "nodeId": "gecis_donemi",
+      "screenshot": "docs/screenshots/gecis_donemi.png",
+      "snapshot": {
+        "mode": "story",
+        "nodeId": "gecis_donemi",
+        "phase": 3,
+        "phaseLabel": "Ozurluk Denemesi",
+        "visibleText": "Kriz, ağır bedellerle de olsa aşıldı. Eski sistemin hayaletlerinden tamamen kurtulup, kurduğunuz yeni düzenin gerçekleriyle yüzleşme zamanı.\n\nFaz 3: Özgürlük Denemesi başlıyor.",
+        "fullText": "Kriz, ağır bedellerle de olsa aşıldı. Eski sistemin hayaletlerinden tamamen kurtulup, kurduğunuz yeni düzenin gerçekleriyle yüzleşme zamanı.\n\nFaz 3: Özgürlük Denemesi başlıyor.",
+        "typing": false,
+        "choices": [
+          "Denemeyi başlat..."
+        ],
+        "stats": {
+          "adalet_puani": 0,
+          "guc_puani": 0,
+          "halk_destegi": 0,
+          "halk_memnuniyeti": 0,
+          "isyan_riski": 0,
+          "hazine": 100,
+          "kisisel_vicdan": 0
+        },
+        "ally": "",
+        "overlay": null,
+        "portrait": null,
+        "background": "assets/media/backgrounds/tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
+        "consoleErrors": []
+      }
+    },
+    {
+      "nodeId": "final_karar",
+      "screenshot": "docs/screenshots/final_karar.png",
+      "snapshot": {
+        "mode": "story",
+        "nodeId": "final_karar",
+        "phase": 3,
+        "phaseLabel": "Ozurluk Denemesi",
+        "visibleText": "Yıllar geçti... Kurduğun toplum, seçimlerinin bir yansıması. Geriye dönüp baktığında ne görüyorsun?\n\n(Aşağıdaki sonuç, oyun boyunca verdiğin kararlara göre şekillendi.)",
+        "fullText": "Yıllar geçti... Kurduğun toplum, seçimlerinin bir yansıması. Geriye dönüp baktığında ne görüyorsun?\n\n(Aşağıdaki sonuç, oyun boyunca verdiğin kararlara göre şekillendi.)",
+        "typing": false,
+        "choices": [
+          "Sonucu Gör"
+        ],
+        "stats": {
+          "adalet_puani": 0,
+          "guc_puani": 0,
+          "halk_destegi": 0,
+          "halk_memnuniyeti": 0,
+          "isyan_riski": 0,
+          "hazine": 100,
+          "kisisel_vicdan": 0
+        },
+        "ally": "",
+        "overlay": null,
+        "portrait": null,
+        "background": "assets/media/backgrounds/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+        "consoleErrors": []
+      }
+    }
+  ],
+  "generatedAt": "2026-03-14T17:59:02.159Z"
+}

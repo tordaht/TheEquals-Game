@@ -1,0 +1,7 @@
+node_modules/
+coverage/
+playwright-artifacts/
+docs/screenshots/
+output/
+scripts/web-game-actions.json
+temp/

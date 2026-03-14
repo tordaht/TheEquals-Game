@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Equals Game / FAZ - TEMIZ</title>
+  <link rel="icon" type="image/x-icon" href="assets/media/favicon.ico">
+  <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body data-text-size="medium">
+  <div id="app" class="app-shell">
+    <header class="utility-bar">
+      <div class="utility-group">
+        <button id="accessibility-toggle" type="button" class="utility-button" aria-expanded="false">Erisilebilirlik</button>
+        <div id="accessibility-panel" class="utility-panel" hidden>
+          <button id="text-size-button" type="button">Yazi Boyutu</button>
+          <button id="colorblind-button" type="button">Renk Modu</button>
+          <button id="contrast-button" type="button">Kontrast</button>
+          <button id="motion-button" type="button">Hareket</button>
+        </div>
+      </div>
+      <div class="utility-group utility-group-right">
+        <button id="music-toggle" type="button" class="utility-button">Muzik: Kapali</button>
+        <button id="volume-down" type="button" class="utility-button utility-button-small">-</button>
+        <span id="volume-display" class="volume-display">15%</span>
+        <button id="volume-up" type="button" class="utility-button utility-button-small">+</button>
+      </div>
+    </header>
+
+    <main class="layout-grid">
+      <aside class="panel panel-side stats-panel">
+        <h2>Durum</h2>
+        <div id="stats-list" class="stats-list"></div>
+      </aside>
+
+      <section class="panel story-panel">
+        <header class="story-header">
+          <img src="assets/media/logo.png" alt="The Equals logosu" class="game-logo">
+          <div>
+            <p id="phase-pill" class="phase-pill">Yukleniyor</p>
+            <h1>The Equals Game</h1>
+            <p id="scene-summary" class="scene-summary">Sahne hazirlaniyor...</p>
+          </div>
+        </header>
+
+        <div class="story-stage">
+          <div class="story-copy">
+            <article id="story-text" class="story-text">Oyun yukleniyor...</article>
+            <p id="choice-hint" class="choice-hint">Secimler hazirlaniyor.</p>
+          </div>
+          <aside id="portrait-panel" class="portrait-panel" hidden>
+            <img id="portrait-image" class="portrait-image" alt="">
+            <p id="portrait-name" class="portrait-name"></p>
+          </aside>
+        </div>
+
+        <div id="overlay-panel" class="overlay-panel" hidden>
+          <div class="overlay-card">
+            <h2 id="overlay-title"></h2>
+            <p id="overlay-content"></p>
+            <button id="overlay-dismiss" type="button" class="overlay-dismiss">Kapat</button>
+          </div>
+        </div>
+
+        <div id="choices" class="choices-list"></div>
+
+        <div class="story-actions">
+          <button id="skip-button" type="button" class="action-button">Metni Atla</button>
+          <button id="rules-button" type="button" class="action-button action-button-secondary">Kurallar</button>
+        </div>
+      </section>
+
+      <aside class="panel panel-side relationships-panel">
+        <h2>Iliskiler</h2>
+        <div id="relationships-list" class="relationships-list"></div>
+      </aside>
+    </main>
+
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <footer class="app-footer">
+      <span>Sadik toparlama / temiz surum</span>
+      <span>Ozan BAYAR / Codex cleanup</span>
+    </footer>
+  </div>
+
+  <div id="rules-modal" class="modal-backdrop" hidden>
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2>Oyun Kurallari</h2>
+        <button id="rules-close" type="button" class="utility-button utility-button-small">X</button>
+      </div>
+      <div id="rules-body" class="rules-body"></div>
+    </div>
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

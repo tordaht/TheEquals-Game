@@ -1,0 +1,677 @@
+[
+  {
+    "nodeId": "start",
+    "phase": 1,
+    "phaseLabel": "Uyanis",
+    "sceneSummary": "Gri ışıklar şehrinde, monoton bir döngüde yaşıyorsun.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Urban_outskirts_gray_concrete_apartment_blocks_working_9beac87a-9211-4f41-abe8-aa8b13b93e36_1.png",
+      "fileName": "tordah_Urban_outskirts_gray_concrete_apartment_blocks_working_9beac87a-9211-4f41-abe8-aa8b13b93e36_1.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "strong",
+      "frameCheck": "captured",
+      "reuse": "unique",
+      "notes": "Acilis karesindeki apartman ve soguk tonlar monoton kent rutini ile uyumlu."
+    }
+  },
+  {
+    "nodeId": "ilk_suphe",
+    "phase": 1,
+    "phaseLabel": "Uyanis",
+    "sceneSummary": "İşyerinde arkadaşın Ahmet işten çıkarıldı.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_A_stark_oppressive_office_corridor_with_harsh_lighting_1261554d-71d1-4211-a9f8-25bc7b278391_1.png",
+      "fileName": "tordah_A_stark_oppressive_office_corridor_with_harsh_lighting_1261554d-71d1-4211-a9f8-25bc7b278391_1.png",
+      "usageCount": 1
+    },
+    "portrait": {
+      "name": "Ahmet",
+      "path": "assets/media/portraits/tordah_Ahmet_in_his_30s_short_black_hair_light_stubble_tired__fb6f8caf-33cb-41d0-af45-a9f21e0766d7_0.png",
+      "fileName": "tordah_Ahmet_in_his_30s_short_black_hair_light_stubble_tired__fb6f8caf-33cb-41d0-af45-a9f21e0766d7_0.png",
+      "usageCount": 1
+    },
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "strong",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": "Koridor gorseli isyerindeki gerilimi ve kurumsal baskiyi iyi tasiyor."
+    }
+  },
+  {
+    "nodeId": "gizli_hiyerarsi",
+    "phase": 1,
+    "phaseLabel": "Uyanis",
+    "sceneSummary": "Olaydan birkaç gün sonra, şehrin derinliklerinde gizli bir toplantıya davet edildin.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Underground_meeting_room_with_warm_lighting_revolution_bcab4a52-5422-439d-94e6-6646b79ea023_1.png",
+      "fileName": "tordah_Underground_meeting_room_with_warm_lighting_revolution_bcab4a52-5422-439d-94e6-6646b79ea023_1.png",
+      "usageCount": 1
+    },
+    "portrait": {
+      "name": "Direnis Lideri",
+      "path": "assets/media/portraits/tordah_A_graphic_novel-style_portrait_of_Arda_the_determined__4fa7596c-1692-4ce0-8c9e-98f8e154d713_3.png",
+      "fileName": "tordah_A_graphic_novel-style_portrait_of_Arda_the_determined__4fa7596c-1692-4ce0-8c9e-98f8e154d713_3.png",
+      "usageCount": 1
+    },
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "strong",
+      "frameCheck": "captured",
+      "reuse": "unique",
+      "notes": "Direnis toplantisi icin yer alti meclisi hissi guclu. Portre daha cizgisel alternatifle eslenebilir."
+    }
+  },
+  {
+    "nodeId": "yanilsama_catlagi",
+    "phase": 1,
+    "phaseLabel": "Uyanis",
+    "sceneSummary": "Seçtiğin {müttefik} grubuyla çalışırken, sistemin yalanlarını daha net görüyorsun.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Activist_headquarters_maps_and_strategy_boards_passion_54439e8a-7feb-4d17-b0bd-12393032b32d_2.png",
+      "fileName": "tordah_Activist_headquarters_maps_and_strategy_boards_passion_54439e8a-7feb-4d17-b0bd-12393032b32d_2.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "ilk_direnis",
+    "phase": 1,
+    "phaseLabel": "Uyanis",
+    "sceneSummary": "İlk eyleminiz ses getirdi. Küçük bir başarı, ama büyük bir umut. Artık geri dönüş yok.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_A_shadowy_plaza_with_scattered_groups_of_people_dim_li_ad630dd5-c790-407b-b140-2fcaedffce38_1.png",
+      "fileName": "tordah_A_shadowy_plaza_with_scattered_groups_of_people_dim_li_ad630dd5-c790-407b-b140-2fcaedffce38_1.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "yerel_orgutlenme",
+    "phase": 1,
+    "phaseLabel": "Uyanis",
+    "sceneSummary": "Mahallede kurduğunuz küçük grup büyüyor. İnsanlar size güveniyor.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Cavernous_marketplace_with_empty_shelves_desperate_cit_963c465e-6dcc-49c9-9a97-3d967ebed299_2.png",
+      "fileName": "tordah_Cavernous_marketplace_with_empty_shelves_desperate_cit_963c465e-6dcc-49c9-9a97-3d967ebed299_2.png",
+      "usageCount": 2
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "devlet_tepkisi",
+    "phase": 1,
+    "phaseLabel": "Uyanis",
+    "sceneSummary": "Merkezi yönetim, yerel örgütlenmenizden rahatsız oldu.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Interrogation_room_with_balanced_lighting_tense_atmosp_d1b99622-c3ad-427f-bd3a-93023b2fb337_2.png",
+      "fileName": "tordah_Interrogation_room_with_balanced_lighting_tense_atmosp_d1b99622-c3ad-427f-bd3a-93023b2fb337_2.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "halk_uyanisi",
+    "phase": 1,
+    "phaseLabel": "Uyanis",
+    "sceneSummary": "Devletin baskısı ters tepti. Diğer mahallelerde de benzer örgütlenmeler başladı.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_A_tense_youth_gathering_in_a_dimly_lit_street_serious__e349ce48-5be1-4830-89ee-765348e4063a_3.png",
+      "fileName": "tordah_A_tense_youth_gathering_in_a_dimly_lit_street_serious__e349ce48-5be1-4830-89ee-765348e4063a_3.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "son_hazirlik",
+    "phase": 1,
+    "phaseLabel": "Uyanis",
+    "sceneSummary": "Devrim anı yaklaşıyor. Tüm hazırlıklar tamamlanmak üzere.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_War_council_chamber_with_multiple_light_sources_strate_339a0576-8b05-42eb-adb5-30e7c1bea02b_1.png",
+      "fileName": "tordah_War_council_chamber_with_multiple_light_sources_strate_339a0576-8b05-42eb-adb5-30e7c1bea02b_1.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "devrim_baslangici",
+    "phase": 1,
+    "phaseLabel": "Uyanis",
+    "sceneSummary": "Artık hazırlıklar tamam. Kıvılcım ateşe dönüştü. Halk sokaklarda.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Through_the_bustling_thoroughfare_protesters_weave_bet_9c837784-1831-454f-9a0e-8eb866462ba9_1.png",
+      "fileName": "tordah_Through_the_bustling_thoroughfare_protesters_weave_bet_9c837784-1831-454f-9a0e-8eb866462ba9_1.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "strong",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": "Kalabalik protesto kompozisyonu devrim baslangici icin uygun."
+    }
+  },
+  {
+    "nodeId": "faz2_baslangic",
+    "phase": 2,
+    "phaseLabel": "Kurulus",
+    "sceneSummary": "Devrim başarılı oldu! Eski rejim devrildi.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+      "fileName": "tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+      "usageCount": 3
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "strong",
+      "frameCheck": "captured",
+      "reuse": "shared-asset",
+      "notes": "Genis forum alanindaki topluluk sahnesi yeni duzenin acilisina uyuyor."
+    }
+  },
+  {
+    "nodeId": "ilk_zafer",
+    "phase": 2,
+    "phaseLabel": "Kurulus",
+    "sceneSummary": "Şehir sizin kontrolünüzde. Halk zaferi kutluyor. Ancak kutlamaların ortasında ilk büyük sorun baş gösteriyor: GÜÇ BOŞLUĞU.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_In_the_marble_council_chamber_cloaked_senators_debate__cb68757a-5b55-400f-9656-116b6c255b28_3.png",
+      "fileName": "tordah_In_the_marble_council_chamber_cloaked_senators_debate__cb68757a-5b55-400f-9656-116b6c255b28_3.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "guc_boslugu",
+    "phase": 2,
+    "phaseLabel": "Kurulus",
+    "sceneSummary": "Liderlik krizi derinleşiyor. Farklı devrimci gruplar kendi gündemlerini dayatıyor. Eski müttefikin, {müttefik} grubu, bir yol göstermen için sana bakıyor.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_A_grim_conference_room_with_dim_lighting_tense_atmosph_18f6b60b-f687-4fa5-824c-a7830aec63e0_3.png",
+      "fileName": "tordah_A_grim_conference_room_with_dim_lighting_tense_atmosph_18f6b60b-f687-4fa5-824c-a7830aec63e0_3.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "merkezi_toplama",
+    "phase": 2,
+    "phaseLabel": "Kurulus",
+    "sceneSummary": "Kararınla 'Devrimci Konsey' tüm yetkileri elinde topladı. Kararlar hızla alınıyor, kaos sona eriyor.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "fileName": "tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "usageCount": 4
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "halk_ihaneti",
+    "phase": 2,
+    "phaseLabel": "Kurulus",
+    "sceneSummary": "Konsey, tam bir tiranlığa dönüştü. Halkın devrimi, halktan çalındı. Sokaklarda fısıltılar yükseliyor: 'Hiçbir şey değişmedi, sadece tiranlar değişti.'",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_In_the_austere_broadcast_chamber_a_lone_figures_visage_5c002841-48ea-41d1-809f-3f62723272da_2.png",
+      "fileName": "tordah_In_the_austere_broadcast_chamber_a_lone_figures_visage_5c002841-48ea-41d1-809f-3f62723272da_2.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "ikinci_direnis",
+    "phase": 2,
+    "phaseLabel": "Kurulus",
+    "sceneSummary": "Yeter! Artık kendi kurduğun düzene veya yozlaşmasına karşı çıkma zamanı. Halkın bir kısmı hala sana inanıyor. İkinci bir direniş başlıyor. Bu seferki hedef: devrimci tiranlar.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Crowded_youth_rally_new_voices_rising_chanting_youth_e_3a6f606f-1171-4cb1-98d3-092092e2055d_0.png",
+      "fileName": "tordah_Crowded_youth_rally_new_voices_rising_chanting_youth_e_3a6f606f-1171-4cb1-98d3-092092e2055d_0.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "anarsist_alternatif",
+    "phase": 2,
+    "phaseLabel": "Kurulus",
+    "sceneSummary": "Kararınla güç, merkezi bir otorite olmaksızın yerel halk meclislerine dağıtıldı. Her mahalle kendi kendini yönetiyor. Bu, gerçek bir özgürlük... ama aynı zamanda büyük bir kaos.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
+      "fileName": "tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
+      "usageCount": 2
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "halk_meclisi",
+    "phase": 2,
+    "phaseLabel": "Kurulus",
+    "sceneSummary": "Önerin kabul gördü. Mahalle meclislerinden seçilen ve geri çağrılabilir delegelerin katıldığı bir 'Genel Meclis' kuruldu.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
+      "fileName": "tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
+      "usageCount": 3
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "guc_savasi",
+    "phase": 2,
+    "phaseLabel": "Kurulus",
+    "sceneSummary": "İç savaş kapıda. Şehir ikiye bölündü:",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Military_checkpoint_at_border_tanks_and_troops_poised__686c54ca-b97c-4814-8f1d-207171424018_0.png",
+      "fileName": "tordah_Military_checkpoint_at_border_tanks_and_troops_poised__686c54ca-b97c-4814-8f1d-207171424018_0.png",
+      "usageCount": 2
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "yeni_sistem_merkezi",
+    "phase": 2,
+    "phaseLabel": "Kurulus",
+    "sceneSummary": "Zafer Konsey'in! Meclisçi isyanı bastırıldı. Güç yeniden merkezde toplandı. Düzen sağlandı, ama özgürlükler ve devrimin ruhu feda edildi. Kurduğun bu yeni otoriter yapı, ilk büyük sınavıyla karşı karşıya...",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "fileName": "tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "usageCount": 4
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "yeni_sistem_anarsi",
+    "phase": 2,
+    "phaseLabel": "Kurulus",
+    "sceneSummary": "Zafer Meclislerin! Merkeziyetçi kanat yenildi. Artık şehir, tamamen özerk mahalle meclislerinin oluşturduğu bir federasyon tarafından yönetiliyor. Bu, tarihte bir ilk.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
+      "fileName": "tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
+      "usageCount": 3
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "ilk_test",
+    "phase": 2,
+    "phaseLabel": "Kurulus",
+    "sceneSummary": "Beklenmedik bir kıtlık baş gösterdi. Tahıl ambarları boş, komşu şehirler ticareti kesti. Halk aç ve öfkeli. Yeni kurduğun sistem bu krizi nasıl çözecek?",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Cavernous_marketplace_with_empty_shelves_desperate_cit_963c465e-6dcc-49c9-9a97-3d967ebed299_2.png",
+      "fileName": "tordah_Cavernous_marketplace_with_empty_shelves_desperate_cit_963c465e-6dcc-49c9-9a97-3d967ebed299_2.png",
+      "usageCount": 2
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "gecis_donemi",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "Kriz, ağır bedellerle de olsa aşıldı. Eski sistemin hayaletlerinden tamamen kurtulup, kurduğunuz yeni düzenin gerçekleriyle yüzleşme zamanı.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
+      "fileName": "tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
+      "usageCount": 2
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "strong",
+      "frameCheck": "captured",
+      "reuse": "shared-asset",
+      "notes": "Baris dolu gecis karesi, Faz 3 oncesi nefes aldiran ton kuruyor."
+    }
+  },
+  {
+    "nodeId": "yerel_yonetimler",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "Toplum, özerk mahalle meclisleri aracılığıyla işliyor. İlk gündem: Eğitim.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_A_dimly_lit_worn_library_with_dusty_shelves_scattered__692f97ae-fe3d-430d-8893-1ec024eacf97_1.png",
+      "fileName": "tordah_A_dimly_lit_worn_library_with_dusty_shelves_scattered__692f97ae-fe3d-430d-8893-1ec024eacf97_1.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "gonullu_birlikler",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "Zorunlu askerlik kaldırıldı. Şehrin savunması, tamamen gönüllülerden oluşan 'Halk Milisleri'ne emanet.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Military_checkpoint_at_border_tanks_and_troops_poised__686c54ca-b97c-4814-8f1d-207171424018_0.png",
+      "fileName": "tordah_Military_checkpoint_at_border_tanks_and_troops_poised__686c54ca-b97c-4814-8f1d-207171424018_0.png",
+      "usageCount": 2
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "ekonomik_ozgurluk",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "Ekonomi, işçilerin sahip olduğu kooperatifler ve takas ağları üzerinden yürüyor. Para neredeyse ortadan kalktı.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_A_grim_government_office_with_harsh_fluorescent_lighti_8b65b72f-f900-4b53-a799-8e3732bcfea1_1.png",
+      "fileName": "tordah_A_grim_government_office_with_harsh_fluorescent_lighti_8b65b72f-f900-4b53-a799-8e3732bcfea1_1.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "ic_catismalar",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "Yeni sistemdeki sorunlar su yüzüne çıkmaya başladı.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_In_the_craggy_mountain_pass_narrow_trails_wind_between_8fd5fcb1-344d-4dd4-af39-f8fa4f209995_0.png",
+      "fileName": "tordah_In_the_craggy_mountain_pass_narrow_trails_wind_between_8fd5fcb1-344d-4dd4-af39-f8fa4f209995_0.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "yeni_tehditler",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "Siz iç sorunlarla boğuşurken, komşu merkeziyetçi devlet 'CAPITALIA', sizin 'kaos düzeninizi' kendi istikrarına bir tehdit olarak gördüğünü açıkladı.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_In_the_war_councils_candlelit_chamber_tattered_maps_sp_e48729e6-131f-41cd-8276-348a7f978b5c_0.png",
+      "fileName": "tordah_In_the_war_councils_candlelit_chamber_tattered_maps_sp_e48729e6-131f-41cd-8276-348a7f978b5c_0.png",
+      "usageCount": 1
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "unique",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "sistem_testi_merkezi",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "Savaşı kazanmak için geçici bir 'Savaş Konseyi' kurdun ve tüm yetkileri ona devrettin. Halk Milisleri, disiplinli bir orduya dönüştü.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "fileName": "tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "usageCount": 4
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "sistem_testi_anarsi",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "Merkezi bir ordu olmadan, her sokakta, her evde direndiniz. Şehir harabeye döndü ama halkın iradesi kırılmadı. Capitalia ordusu, bu 'başsız' düşman karşısında yıprandı ve geri çekildi.",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
+      "fileName": "tordah_In_the_sun-drenched_plaza_youth_and_elders_raise_their_db047ccc-6564-4913-9a16-d57935979470_3.png",
+      "usageCount": 2
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "final_karar",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "Yıllar geçti... Kurduğun toplum, seçimlerinin bir yansıması. Geriye dönüp baktığında ne görüyorsun?",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+      "fileName": "tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+      "usageCount": 3
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "strong",
+      "frameCheck": "captured",
+      "reuse": "shared-asset",
+      "notes": "Toplumsal toplanma gorseli, final degerlendirmesi icin tarafsiz ve kapsayici bir alan sagliyor."
+    }
+  },
+  {
+    "nodeId": "final_otomatik_sonuc",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "SONUÇ: {final_sonuc_baslik}",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+      "fileName": "tordah_Through_the_grand_forums_vaulted_archway_crowds_mill_b_1e3f10ad-e454-4693-9df4-db42524f22e7_1.png",
+      "usageCount": 3
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "final_yeni_tiranlik",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "SONUÇ: YENİ TİRANLIK",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "fileName": "tordah_Upon_the_gilded_dais_a_solitary_leader_addresses_assem_cb8b013b-364c-462c-9e21-83254a4625d4_0.png",
+      "usageCount": 4
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "final_zorlu_ozgurluk",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "SONUÇ: ZORLU ÖZGÜRLÜK",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
+      "fileName": "tordah_In_the_echoing_assembly_hall_revolutionaries_gather_be_83ea19ae-f1c2-456d-807b-6b375363e94d_2.png",
+      "usageCount": 3
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  },
+  {
+    "nodeId": "final_karma_sistem",
+    "phase": 3,
+    "phaseLabel": "Ozurluk Denemesi",
+    "sceneSummary": "SONUÇ: KIRILGAN DENGE",
+    "background": {
+      "path": "assets/media/backgrounds/tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
+      "fileName": "tordah_Crowds_celebrating_peaceful_handover_of_power_in_publi_02cf515a-4164-434d-b8ec-653e28ac9495_0.png",
+      "usageCount": 2
+    },
+    "portrait": null,
+    "audit": {
+      "filenameMatch": "source-preserved",
+      "contentFit": "queued",
+      "frameCheck": "queued",
+      "reuse": "shared-asset",
+      "notes": ""
+    }
+  }
+]

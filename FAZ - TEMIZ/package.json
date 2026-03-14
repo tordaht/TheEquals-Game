@@ -1,0 +1,30 @@
+{
+  "name": "the-equals-game-faz-temiz",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Clean, modular edition of The Equals Game with visual audit tooling.",
+  "scripts": {
+    "start": "http-server -p 8111 -c-1",
+    "dev": "http-server -p 8111 -c-1",
+    "lint": "eslint \"src/**/*.js\" \"scripts/**/*.mjs\" \"tests/**/*.mjs\"",
+    "test": "node --test tests/**/*.test.mjs",
+    "test:visual": "node scripts/visual-audit.mjs",
+    "audit:assets": "node scripts/build-visual-manifest.mjs",
+    "prepare:data": "node scripts/prepare-story-data.mjs"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "playwright": "file:vendor/playwright-shim",
+    "playwright-core": "^1.54.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0",
+    "globals": "^16.3.0",
+    "jsdom": "^26.1.0"
+  }
+}
