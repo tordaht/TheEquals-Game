@@ -1,5 +1,6 @@
 // Jest Test Setup - The Equals Game
 // Bu dosya test ortamını hazırlar
+import { jest } from '@jest/globals';
 
 // DOM ortamını simüle et
 document.body.innerHTML = `
