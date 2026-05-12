@@ -874,7 +874,12 @@ function showChoices(choices) {
         const button = document.createElement('button');
         button.className = 'choice-button';
         button.textContent = choice.text;
-        button.onclick = () => selectChoice(choice);
+        button.onclick = () => {
+            if (navigator.vibrate) {
+                navigator.vibrate(12);
+            }
+            selectChoice(choice);
+        };
         button.setAttribute('tabindex', index + 1);
         choicesContainer.appendChild(button);
     });
@@ -1264,6 +1269,61 @@ function loadAccessibilityPreferences() {
     }
 }
 
+function upsertMetaTag(name, content, attribute = 'name') {
+    const selector = `meta[${attribute}="${name}"]`;
+    let meta = document.querySelector(selector);
+
+    if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute(attribute, name);
+        document.head.appendChild(meta);
+    }
+
+    meta.setAttribute('content', content);
+}
+
+function ensureLinkTag(rel, href) {
+    let link = document.querySelector(`link[rel="${rel}"]`);
+
+    if (!link) {
+        link = document.createElement('link');
+        link.setAttribute('rel', rel);
+        document.head.appendChild(link);
+    }
+
+    link.setAttribute('href', href);
+}
+
+function isIOSDevice() {
+    const platform = navigator.platform || '';
+    const userAgent = navigator.userAgent || '';
+    const touchMac = platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+    return /iPad|iPhone|iPod/.test(userAgent) || touchMac;
+}
+
+function setupIOSExperience() {
+    if (!isIOSDevice()) return;
+
+    document.body.classList.add('ios-device');
+
+    if ((window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone) {
+        document.body.classList.add('ios-standalone');
+    }
+
+    upsertMetaTag('apple-mobile-web-app-capable', 'yes');
+    upsertMetaTag('apple-mobile-web-app-status-bar-style', 'black-translucent');
+    upsertMetaTag('apple-mobile-web-app-title', 'The Equals Game');
+    upsertMetaTag('format-detection', 'telephone=no');
+    upsertMetaTag('theme-color', '#0b1021');
+    ensureLinkTag('apple-touch-icon', 'logo.png');
+}
+
+function applyMobileViewportMetrics() {
+    const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+    const vh = Math.max(viewportHeight, 320) * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
 // Mobil dokunmatik optimizasyonu
 function setupMobileOptimization() {
     // Dokunmatik cihaz kontrolü
@@ -1274,8 +1334,34 @@ function setupMobileOptimization() {
     // Viewport ayarları
     const viewport = document.querySelector('meta[name=viewport]');
     if (viewport) {
-        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes');
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes');
     }
+    
+    applyMobileViewportMetrics();
+    window.addEventListener('resize', applyMobileViewportMetrics, { passive: true });
+    window.addEventListener('orientationchange', applyMobileViewportMetrics, { passive: true });
+    
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', applyMobileViewportMetrics, { passive: true });
+    }
+}
+
+function setupTouchFeedback() {
+    document.addEventListener('pointerdown', (event) => {
+        const target = event.target.closest('button, .choice-button, .rules-close, .news-close');
+        if (!target) return;
+        target.classList.add('is-pressed');
+    });
+
+    const clearPressedState = (event) => {
+        const target = event.target.closest('button, .choice-button, .rules-close, .news-close');
+        if (!target) return;
+        target.classList.remove('is-pressed');
+    };
+
+    document.addEventListener('pointerup', clearPressedState);
+    document.addEventListener('pointercancel', clearPressedState);
+    document.addEventListener('pointerleave', clearPressedState, true);
 }
 
 // Klavye navigasyonu
@@ -1415,6 +1501,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Mobil optimizasyonu kur
     setupMobileOptimization();
+    
+    // iOS deneyim ayarları
+    setupIOSExperience();
+    
+    // Dokunmatik basış geri bildirimi
+    setupTouchFeedback();
     
     // Klavye navigasyonu kur
     setupKeyboardNavigation();

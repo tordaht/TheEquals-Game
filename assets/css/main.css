@@ -1809,3 +1809,327 @@ body.high-contrast {
         min-width: 30px;
     }
 } 
+
+/* Mobile stability overrides */
+:root {
+    --mobile-safe-top: env(safe-area-inset-top, 0px);
+    --mobile-safe-bottom: env(safe-area-inset-bottom, 0px);
+    --vh: 1vh;
+}
+
+@media (max-width: 900px) {
+    body {
+        display: block;
+        min-height: calc(var(--vh) * 100);
+        padding: calc(10px + var(--mobile-safe-top)) 10px calc(120px + var(--mobile-safe-bottom));
+        background-attachment: scroll;
+    }
+
+    body::before {
+        height: calc(var(--vh) * 100);
+    }
+
+    #game-container {
+        width: 100%;
+        max-width: none;
+        padding: 20px 14px;
+        border-radius: 18px;
+    }
+
+    .game-title {
+        font-size: 1.7em;
+    }
+
+    #story-text {
+        font-size: 1.05em;
+        line-height: 1.7;
+    }
+
+    .choice-button {
+        min-height: 52px;
+        padding: 14px 12px;
+    }
+
+    .stats-panel {
+        position: static;
+        width: 100%;
+        max-width: none;
+        margin: 12px 0 0;
+        font-size: 0.72em;
+        z-index: 2;
+    }
+
+    .stat-row {
+        padding: 4px 6px;
+    }
+
+    .music-controls {
+        top: calc(10px + var(--mobile-safe-top));
+        right: 10px;
+    }
+
+    .accessibility-toggle {
+        top: calc(10px + var(--mobile-safe-top));
+        left: 10px;
+    }
+
+    .accessibility-controls {
+        top: calc(64px + var(--mobile-safe-top));
+        left: 10px;
+        right: 10px;
+        max-height: 40vh;
+        overflow-y: auto;
+    }
+
+    .rules-button {
+        right: 10px;
+        bottom: calc(10px + var(--mobile-safe-bottom));
+    }
+
+    .skip-button {
+        bottom: calc(64px + var(--mobile-safe-bottom));
+        max-width: calc(100% - 24px);
+    }
+
+    .developer-info-small {
+        bottom: calc(42px + var(--mobile-safe-bottom));
+        font-size: 0.72em;
+    }
+
+    .rules-content,
+    .confirmation-content,
+    .flashback-content {
+        width: min(96vw, 640px);
+        max-height: 78vh;
+    }
+
+    .news-messagebox {
+        top: calc(10px + var(--mobile-safe-top));
+        left: 10px;
+        right: 10px;
+        width: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    #game-container {
+        padding: 16px 12px;
+    }
+
+    .game-logo {
+        width: 64px;
+        height: 64px;
+    }
+
+    .game-title {
+        font-size: 1.45em;
+    }
+
+    .story-content-wrapper {
+        gap: 10px;
+    }
+
+    .character-portrait {
+        width: 84px;
+        height: 84px;
+    }
+
+    .stats-panel {
+        font-size: 0.66em;
+    }
+
+    .music-controls {
+        min-width: 84px;
+        padding: 6px;
+    }
+
+    .accessibility-toggle {
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+    }
+}
+
+/* Design refresh + iOS polish */
+:root {
+    --teg-bg-deep: #070b17;
+    --teg-bg-mid: #0e1730;
+    --teg-accent: #3dd1ff;
+    --teg-accent-soft: #8be4ff;
+    --teg-danger: #ff6b7f;
+    --teg-surface: rgba(10, 16, 33, 0.78);
+    --teg-surface-soft: rgba(17, 28, 52, 0.72);
+    --teg-border: rgba(146, 201, 255, 0.22);
+    --teg-shadow-lg: 0 18px 44px rgba(3, 7, 18, 0.52);
+    --teg-shadow-sm: 0 8px 20px rgba(4, 9, 20, 0.38);
+}
+
+body {
+    color-scheme: dark;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(61, 209, 255, 0.14), transparent 65%),
+        radial-gradient(900px 500px at 100% 100%, rgba(255, 107, 127, 0.12), transparent 65%),
+        linear-gradient(155deg, rgba(9, 14, 29, 0.35), rgba(11, 22, 45, 0.1));
+    pointer-events: none;
+    z-index: 1;
+}
+
+#game-container {
+    background: linear-gradient(168deg, var(--teg-surface) 0%, var(--teg-surface-soft) 100%);
+    border-color: var(--teg-border);
+    box-shadow: var(--teg-shadow-lg);
+}
+
+.game-header {
+    margin-bottom: 20px;
+}
+
+.game-title {
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.version-info {
+    color: #bdd7ff;
+}
+
+#story-text {
+    color: #eaf2ff;
+}
+
+.choice-button {
+    background: linear-gradient(170deg, rgba(31, 45, 79, 0.86), rgba(20, 30, 54, 0.92));
+    border: 1px solid rgba(141, 190, 255, 0.35);
+    color: #f3f8ff;
+    box-shadow: var(--teg-shadow-sm);
+    position: relative;
+}
+
+.choice-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(61, 209, 255, 0.15), rgba(255, 107, 127, 0.1));
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.choice-button:hover::before,
+.choice-button:focus::before {
+    opacity: 1;
+}
+
+.choice-button:hover,
+.choice-button:focus {
+    border-color: var(--teg-accent-soft);
+    transform: translateY(-1px);
+}
+
+.choice-button.is-pressed,
+button.is-pressed,
+.rules-close.is-pressed,
+.news-close.is-pressed {
+    transform: scale(0.98);
+    filter: brightness(0.95);
+}
+
+.stats-panel,
+.music-controls,
+.accessibility-controls {
+    background: rgba(7, 13, 27, 0.84);
+    border-color: rgba(158, 207, 255, 0.26);
+    box-shadow: var(--teg-shadow-sm);
+}
+
+.stat-row {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.rules-button,
+.skip-button,
+.music-toggle,
+.volume-btn,
+.accessibility-controls button {
+    border: 1px solid rgba(160, 211, 255, 0.34);
+    background: linear-gradient(150deg, rgba(34, 51, 88, 0.86), rgba(18, 27, 47, 0.9));
+}
+
+.rules-button:hover,
+.skip-button:hover,
+.music-toggle:hover,
+.volume-btn:hover,
+.accessibility-controls button:hover {
+    border-color: var(--teg-accent-soft);
+    box-shadow: 0 0 0 1px rgba(139, 228, 255, 0.25), 0 6px 16px rgba(5, 10, 23, 0.4);
+}
+
+.rules-content,
+.confirmation-content,
+.flashback-content,
+.news-messagebox {
+    border-color: rgba(162, 209, 255, 0.3);
+    box-shadow: var(--teg-shadow-lg);
+}
+
+.news-messagebox {
+    background: rgba(12, 20, 38, 0.96);
+}
+
+.news-header,
+.news-footer {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(166, 210, 255, 0.24);
+}
+
+.news-content,
+.news-title,
+.news-source,
+.news-time {
+    color: #eaf2ff;
+}
+
+.rules-modal,
+.confirmation-dialog {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.developer-info-small {
+    background: rgba(7, 12, 25, 0.58);
+    border: 1px solid rgba(165, 209, 255, 0.22);
+}
+
+/* iOS specific behaviors */
+body.ios-device {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: rgba(61, 209, 255, 0.22);
+}
+
+body.ios-device button,
+body.ios-device .choice-button,
+body.ios-device .rules-close,
+body.ios-device .news-close {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+}
+
+body.ios-device #game-container {
+    border-radius: 22px;
+}
+
+body.ios-standalone {
+    padding-top: calc(18px + var(--mobile-safe-top));
+}
+
+@supports (-webkit-touch-callout: none) {
+    body {
+        overscroll-behavior-y: contain;
+    }
+}
