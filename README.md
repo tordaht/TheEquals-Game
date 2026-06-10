@@ -159,4 +159,4 @@ Veya `Index.HTML` dosyasını bir web tarayıcısında açın.
 
 ---
 
-**⚠️ Not**: Bu oyun şu anda Beta aşamasındadır. Modern altyapı ile geliştirilmektedir. 
+**⚠️ Not**: Bu oyun şu anda Beta aşamasındadır. Modern altyapı ile geliştirilmektedir. \n### Modules\nGame logic has been modularized under `assets/js/modules`. Run `npm test` to execute unit tests.
